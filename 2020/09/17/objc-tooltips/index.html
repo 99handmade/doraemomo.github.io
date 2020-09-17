@@ -21,10 +21,10 @@
   var CONFIG = {
     hostname: new URL('https://doraemomo.github.io').hostname,
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Mist',
     version: '7.7.1',
     exturl: false,
-    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -48,13 +48,13 @@
 
   <meta name="description" content="Disable methodConvenient feature in some special cases, for example, when we want to disable non-parameter constructor and only use the required constructor, the init() method will inherit from the su">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ObjectiveC tips">
+<meta property="og:title" content="ObjectiveC tooltips">
 <meta property="og:url" content="https://doraemomo.github.io/2020/09/17/objc-tooltips/index.html">
 <meta property="og:site_name" content="Doraemomo&#39;s site">
 <meta property="og:description" content="Disable methodConvenient feature in some special cases, for example, when we want to disable non-parameter constructor and only use the required constructor, the init() method will inherit from the su">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-09-17T14:19:28.000Z">
-<meta property="article:modified_time" content="2020-09-17T15:44:58.832Z">
+<meta property="article:modified_time" content="2020-09-17T21:14:03.057Z">
 <meta property="article:author" content="doraemomo">
 <meta name="twitter:card" content="summary">
 
@@ -70,7 +70,7 @@
   };
 </script>
 
-  <title>ObjectiveC tips | Doraemomo's site</title>
+  <title>ObjectiveC tooltips | Doraemomo's site</title>
   
 
 
@@ -138,9 +138,24 @@
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
 
   </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">0</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">0</span></a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">15</span></a>
 
   </li>
   </ul>
@@ -182,7 +197,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          ObjectiveC tips
+          ObjectiveC tooltips
         </h1>
 
         <div class="post-meta">
@@ -193,7 +208,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-09-17 16:19:28 / Modified: 17:44:58" itemprop="dateCreated datePublished" datetime="2020-09-17T16:19:28+02:00">2020-09-17</time>
+              <time title="Created: 2020-09-17 16:19:28 / Modified: 23:14:03" itemprop="dateCreated datePublished" datetime="2020-09-17T16:19:28+02:00">2020-09-17</time>
             </span>
 
           
@@ -359,11 +374,6 @@
   </span>
   <span class="author" itemprop="copyrightHolder">doraemomo</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.1
-  </div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.1
-  </div>
 
         
 
@@ -430,7 +440,7 @@
   var disqus_config = function() {
     this.page.url = "https://doraemomo.github.io/2020/09/17/objc-tooltips/";
     this.page.identifier = "2020/09/17/objc-tooltips/";
-    this.page.title = "ObjectiveC tips";
+    this.page.title = "ObjectiveC tooltips";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
