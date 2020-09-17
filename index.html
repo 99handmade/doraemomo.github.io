@@ -165,6 +165,728 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2020/09/17/objc-tooltips/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="doraemomo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Doraemomo's site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/17/objc-tooltips/" class="post-title-link" itemprop="url">ObjectiveC tips</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-09-17 16:19:28 / Modified: 17:44:58" itemprop="dateCreated datePublished" datetime="2020-09-17T16:19:28+02:00">2020-09-17</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/09/17/objc-tooltips/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/09/17/objc-tooltips/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Disable-method"><a href="#Disable-method" class="headerlink" title="Disable method"></a>Disable method</h2><p>Convenient feature in some special cases, for example, when we want to disable non-parameter constructor and only use the required constructor, the init() method will inherit from the superclass, and unlike Java, even if you don’t override it, it can be called for subclasses, so you need to do the following:</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// UNAVAILABLE_ATTRIBUTE is a macro for __attribute__((unavailable))</span></span><br><span class="line">- (<span class="keyword">instancetype</span>)init UNAVAILABLE_ATTRIBUTE;</span><br></pre></td></tr></table></figure>
+
+<p>After that, if someone wants to call init(), a compile error will occur.</p>
+<blockquote>
+<p>If you do this on a class, its subclasses will not be able to inherit the init() method.</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2020/09/11/java-tooltips/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="doraemomo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Doraemomo's site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/11/java-tooltips/" class="post-title-link" itemprop="url">Java tooltips</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-09-11 10:31:32" itemprop="dateCreated datePublished" datetime="2020-09-11T10:31:32+02:00">2020-09-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-09-17 17:44:53" itemprop="dateModified" datetime="2020-09-17T17:44:53+02:00">2020-09-17</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/09/11/java-tooltips/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/09/11/java-tooltips/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><p>构造函数是不能继承的, 只能用来在子类中调用. 如果父类没有无参数构造函数, 创建子类时, 必须在子类构造函数代码第一行显示调用父类的无参数构造函数, 否则不能编译.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2020/09/05/coding-and-naming-style/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="doraemomo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Doraemomo's site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/05/coding-and-naming-style/" class="post-title-link" itemprop="url">Coding And Naming Style</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-09-05 14:51:59" itemprop="dateCreated datePublished" datetime="2020-09-05T14:51:59+02:00">2020-09-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-09-17 17:38:37" itemprop="dateModified" datetime="2020-09-17T17:38:37+02:00">2020-09-17</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/09/05/coding-and-naming-style/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/09/05/coding-and-naming-style/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Alibaba-Java-coding-guidelines"><a href="#Alibaba-Java-coding-guidelines" class="headerlink" title="Alibaba Java coding guidelines"></a>Alibaba Java coding guidelines</h2><p><a href="https://github.com/alibaba/p3c" target="_blank" rel="noopener">https://github.com/alibaba/p3c</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2020/09/02/git-tooltips/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="doraemomo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Doraemomo's site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/02/git-tooltips/" class="post-title-link" itemprop="url">Git Tooltips</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-09-02 17:21:11" itemprop="dateCreated datePublished" datetime="2020-09-02T17:21:11+02:00">2020-09-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-09-17 17:44:46" itemprop="dateModified" datetime="2020-09-17T17:44:46+02:00">2020-09-17</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/09/02/git-tooltips/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/09/02/git-tooltips/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="unstage-added-file"><a href="#unstage-added-file" class="headerlink" title="unstage added file"></a>unstage added file</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset</span><br></pre></td></tr></table></figure>
+
+<p>will unstage all added files.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset &lt;file_name&gt;</span><br></pre></td></tr></table></figure>
+
+<p>will unstage current file.</p>
+<h2 id="tag"><a href="#tag" class="headerlink" title="tag"></a>tag</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git tag -a &lt;tag_name_without_<span class="string">"&gt; -m &lt;"</span>comment<span class="string">"&gt;</span></span><br><span class="line"><span class="string">git push origin --tags</span></span><br></pre></td></tr></table></figure>
+
+<p>tags will not be pushed with commits, need to be pushed explicitly.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2020/09/01/stack-overflow/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="doraemomo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Doraemomo's site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/01/stack-overflow/" class="post-title-link" itemprop="url">Stack Overflow</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-09-01 15:35:15" itemprop="dateCreated datePublished" datetime="2020-09-01T15:35:15+02:00">2020-09-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-09-17 17:45:30" itemprop="dateModified" datetime="2020-09-17T17:45:30+02:00">2020-09-17</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/09/01/stack-overflow/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/09/01/stack-overflow/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a href="https://stackoverflow.com/questions/44413952/gradle-implementation-vs-api-configuration" target="_blank" rel="noopener">Gradle: api vs implementation</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2020/08/27/dependency-mechanism/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="doraemomo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Doraemomo's site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/27/dependency-mechanism/" class="post-title-link" itemprop="url">Dependencies management</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-08-27 10:22:49" itemprop="dateCreated datePublished" datetime="2020-08-27T10:22:49+02:00">2020-08-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-09-17 17:40:52" itemprop="dateModified" datetime="2020-09-17T17:40:52+02:00">2020-09-17</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/08/27/dependency-mechanism/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/08/27/dependency-mechanism/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="A-few-word-about-dependencies-management"><a href="#A-few-word-about-dependencies-management" class="headerlink" title="A few word about dependencies management"></a>A few word about dependencies management</h2><p>Dependencies management is very important part of our project, althogh it is now quite easy to manage dependencies with those powerful tools such as Maven, Gradle, CocoaPods, Carthage, NPM etc. it is sometimes a weekness in many projects. </p>
+<p>Choosing a libraries without careful thinging or well comparing will bring potential problem, a popular library is more robust, on the contrary, a unpopular libbrary is risky. Dependencies without comments, espacially those less well-known libraries, will increase complexity of project maintenance, and sometimes get worse when changing developers.</p>
+<p>Every team needs a dependencies strategy. These “additional” tasks will have a small impact on the team’s capaticy, but the benefits will be great, we can imagine some fews improvement above:</p>
+<ul>
+<li>document/comment the dependencies</li>
+</ul>
+<blockquote>
+<p>Dependencies also be a part of the project, and they need to be maintained as the code. Comment your dependencies, tell about the purpose of using this library, a link to his repository or website, and also list the comparing library that you analysed.</p>
+</blockquote>
+<ul>
+<li>native solution &gt; popular library &gt; unpopular library</li>
+</ul>
+<blockquote>
+<p>this is not the golden rule, you can easily find some counterexamples, many mobile developers prefer to use third-party database solutions (such as Realm) instead of CoreData, SQLite, because they are more developer-friendly. Front-end developers will use third-part UI library instead of native one, because they have rich elements and are cool.</p>
+</blockquote>
+<p>However, you can still try to follow this principle, or better call it a recommendation, in most cases it will provide you with project stability and ease of maintenance.</p>
+<ul>
+<li>carefully to choose local dependencies</li>
+</ul>
+<blockquote>
+<p>here a local dependencies presents dependencies without a management system, and need to be integrated in the project manually, for example, take directly a .jar, or link a project into the current working space. If you want to do that, document it well.</p>
+</blockquote>
+<ul>
+<li>periodly check your dependencies, sometimes the dependencies is deprecated, achieved due to many reasons, and consider if you need to move on</li>
+</ul>
+<h2 id="How-to-distribute-own-library"><a href="#How-to-distribute-own-library" class="headerlink" title="How to distribute own library"></a>How to distribute own library</h2><p><a href="https://github.com/codepath/android_guides/wiki/Building-your-own-Android-library" target="_blank" rel="noopener">Building your own Android library</a></p>
+<p><a href="https://inthecheesefactory.com/blog/how-to-upload-library-to-jcenter-maven-central-as-dependency/en" target="_blank" rel="noopener">How to distribute your own Android library through jCenter and Maven Central from Android Studio</a></p>
+<h2 id="Gradle"><a href="#Gradle" class="headerlink" title="Gradle"></a>Gradle</h2><h3 id="Init-project-with-gradle-support"><a href="#Init-project-with-gradle-support" class="headerlink" title="Init project with gradle support"></a>Init project with gradle support</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradle init</span><br></pre></td></tr></table></figure>
+
+<h3 id="Show-all-tasks"><a href="#Show-all-tasks" class="headerlink" title="Show all tasks"></a>Show all tasks</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradle tasks</span><br></pre></td></tr></table></figure>
+
+<h3 id="local-gradle-repository"><a href="#local-gradle-repository" class="headerlink" title="local gradle repository"></a>local gradle repository</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$HOME</span>/.gradle/caches</span><br></pre></td></tr></table></figure>
+
+<p>you need to remove this directory to reload Android Studio dependencies.</p>
+<h2 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h2><h3 id="local-maven-repository"><a href="#local-maven-repository" class="headerlink" title="local maven repository"></a>local maven repository</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$HOME</span>/.m2/repository</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2020/08/21/operation-system-tooltips/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="doraemomo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Doraemomo's site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/21/operation-system-tooltips/" class="post-title-link" itemprop="url">Operation system tooltips</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-08-21 16:27:06" itemprop="dateCreated datePublished" datetime="2020-08-21T16:27:06+02:00">2020-08-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-09-17 17:46:36" itemprop="dateModified" datetime="2020-09-17T17:46:36+02:00">2020-09-17</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/08/21/operation-system-tooltips/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/08/21/operation-system-tooltips/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h2><h3 id="update-upgrade-package"><a href="#update-upgrade-package" class="headerlink" title="update/upgrade package"></a>update/upgrade package</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get upgrade</span><br></pre></td></tr></table></figure>
+
+<h3 id="Environment-variable"><a href="#Environment-variable" class="headerlink" title="Environment variable"></a>Environment variable</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> JFROG_HOME=<span class="string">"/opt/jfrog"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$JFROG_HOME</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Debian"><a href="#Debian" class="headerlink" title="Debian"></a>Debian</h2><h3 id="show-package"><a href="#show-package" class="headerlink" title="show package"></a>show package</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dpkg -l</span><br><span class="line">dpkg -l | grep &lt;search_name&gt;</span><br></pre></td></tr></table></figure>
+
+<p>In result, the first column corresponds to the status of a package, and it is represented by three characters, the first character signifies the desired state:</p>
+<ul>
+<li>u: Unknown (an unknown state)</li>
+<li>i: Install (marked for installation)</li>
+<li>r: Remove (marked for removal)</li>
+<li>p: Purge (marked for purging)</li>
+<li>h: Hold</li>
+</ul>
+<p>The second character signifies the current state, whether it is installed or not. The possible values are:</p>
+<ul>
+<li>n: Not- The package is not installed</li>
+<li>i: Inst – The package is successfully installed</li>
+<li>c: Cfg-files – Configuration files are present</li>
+<li>u: Unpacked- The package is stilled unpacked</li>
+<li>f: Failed-cfg- Failed to remove configuration files</li>
+<li>h: Half-inst- The package is only partially installed</li>
+<li>W: trig-aWait</li>
+<li>t: Trig-pend</li>
+</ul>
+<p>The third Character corresponds to the error state (optional). The possible value include:</p>
+<ul>
+<li>R: Reinst-required The package must be installed.</li>
+</ul>
+<h3 id="search-package"><a href="#search-package" class="headerlink" title="search package"></a>search package</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-cache search &lt;package_name&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Delete-symbolic-link"><a href="#Delete-symbolic-link" class="headerlink" title="Delete symbolic link"></a>Delete symbolic link</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rm &lt;path_to_link&gt;</span><br><span class="line"><span class="comment"># or</span></span><br><span class="line">unlink &lt;path_to_link&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><h3 id="Show-running-container"><a href="#Show-running-container" class="headerlink" title="Show running container"></a>Show running container</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure>
+
+<h3 id="Show-all-container"><a href="#Show-all-container" class="headerlink" title="Show all container"></a>Show all container</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+
+<h3 id="Delete-container"><a href="#Delete-container" class="headerlink" title="Delete container"></a>Delete container</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker container rm &lt;container_id&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Build-image"><a href="#Build-image" class="headerlink" title="Build image"></a>Build image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t web-server-image .</span><br></pre></td></tr></table></figure>
+
+<h3 id="Delete-image"><a href="#Delete-image" class="headerlink" title="Delete image"></a>Delete image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image rm &lt;image_id&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2020/08/19/translation-jse-specification/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="doraemomo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Doraemomo's site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/19/translation-jse-specification/" class="post-title-link" itemprop="url">Translation JSE specification</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-08-19 15:26:40" itemprop="dateCreated datePublished" datetime="2020-08-19T15:26:40+02:00">2020-08-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-09-17 17:46:56" itemprop="dateModified" datetime="2020-09-17T17:46:56+02:00">2020-09-17</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/08/19/translation-jse-specification/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/08/19/translation-jse-specification/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Chapter-17-Threads-and-Locks-线程和锁"><a href="#Chapter-17-Threads-and-Locks-线程和锁" class="headerlink" title="Chapter 17. Threads and Locks (线程和锁)"></a>Chapter 17. Threads and Locks (线程和锁)</h2><p>While most of the discussion in the preceding chapters is concerned only with the behavior of code as executed a single statement or expression at a time, that is, by a single thread, the Java Virtual Machine can support many threads of execution at once. These threads independently execute code that operates on values and objects residing in a shared main memory. Threads may be supported by having many hardware processors, by time-slicing a single hardware processor, or by time-slicing many hardware processors.</p>
+<p>尽管前几章的大多数讨论仅限于一次执行单个语句或表达式的代码, Java虚拟机是支持多线程的. 这些线程独立地执行对驻留在共享内存中值和对象操作对代码.可以通过多核处理器,分时共享对单核处理器,或者是分时共享对多核处理器来支持线程.</p>
+<p>Threads are represented by the Thread class. The only way for a user to create a thread is to create an object of this class; each thread is associated with such an object. A thread will start when the start() method is invoked on the corresponding Thread object.</p>
+<p>线程由Thread类表示.用户创建线程的唯一方法就是创建此类的对象: 每个线程都与一个这样的对象关联.调用对象的start()方法可以启动线程.</p>
+<p>The behavior of threads, particularly when not correctly synchronized, can be confusing and counterintuitive. This chapter describes the semantics of multithreaded programs; it includes rules for which values may be seen by a read of shared memory that is updated by multiple threads. As the specification is similar to the memory models for different hardware architectures, these semantics are known as the Java programming language memory model. When no confusion can arise, we will simply refer to these rules as “the memory model”.</p>
+<p>线程的行为,尤其是没正确同步,可能会造成混淆和异常. 这章介绍了多线程编程的语义: 包括通过读取由多个线程更新的共享内存来查看值的规则. 这些语义成为Java编程语言内存模型.</p>
+<p>These semantics do not prescribe how a multithreaded program should be executed. Rather, they describe the behaviors that multithreaded programs are allowed to exhibit. Any execution strategy that generates only allowed behaviors is an acceptable execution strategy.</p>
+<p>这些语义不会详述一个多线程程序是如何执行的. 相反地, 他描述了允许多线程程序表现的行为. 任何仅生成允许的行为的执行策略都是可接受的执行策略.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2020/07/23/audio-signal-processing/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -179,7 +901,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/07/23/audio-signal-processing/" class="post-title-link" itemprop="url">audio_signal_processing</a>
+            <a href="/2020/07/23/audio-signal-processing/" class="post-title-link" itemprop="url">Audio Signal Processing</a>
         </h1>
 
         <div class="post-meta">
@@ -188,10 +910,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-07-23 11:26:06 / Modified: 11:34:57" itemprop="dateCreated datePublished" datetime="2020-07-23T11:26:06+02:00">2020-07-23</time>
+              <time title="Created: 2020-07-23 11:26:06" itemprop="dateCreated datePublished" datetime="2020-07-23T11:26:06+02:00">2020-07-23</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-09-17 17:38:41" itemprop="dateModified" datetime="2020-09-17T17:38:41+02:00">2020-09-17</time>
+              </span>
 
           
   
@@ -258,7 +986,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/07/07/angular-tooltips/" class="post-title-link" itemprop="url">angular_tooltips</a>
+            <a href="/2020/07/07/angular-tooltips/" class="post-title-link" itemprop="url">Angular toolips</a>
         </h1>
 
         <div class="post-meta">
@@ -275,7 +1003,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-09 15:32:32" itemprop="dateModified" datetime="2020-07-09T15:32:32+02:00">2020-07-09</time>
+                <time title="Modified: 2020-09-17 17:37:00" itemprop="dateModified" datetime="2020-09-17T17:37:00+02:00">2020-09-17</time>
               </span>
 
           
@@ -320,416 +1048,12 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2020/06/26/windows-tooltips/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="doraemomo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Doraemomo's site">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/26/windows-tooltips/" class="post-title-link" itemprop="url">windows_tooltips</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-06-26 11:05:41 / Modified: 11:09:41" itemprop="dateCreated datePublished" datetime="2020-06-26T11:05:41+02:00">2020-06-26</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/06/26/windows-tooltips/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/26/windows-tooltips/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Windows-with-limited-app"><a href="#Windows-with-limited-app" class="headerlink" title="Windows with limited app"></a>Windows with limited app</h2><p>Windows Configuration Designer</p>
-<p><a href="https://docs.microsoft.com/en-us/windows/configuration/provisioning-packages/provisioning-install-icd#install-windows-configuration-designer-1" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/windows/configuration/provisioning-packages/provisioning-install-icd#install-windows-configuration-designer-1</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2020/04/06/android-tooltip/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="doraemomo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Doraemomo's site">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/06/android-tooltip/" class="post-title-link" itemprop="url">android_tooltip</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-04-06 23:52:48" itemprop="dateCreated datePublished" datetime="2020-04-06T23:52:48+02:00">2020-04-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-18 10:29:56" itemprop="dateModified" datetime="2020-06-18T10:29:56+02:00">2020-06-18</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/04/06/android-tooltip/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/04/06/android-tooltip/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="keytool"><a href="#keytool" class="headerlink" title="keytool"></a>keytool</h2><h3 id="Check-APK-signature-information"><a href="#Check-APK-signature-information" class="headerlink" title="Check APK signature information"></a>Check APK signature information</h3><p>keytool -printcert -jarfile [apk_file_name]</p>
-<h3 id="Check-keystore-file-information"><a href="#Check-keystore-file-information" class="headerlink" title="Check keystore file information"></a>Check keystore file information</h3><p>keytool -list -alias [alias_name] -keystore [keysotre_file_name]</p>
-<p>This needs to entrer password.</p>
-<h3 id="Sign-an-apk"><a href="#Sign-an-apk" class="headerlink" title="Sign an apk"></a>Sign an apk</h3><p>jarsigner -verbose -keystore [keysotre_file_name] [apk_file_name] [alias_name]</p>
-<h3 id="Verify-a-signed-apk"><a href="#Verify-a-signed-apk" class="headerlink" title="Verify a signed apk"></a>Verify a signed apk</h3><p>jarsigner -verify [apk_file_name]</p>
-<h3 id="About-zipalign"><a href="#About-zipalign" class="headerlink" title="About zipalign"></a>About zipalign</h3><p><a href="https://developer.android.com/studio/command-line/zipalign" target="_blank" rel="noopener">zipalign</a></p>
-<h3 id="install-apk-force-downgrade-replace"><a href="#install-apk-force-downgrade-replace" class="headerlink" title="install apk, force downgrade, replace"></a>install apk, force downgrade, replace</h3><p>adb install -d -r [apk file]</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2020/03/26/debug-windows-service-visualstudio-c/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="doraemomo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Doraemomo's site">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/26/debug-windows-service-visualstudio-c/" class="post-title-link" itemprop="url">debug-windows-service-visualstudio-c#</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-03-26 15:25:29 / Modified: 15:45:30" itemprop="dateCreated datePublished" datetime="2020-03-26T15:25:29+01:00">2020-03-26</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/03/26/debug-windows-service-visualstudio-c/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/03/26/debug-windows-service-visualstudio-c/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://docs.microsoft.com/en-gb/dotnet/framework/windows-services/how-to-debug-windows-service-applications" target="_blank" rel="noopener">How to: Debug Windows Service Applications</a></p>
-<h2 id="How-to"><a href="#How-to" class="headerlink" title="How to"></a>How to</h2><p>Let me be straightforward, although you can attach to a service process and debug it, everyone wants to debug the service as before (I mean, classic approach…), click the debug button and done!</p>
-<p>Fortunately, you can easily change the service to a console application and then revert it to a service when you want to publish the product.</p>
-<h3 id="step-1"><a href="#step-1" class="headerlink" title="step 1"></a>step 1</h3><p>Add this method to service class:</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">internal</span> <span class="keyword">void</span> <span class="title">TestStartupAndStop</span>(<span class="params"><span class="keyword">string</span>[] args</span>)  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    <span class="keyword">this</span>.OnStart(args);  </span><br><span class="line">    Console.ReadLine();  </span><br><span class="line">    <span class="keyword">this</span>.OnStop();  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="step-2"><a href="#step-2" class="headerlink" title="step 2"></a>step 2</h3><p>Rewrite the main method, send null if the service takes no parameters:</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    <span class="keyword">if</span> (Environment.UserInteractive)  </span><br><span class="line">    &#123;  </span><br><span class="line">        MyNewService service1 = <span class="keyword">new</span> MyNewService(args);  </span><br><span class="line">        service1.TestStartupAndStop(args);  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">else</span>  </span><br><span class="line">    &#123;  </span><br><span class="line">        <span class="comment">// Put the body of your old Main method here.  </span></span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="step-3"><a href="#step-3" class="headerlink" title="step 3"></a>step 3</h3><p>In the <strong>Application</strong> tab of the project’s properties, set the <strong>Output type</strong> to <strong>Console Application</strong>.</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2020/02/06/web-win32-rest-dll/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="doraemomo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Doraemomo's site">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/06/web-win32-rest-dll/" class="post-title-link" itemprop="url">web-win32-rest-dll</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-02-06 17:40:34" itemprop="dateCreated datePublished" datetime="2020-02-06T17:40:34+01:00">2020-02-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-07 10:25:42" itemprop="dateModified" datetime="2020-02-07T10:25:42+01:00">2020-02-07</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/02/06/web-win32-rest-dll/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/02/06/web-win32-rest-dll/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://docs.microsoft.com/fr-fr/windows/win32/http/http-api-start-page" target="_blank" rel="noopener">HTTP Server API</a></p>
-<h2 id="Feasibility"><a href="#Feasibility" class="headerlink" title="Feasibility"></a>Feasibility</h2><p>It is rarely necessary to call a DLL directly from a web application, but if needed, developing a Windows application (which exposes the REST service in localhost, to call the function from the DLL) is an option.</p>
-<h2 id="Technology-stack"><a href="#Technology-stack" class="headerlink" title="Technology stack"></a>Technology stack</h2><p>C, Angular.</p>
-<p>Some poeple likes to write in C when they can, I am among them, encouragingly, we can still use the latest Visual Studio 2019 to develop in C.</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2020/02/03/websocket-sockjs-stomp-angular-springmvc/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="doraemomo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Doraemomo's site">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/03/websocket-sockjs-stomp-angular-springmvc/" class="post-title-link" itemprop="url">websocket+sockjs+stomp_angular+springmvc</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-02-03 16:58:22" itemprop="dateCreated datePublished" datetime="2020-02-03T16:58:22+01:00">2020-02-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-05 14:05:06" itemprop="dateModified" datetime="2020-02-05T14:05:06+01:00">2020-02-05</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/02/03/websocket-sockjs-stomp-angular-springmvc/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/02/03/websocket-sockjs-stomp-angular-springmvc/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#websocket" target="_blank" rel="noopener">Spring Web MVC with WebSocket</a><br><a href="https://stomp-js.github.io/api-docs/latest/classes/RxStomp.html" target="_blank" rel="noopener">STOMP JS with RxSTOMP</a><br><a href="https://stomp.github.io/stomp-specification-1.2.html" target="_blank" rel="noopener">STOMP v1.2 specification</a></p>
-<h2 id="Enable-Heart-beating"><a href="#Enable-Heart-beating" class="headerlink" title="Enable Heart-beating"></a>Enable Heart-beating</h2><p>STOMP heart-beating is supported by simple broker, using heart-beating allows to detect and faster response to disconnection (for example, network connection lost).</p>
-<h2 id="Enable-ACK"><a href="#Enable-ACK" class="headerlink" title="Enable ACK"></a>Enable ACK</h2><p>Remember that simple broker is build-in broker, too enable ACK, we need a full-featured broker instead of a simple broker, which need to be a external broker, and Spring application runs as a relay on it.</p>
-<p><a href="https://www.rabbitmq.com/stomp.html" target="_blank" rel="noopener">RabbitMQ with STOMP plugin</a><br><a href="https://activemq.apache.org/stomp.html" target="_blank" rel="noopener">ActiveMQ</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
 
 
 
@@ -794,7 +1118,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
