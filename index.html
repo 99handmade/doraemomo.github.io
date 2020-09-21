@@ -141,7 +141,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">2</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">5</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -180,7 +180,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2020/09/17/objc-tooltips/">
+    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2020/09/21/ios-tooltips/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -194,7 +194,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/09/17/objc-tooltips/" class="post-title-link" itemprop="url">ObjectiveC tooltips</a>
+            <a href="/2020/09/21/ios-tooltips/" class="post-title-link" itemprop="url">ios-tooltips</a>
         </h1>
 
         <div class="post-meta">
@@ -205,7 +205,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-09-17 16:19:28 / Modified: 23:14:03" itemprop="dateCreated datePublished" datetime="2020-09-17T16:19:28+02:00">2020-09-17</time>
+              <time title="Created: 2020-09-21 15:57:03 / Modified: 16:17:33" itemprop="dateCreated datePublished" datetime="2020-09-21T15:57:03+02:00">2020-09-21</time>
             </span>
 
           
@@ -217,8 +217,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2020/09/17/objc-tooltips/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/09/17/objc-tooltips/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2020/09/21/ios-tooltips/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/09/21/ios-tooltips/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -233,13 +233,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Disable-method"><a href="#Disable-method" class="headerlink" title="Disable method"></a>Disable method</h2><p>Convenient feature in some special cases, for example, when we want to disable non-parameter constructor and only use the required constructor, the init() method will inherit from the superclass, and unlike Java, even if you don’t override it, it can be called for subclasses, so you need to do the following:</p>
+          <h2 id="Disable-a-method"><a href="#Disable-a-method" class="headerlink" title="Disable a method"></a>Disable a method</h2><p>Convenient feature in some special cases, for example, when we want to disable non-parameter constructor and only use the required constructor, the init() method will inherit from the superclass, and unlike Java, even if you don’t override it, it can be called for subclasses, so you need to do the following:</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// UNAVAILABLE_ATTRIBUTE is a macro for __attribute__((unavailable))</span></span><br><span class="line">- (<span class="keyword">instancetype</span>)init UNAVAILABLE_ATTRIBUTE;</span><br></pre></td></tr></table></figure>
 
 <p>After that, if someone wants to call init(), a compile error will occur.</p>
 <blockquote>
 <p>If you do this on a class, its subclasses will not be able to inherit the init() method.</p>
 </blockquote>
+<p>Currently, there is no perfect solution in Swift… you can try the following:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@available</span>(*, unavailable, message: <span class="string">"use *** instead"</span>)</span><br><span class="line"><span class="keyword">init</span>() &#123;</span><br><span class="line">    <span class="built_in">fatalError</span>(<span class="string">"init() has not been implemented"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Mentioned in this post <a href="https://stackoverflow.com/questions/35166662/make-init-private-for-nsobject-subclass" target="_blank" rel="noopener">https://stackoverflow.com/questions/35166662/make-init-private-for-nsobject-subclass</a>.</p>
+<p>the fact is, if you need a singleton, and force others only to use the singleton access and not the init() method, you can’t do like this way in Swift because you will find that you can not initialize you singleton instance because the init() method is unavailable…<br>The fact is that if you need a singleton and force others to use only singleton access instead of the init() method, you cannot do this in Swift, because you will find that you cannot initialize a singleton instance because the init() method is unavailable…</p>
+<p>Hope the future version of Swift can provide a perfect solution.</p>
 
       
     </div>
@@ -1140,7 +1146,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
