@@ -46,19 +46,20 @@
   };
 </script>
 
-  <meta name="description" content="Disable a methodConvenient feature in some special cases, for example, when we want to disable non-parameter constructor and only use the required constructor, the init() method will inherit from the">
+  <meta name="description" content="GeneralDisable a methodConvenient feature in some special cases, for example, when we want to disable non-parameter constructor and only use the required constructor, the init() method will inherit fr">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS tooltips">
 <meta property="og:url" content="https://doraemomo.github.io/2020/09/21/ios-tooltips/index.html">
 <meta property="og:site_name" content="Doraemomo&#39;s site">
-<meta property="og:description" content="Disable a methodConvenient feature in some special cases, for example, when we want to disable non-parameter constructor and only use the required constructor, the init() method will inherit from the">
+<meta property="og:description" content="GeneralDisable a methodConvenient feature in some special cases, for example, when we want to disable non-parameter constructor and only use the required constructor, the init() method will inherit fr">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-09-21T13:57:03.000Z">
-<meta property="article:modified_time" content="2020-09-21T14:18:22.304Z">
+<meta property="article:modified_time" content="2020-09-22T12:02:28.557Z">
 <meta property="article:author" content="doraemomo">
 <meta property="article:tag" content="iOS">
 <meta property="article:tag" content="ObjC">
 <meta property="article:tag" content="Swift">
+<meta property="article:tag" content="SwiftUI">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://doraemomo.github.io/2020/09/21/ios-tooltips/">
@@ -148,7 +149,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">5</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">9</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -158,7 +159,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">15</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">16</span></a>
 
   </li>
   </ul>
@@ -209,10 +210,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-09-21 15:57:03 / Modified: 16:18:22" itemprop="dateCreated datePublished" datetime="2020-09-21T15:57:03+02:00">2020-09-21</time>
+              <time title="Created: 2020-09-21 15:57:03" itemprop="dateCreated datePublished" datetime="2020-09-21T15:57:03+02:00">2020-09-21</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-09-22 14:02:28" itemprop="dateModified" datetime="2020-09-22T14:02:28+02:00">2020-09-22</time>
+              </span>
 
           
   
@@ -239,7 +246,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Disable-a-method"><a href="#Disable-a-method" class="headerlink" title="Disable a method"></a>Disable a method</h2><p>Convenient feature in some special cases, for example, when we want to disable non-parameter constructor and only use the required constructor, the init() method will inherit from the superclass, and unlike Java, even if you don’t override it, it can be called for subclasses, so you need to do the following:</p>
+        <h3 id="General"><a href="#General" class="headerlink" title="General"></a>General</h3><h3 id="Disable-a-method"><a href="#Disable-a-method" class="headerlink" title="Disable a method"></a>Disable a method</h3><p>Convenient feature in some special cases, for example, when we want to disable non-parameter constructor and only use the required constructor, the init() method will inherit from the superclass, and unlike Java, even if you don’t override it, it can be called for subclasses, so you need to do the following:</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// UNAVAILABLE_ATTRIBUTE is a macro for __attribute__((unavailable))</span></span><br><span class="line">- (<span class="keyword">instancetype</span>)init UNAVAILABLE_ATTRIBUTE;</span><br></pre></td></tr></table></figure>
 
 <p>After that, if someone wants to call init(), a compile error will occur.</p>
@@ -252,6 +259,7 @@
 <p>Mentioned in this post <a href="https://stackoverflow.com/questions/35166662/make-init-private-for-nsobject-subclass" target="_blank" rel="noopener">https://stackoverflow.com/questions/35166662/make-init-private-for-nsobject-subclass</a>.</p>
 <p>the fact is, if you need a singleton, and force others only to use the singleton access and not the init() method, you can’t do like this way in Swift because you will find that you can not initialize you singleton instance because the init() method is unavailable…<br>The fact is that if you need a singleton and force others to use only singleton access instead of the init() method, you cannot do this in Swift, because you will find that you cannot initialize a singleton instance because the init() method is unavailable…</p>
 <p>Hope the future version of Swift can provide a perfect solution.</p>
+<h2 id="SwiftUI"><a href="#SwiftUI" class="headerlink" title="SwiftUI"></a>SwiftUI</h2><h3 id="Simply-Render-image-color"><a href="#Simply-Render-image-color" class="headerlink" title="Simply Render image color"></a>Simply Render image color</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Image</span>(<span class="string">"image-name"</span>)</span><br><span class="line">  .renderingMode(.template)</span><br><span class="line">  .foregroundColor(.black)</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -264,6 +272,7 @@
               <a href="/tags/iOS/" rel="tag"># iOS</a>
               <a href="/tags/ObjC/" rel="tag"># ObjC</a>
               <a href="/tags/Swift/" rel="tag"># Swift</a>
+              <a href="/tags/SwiftUI/" rel="tag"># SwiftUI</a>
           </div>
 
         
@@ -275,7 +284,10 @@
     <a href="/2020/09/11/java-tooltips/" rel="prev" title="Java tooltips">
       <i class="fa fa-chevron-left"></i> Java tooltips
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/09/22/bluetooth-tooltips/" rel="next" title="Bluetooth tooltips">
+      Bluetooth tooltips <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -342,7 +354,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Disable-a-method"><span class="nav-number">1.</span> <span class="nav-text">Disable a method</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#General"><span class="nav-number">1.</span> <span class="nav-text">General</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Disable-a-method"><span class="nav-number">2.</span> <span class="nav-text">Disable a method</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SwiftUI"><span class="nav-number"></span> <span class="nav-text">SwiftUI</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Simply-Render-image-color"><span class="nav-number">1.</span> <span class="nav-text">Simply Render image color</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -356,14 +368,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
