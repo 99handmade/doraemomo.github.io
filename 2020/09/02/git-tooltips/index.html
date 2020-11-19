@@ -46,16 +46,17 @@
   };
 </script>
 
-  <meta name="description" content="unstage added file1git reset  will unstage all added files. 1git reset &lt;file_name&gt;  will unstage current file. tag12git tag -a &lt;tag_name_without_&quot;&gt; -m &lt;&quot;comment&quot;&gt;git push origin --ta">
+  <meta name="description" content="Show configuration1git config --list  Uncommit commitkeep change: 1git reset --soft HEAD^  remove all: 1git reset --hard HEAD^  can also jump to more than one commit: 1git reset --soft HEAD~2  Unstage">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git Tooltips">
 <meta property="og:url" content="https://doraemomo.github.io/2020/09/02/git-tooltips/index.html">
 <meta property="og:site_name" content="Doraemomo&#39;s site">
-<meta property="og:description" content="unstage added file1git reset  will unstage all added files. 1git reset &lt;file_name&gt;  will unstage current file. tag12git tag -a &lt;tag_name_without_&quot;&gt; -m &lt;&quot;comment&quot;&gt;git push origin --ta">
+<meta property="og:description" content="Show configuration1git config --list  Uncommit commitkeep change: 1git reset --soft HEAD^  remove all: 1git reset --hard HEAD^  can also jump to more than one commit: 1git reset --soft HEAD~2  Unstage">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-09-02T15:21:11.000Z">
-<meta property="article:modified_time" content="2020-09-17T15:44:46.856Z">
+<meta property="article:modified_time" content="2020-11-03T15:54:33.539Z">
 <meta property="article:author" content="doraemomo">
+<meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://doraemomo.github.io/2020/09/02/git-tooltips/">
@@ -138,24 +139,29 @@
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">14</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">2</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">19</span></a>
+
+  </li>
         <li class="menu-item menu-item-about">
 
     <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
 
   </li>
-        <li class="menu-item menu-item-tags">
+        <li class="menu-item menu-item-booklist">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">9</span></a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">0</span></a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">16</span></a>
+    <a href="/booklist/" rel="section"><i class="fa fa-fw fa-book list"></i>booklist</a>
 
   </li>
   </ul>
@@ -214,8 +220,19 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-09-17 17:44:46" itemprop="dateModified" datetime="2020-09-17T17:44:46+02:00">2020-09-17</time>
+                <time title="Modified: 2020-11-03 16:54:33" itemprop="dateModified" datetime="2020-11-03T16:54:33+01:00">2020-11-03</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/version-control/" itemprop="url" rel="index">
+                    <span itemprop="name">version control</span>
+                  </a>
+                </span>
+            </span>
 
           
   
@@ -242,15 +259,47 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="unstage-added-file"><a href="#unstage-added-file" class="headerlink" title="unstage added file"></a>unstage added file</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset</span><br></pre></td></tr></table></figure>
+        <h2 id="Show-configuration"><a href="#Show-configuration" class="headerlink" title="Show configuration"></a>Show configuration</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure>
+
+<h2 id="Uncommit-commit"><a href="#Uncommit-commit" class="headerlink" title="Uncommit commit"></a>Uncommit commit</h2><p>keep change:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --soft HEAD^</span><br></pre></td></tr></table></figure>
+
+<p>remove all:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD^</span><br></pre></td></tr></table></figure>
+
+<p>can also jump to more than one commit:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --soft HEAD~2</span><br></pre></td></tr></table></figure>
+
+<h2 id="Unstage-added-file"><a href="#Unstage-added-file" class="headerlink" title="Unstage added file"></a>Unstage added file</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset</span><br></pre></td></tr></table></figure>
 
 <p>will unstage all added files.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset &lt;file_name&gt;</span><br></pre></td></tr></table></figure>
 
 <p>will unstage current file.</p>
-<h2 id="tag"><a href="#tag" class="headerlink" title="tag"></a>tag</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git tag -a &lt;tag_name_without_<span class="string">"&gt; -m &lt;"</span>comment<span class="string">"&gt;</span></span><br><span class="line"><span class="string">git push origin --tags</span></span><br></pre></td></tr></table></figure>
+<h2 id="Tag"><a href="#Tag" class="headerlink" title="Tag"></a>Tag</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git tag -a &lt;tag_name&gt; -m <span class="string">"&lt;comment&gt;"</span></span><br><span class="line">git push origin --tags</span><br></pre></td></tr></table></figure>
 
 <p>tags will not be pushed with commits, need to be pushed explicitly.</p>
+<h2 id="Delete-remote-branch"><a href="#Delete-remote-branch" class="headerlink" title="Delete remote branch"></a>Delete remote branch</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin --delete &lt;branch_name&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Submodule"><a href="#Submodule" class="headerlink" title="Submodule"></a>Submodule</h2><p>To add new submodule:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule add &lt;repository url&gt;</span><br></pre></td></tr></table></figure>
+
+<p>“foreach” command allows to controll all submodule together, and it is also a convenient way to get the list of submodules that used in the project:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git foreach <span class="string">'git status'</span></span><br></pre></td></tr></table></figure>
+
+<p>to remove a submodule:</p>
+<p>Delete the relevant line from the .gitmodules file.<br>Delete the relevant section from .git/config.<br>Run git rm –cached pathtosubmodule (no trailing slash).<br>Commit the superproject.<br>Delete the now untracked submodule files.</p>
+<h2 id="Stash"><a href="#Stash" class="headerlink" title="Stash"></a>Stash</h2><p>To save codes that you don’t want to commit, for example, when switch branch, when you forget to pull and need to pull but have a conflict…</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash</span><br></pre></td></tr></table></figure>
+
+<p>check stash list:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash list</span><br></pre></td></tr></table></figure>
+
+<p>get back the modifications:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash apply</span><br></pre></td></tr></table></figure>
+
+<h2 id="update-gitignore-and-related-files"><a href="#update-gitignore-and-related-files" class="headerlink" title="update .gitignore and related files"></a>update .gitignore and related files</h2><p>After update and commit <strong>.gitignore</strong> file:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached .</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">""</span></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -259,6 +308,9 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/git/" rel="tag"># git</a>
+          </div>
 
         
 
@@ -339,7 +391,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#unstage-added-file"><span class="nav-number">1.</span> <span class="nav-text">unstage added file</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tag"><span class="nav-number">2.</span> <span class="nav-text">tag</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Show-configuration"><span class="nav-number">1.</span> <span class="nav-text">Show configuration</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Uncommit-commit"><span class="nav-number">2.</span> <span class="nav-text">Uncommit commit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unstage-added-file"><span class="nav-number">3.</span> <span class="nav-text">Unstage added file</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tag"><span class="nav-number">4.</span> <span class="nav-text">Tag</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Delete-remote-branch"><span class="nav-number">5.</span> <span class="nav-text">Delete remote branch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Submodule"><span class="nav-number">6.</span> <span class="nav-text">Submodule</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stash"><span class="nav-number">7.</span> <span class="nav-text">Stash</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#update-gitignore-and-related-files"><span class="nav-number">8.</span> <span class="nav-text">update .gitignore and related files</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -353,14 +405,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">posts</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
