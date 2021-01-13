@@ -54,7 +54,7 @@
 <meta property="og:description" content="A few word about dependencies managementDependencies management is very important part of our project, althogh it is now quite easy to manage dependencies with those powerful tools such as Maven, Grad">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-27T08:22:49.000Z">
-<meta property="article:modified_time" content="2020-11-19T12:58:57.664Z">
+<meta property="article:modified_time" content="2020-11-29T16:15:54.860Z">
 <meta property="article:author" content="doraemomo">
 <meta name="twitter:card" content="summary">
 
@@ -140,17 +140,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">14</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">15</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">2</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">3</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">19</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">22</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -219,7 +219,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-19 13:58:57" itemprop="dateModified" datetime="2020-11-19T13:58:57+01:00">2020-11-19</time>
+                <time title="Modified: 2020-11-29 17:15:54" itemprop="dateModified" datetime="2020-11-29T17:15:54+01:00">2020-11-29</time>
               </span>
 
           
@@ -282,7 +282,16 @@
 <h3 id="local-gradle-repository"><a href="#local-gradle-repository" class="headerlink" title="local gradle repository"></a>local gradle repository</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$HOME</span>/.gradle/caches</span><br></pre></td></tr></table></figure>
 
 <p>you need to remove this directory to reload Android Studio dependencies.</p>
-<h2 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h2><h3 id="local-maven-repository"><a href="#local-maven-repository" class="headerlink" title="local maven repository"></a>local maven repository</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$HOME</span>/.m2/repository</span><br></pre></td></tr></table></figure>
+<h2 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h2><h3 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h3><p><a href="https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html" target="_blank" rel="noopener">https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html</a></p>
+<h3 id="local-maven-repository"><a href="#local-maven-repository" class="headerlink" title="local maven repository"></a>local maven repository</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$HOME</span>/.m2/repository</span><br></pre></td></tr></table></figure>
+
+<h3 id="version"><a href="#version" class="headerlink" title="version"></a>version</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn --version</span><br></pre></td></tr></table></figure>
+
+<h3 id="compile"><a href="#compile" class="headerlink" title="compile"></a>compile</h3><p>Compile the source code of the project.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn compile</span><br></pre></td></tr></table></figure>
+
+<h3 id="package"><a href="#package" class="headerlink" title="package"></a>package</h3><p>Take the compiled code and package it in its distributable format, such as a JAR.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn package</span><br></pre></td></tr></table></figure>
 
 <h2 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h2><h3 id="Binary-distribution"><a href="#Binary-distribution" class="headerlink" title="Binary distribution"></a>Binary distribution</h3><p>When building a framework, don’t forget to set <strong>Generate Debug Symbols</strong> to <strong>NO</strong> to prevent the code source from leaking when the uses use the framework in debugging (for example, using breakpoints and checking the call stack).</p>
 <h2 id="SDK-distribution-private-repository-closed-source-Github"><a href="#SDK-distribution-private-repository-closed-source-Github" class="headerlink" title="SDK distribution, private repository, closed source, Github"></a>SDK distribution, private repository, closed source, Github</h2><p>For a private SDK distribution, this is a bit painful, and if the distribution needs to be costless, it is even more painful. We can choose to use a private server, but in fact, we have no right to do this for commercial purposes, for example, if we want To use: <a href="https://www.sonatype.com/nexus/repository-oss" target="_blank" rel="noopener">nexus</a> or <a href="https://jfrog.com/artifactory/" target="_blank" rel="noopener">Artifactory</a>.</p>
@@ -384,7 +393,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#A-few-word-about-dependencies-management"><span class="nav-number">1.</span> <span class="nav-text">A few word about dependencies management</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-to-distribute-own-library"><span class="nav-number">2.</span> <span class="nav-text">How to distribute own library</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gradle"><span class="nav-number">3.</span> <span class="nav-text">Gradle</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Init-project-with-gradle-support"><span class="nav-number">3.1.</span> <span class="nav-text">Init project with gradle support</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Show-all-tasks"><span class="nav-number">3.2.</span> <span class="nav-text">Show all tasks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#local-gradle-repository"><span class="nav-number">3.3.</span> <span class="nav-text">local gradle repository</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maven"><span class="nav-number">4.</span> <span class="nav-text">Maven</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#local-maven-repository"><span class="nav-number">4.1.</span> <span class="nav-text">local maven repository</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iOS"><span class="nav-number">5.</span> <span class="nav-text">iOS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Binary-distribution"><span class="nav-number">5.1.</span> <span class="nav-text">Binary distribution</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SDK-distribution-private-repository-closed-source-Github"><span class="nav-number">6.</span> <span class="nav-text">SDK distribution, private repository, closed source, Github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maven-force-TSL-version"><span class="nav-number">7.</span> <span class="nav-text">Maven force TSL version</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#A-few-word-about-dependencies-management"><span class="nav-number">1.</span> <span class="nav-text">A few word about dependencies management</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-to-distribute-own-library"><span class="nav-number">2.</span> <span class="nav-text">How to distribute own library</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gradle"><span class="nav-number">3.</span> <span class="nav-text">Gradle</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Init-project-with-gradle-support"><span class="nav-number">3.1.</span> <span class="nav-text">Init project with gradle support</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Show-all-tasks"><span class="nav-number">3.2.</span> <span class="nav-text">Show all tasks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#local-gradle-repository"><span class="nav-number">3.3.</span> <span class="nav-text">local gradle repository</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maven"><span class="nav-number">4.</span> <span class="nav-text">Maven</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#reference"><span class="nav-number">4.1.</span> <span class="nav-text">reference</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#local-maven-repository"><span class="nav-number">4.2.</span> <span class="nav-text">local maven repository</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#version"><span class="nav-number">4.3.</span> <span class="nav-text">version</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#compile"><span class="nav-number">4.4.</span> <span class="nav-text">compile</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#package"><span class="nav-number">4.5.</span> <span class="nav-text">package</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iOS"><span class="nav-number">5.</span> <span class="nav-text">iOS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Binary-distribution"><span class="nav-number">5.1.</span> <span class="nav-text">Binary distribution</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SDK-distribution-private-repository-closed-source-Github"><span class="nav-number">6.</span> <span class="nav-text">SDK distribution, private repository, closed source, Github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maven-force-TSL-version"><span class="nav-number">7.</span> <span class="nav-text">Maven force TSL version</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -398,20 +407,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -436,7 +445,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

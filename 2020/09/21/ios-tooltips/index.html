@@ -46,15 +46,15 @@
   };
 </script>
 
-  <meta name="description" content="GeneralDisable a methodConvenient feature in some special cases, for example, when we want to disable non-parameter constructor and only use the required constructor, the init() method will inherit fr">
+  <meta name="description" content="GeneralEntry point for existing projectsSometimes you don’t need to go through the structure or to do a up-down search for something you want to modify, especially when the project structure or code i">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS tooltips">
 <meta property="og:url" content="https://doraemomo.github.io/2020/09/21/ios-tooltips/index.html">
 <meta property="og:site_name" content="Doraemomo&#39;s site">
-<meta property="og:description" content="GeneralDisable a methodConvenient feature in some special cases, for example, when we want to disable non-parameter constructor and only use the required constructor, the init() method will inherit fr">
+<meta property="og:description" content="GeneralEntry point for existing projectsSometimes you don’t need to go through the structure or to do a up-down search for something you want to modify, especially when the project structure or code i">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-09-21T13:57:03.000Z">
-<meta property="article:modified_time" content="2020-09-22T12:02:28.000Z">
+<meta property="article:modified_time" content="2020-12-23T10:34:25.013Z">
 <meta property="article:author" content="doraemomo">
 <meta property="article:tag" content="iOS">
 <meta property="article:tag" content="ObjC">
@@ -144,17 +144,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">14</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">15</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">2</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">3</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">19</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">22</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -223,7 +223,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-09-22 14:02:28" itemprop="dateModified" datetime="2020-09-22T14:02:28+02:00">2020-09-22</time>
+                <time title="Modified: 2020-12-23 11:34:25" itemprop="dateModified" datetime="2020-12-23T11:34:25+01:00">2020-12-23</time>
               </span>
 
           
@@ -251,7 +251,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="General"><a href="#General" class="headerlink" title="General"></a>General</h3><h3 id="Disable-a-method"><a href="#Disable-a-method" class="headerlink" title="Disable a method"></a>Disable a method</h3><p>Convenient feature in some special cases, for example, when we want to disable non-parameter constructor and only use the required constructor, the init() method will inherit from the superclass, and unlike Java, even if you don’t override it, it can be called for subclasses, so you need to do the following:</p>
+        <h3 id="General"><a href="#General" class="headerlink" title="General"></a>General</h3><h4 id="Entry-point-for-existing-projects"><a href="#Entry-point-for-existing-projects" class="headerlink" title="Entry point for existing projects"></a>Entry point for existing projects</h4><p>Sometimes you don’t need to go through the structure or to do a up-down search for something you want to modify, especially when the project structure or code is not easy to understand, you can find some clue, for example, the icon of a button, the text that using in where you want to locate, cause to find the location of a text or picture is easier, then from the code where using this resource, as a starting point, to locate the code where you want to understand.</p>
+<h3 id="Disable-a-method"><a href="#Disable-a-method" class="headerlink" title="Disable a method"></a>Disable a method</h3><p>Convenient feature in some special cases, for example, when we want to disable non-parameter constructor and only use the required constructor, the init() method will inherit from the superclass, and unlike Java, even if you don’t override it, it can be called for subclasses, so you need to do the following:</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// UNAVAILABLE_ATTRIBUTE is a macro for __attribute__((unavailable))</span></span><br><span class="line">- (<span class="keyword">instancetype</span>)init UNAVAILABLE_ATTRIBUTE;</span><br></pre></td></tr></table></figure>
 
 <p>After that, if someone wants to call init(), a compile error will occur.</p>
@@ -265,6 +266,9 @@
 <p>the fact is, if you need a singleton, and force others only to use the singleton access and not the init() method, you can’t do like this way in Swift because you will find that you can not initialize you singleton instance because the init() method is unavailable…<br>The fact is that if you need a singleton and force others to use only singleton access instead of the init() method, you cannot do this in Swift, because you will find that you cannot initialize a singleton instance because the init() method is unavailable…</p>
 <p>Hope the future version of Swift can provide a perfect solution.</p>
 <h2 id="SwiftUI"><a href="#SwiftUI" class="headerlink" title="SwiftUI"></a>SwiftUI</h2><h3 id="Simply-Render-image-color"><a href="#Simply-Render-image-color" class="headerlink" title="Simply Render image color"></a>Simply Render image color</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Image</span>(<span class="string">"image-name"</span>)</span><br><span class="line">  .renderingMode(.template)</span><br><span class="line">  .foregroundColor(.black)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Objective-C"><a href="#Objective-C" class="headerlink" title="Objective C"></a>Objective C</h2><h3 id="static-variable"><a href="#static-variable" class="headerlink" title="static variable"></a>static variable</h3><p>Static variables can be used to declare class property similar to Java, which feature that ObjC do not have itself. The declaration will be out of the scope of the class (@implementation), but it must be in the class file. During the initialization of the class object, this property will be initialized only once. This technic is also used to create singleton instances.</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// .m file</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> MObject * obj = <span class="literal">nil</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">MObject</span></span></span><br><span class="line"></span><br><span class="line">+ (<span class="keyword">instancetype</span>)instance</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">if</span> (obj == <span class="literal">nil</span>) &#123;</span><br><span class="line">    obj = [[MObject alloc] init];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -359,7 +363,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#General"><span class="nav-number">1.</span> <span class="nav-text">General</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Disable-a-method"><span class="nav-number">2.</span> <span class="nav-text">Disable a method</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SwiftUI"><span class="nav-number"></span> <span class="nav-text">SwiftUI</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Simply-Render-image-color"><span class="nav-number">1.</span> <span class="nav-text">Simply Render image color</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#General"><span class="nav-number">1.</span> <span class="nav-text">General</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Entry-point-for-existing-projects"><span class="nav-number">1.1.</span> <span class="nav-text">Entry point for existing projects</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Disable-a-method"><span class="nav-number">2.</span> <span class="nav-text">Disable a method</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SwiftUI"><span class="nav-number"></span> <span class="nav-text">SwiftUI</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Simply-Render-image-color"><span class="nav-number">1.</span> <span class="nav-text">Simply Render image color</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Objective-C"><span class="nav-number"></span> <span class="nav-text">Objective C</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#static-variable"><span class="nav-number">1.</span> <span class="nav-text">static variable</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -373,20 +377,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -411,7 +415,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
