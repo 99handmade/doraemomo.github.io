@@ -54,7 +54,7 @@
 <meta property="og:description" content="MacOSJDK fast switchingedit ~&#x2F;.bash_profile (create one if file not exists), the java home could be different: 123456789export JAVA_7_HOME&#x3D;&#x2F;Library&#x2F;Java&#x2F;JavaVirtualMachines&#x2F;jdk1.7.0_80.jdk&#x2F;Contents&#x2F;Ho">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-21T14:27:06.000Z">
-<meta property="article:modified_time" content="2021-01-12T14:10:37.458Z">
+<meta property="article:modified_time" content="2021-02-14T16:37:12.892Z">
 <meta property="article:author" content="doraemomo">
 <meta name="twitter:card" content="summary">
 
@@ -140,17 +140,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">16</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">18</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">4</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">6</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">22</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">23</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -219,7 +219,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-12 15:10:37" itemprop="dateModified" datetime="2021-01-12T15:10:37+01:00">2021-01-12</time>
+                <time title="Modified: 2021-02-14 17:37:12" itemprop="dateModified" datetime="2021-02-14T17:37:12+01:00">2021-02-14</time>
               </span>
 
           
@@ -252,7 +252,6 @@
 
 <p>after restart, you can use alias to switch java now:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">jdk7</span><br><span class="line">java -version</span><br></pre></td></tr></table></figure>
-
 
 <h2 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h2><h3 id="update-upgrade-package"><a href="#update-upgrade-package" class="headerlink" title="update/upgrade package"></a>update/upgrade package</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get upgrade</span><br></pre></td></tr></table></figure>
 
@@ -297,6 +296,8 @@
 
 <h3 id="Delete-image"><a href="#Delete-image" class="headerlink" title="Delete image"></a>Delete image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image rm &lt;image_id&gt;</span><br></pre></td></tr></table></figure>
 
+<h2 id="SSH-in-container"><a href="#SSH-in-container" class="headerlink" title="SSH in container"></a>SSH in container</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it &lt;container name&gt; /bin/bash</span><br></pre></td></tr></table></figure>
+
 <h2 id="Screen"><a href="#Screen" class="headerlink" title="Screen"></a>Screen</h2><h3 id="show-all-screen"><a href="#show-all-screen" class="headerlink" title="show all screen"></a>show all screen</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen -ls</span><br></pre></td></tr></table></figure>
 
 <h3 id="Start-a-screen-with-special-name"><a href="#Start-a-screen-with-special-name" class="headerlink" title="Start a screen with special name"></a>Start a screen with special name</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen -S &lt;screen_name&gt;</span><br></pre></td></tr></table></figure>
@@ -307,9 +308,8 @@
 <h3 id="terminate-a-screen"><a href="#terminate-a-screen" class="headerlink" title="terminate a screen"></a>terminate a screen</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">screen -XS &lt;screen_index&gt; quit</span><br><span class="line">`</span><br></pre></td></tr></table></figure>
 
 <h2 id="OpenSSL"><a href="#OpenSSL" class="headerlink" title="OpenSSL"></a>OpenSSL</h2><h3 id="password"><a href="#password" class="headerlink" title="password"></a>password</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">openssl rand -base64 6</span><br><span class="line"></span><br><span class="line">openssl rand -hex 4</span><br></pre></td></tr></table></figure>
-<h2 id="Curl"><a href="#Curl" class="headerlink" title="Curl"></a>Curl</h2><ul>
-<li>-i: include the HTTP responseheaders in the output</li>
-</ul>
+
+<h2 id="Curl"><a href="#Curl" class="headerlink" title="Curl"></a>Curl</h2><p>-i: include the HTTP responseheaders in the output</p>
 
     </div>
 
@@ -398,7 +398,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MacOS"><span class="nav-number">1.</span> <span class="nav-text">MacOS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JDK-fast-switching"><span class="nav-number">1.1.</span> <span class="nav-text">JDK fast switching</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu"><span class="nav-number">2.</span> <span class="nav-text">Ubuntu</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#update-upgrade-package"><span class="nav-number">2.1.</span> <span class="nav-text">update&#x2F;upgrade package</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Environment-variable"><span class="nav-number">2.2.</span> <span class="nav-text">Environment variable</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Debian"><span class="nav-number">3.</span> <span class="nav-text">Debian</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#show-package"><span class="nav-number">3.1.</span> <span class="nav-text">show package</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#search-package"><span class="nav-number">3.2.</span> <span class="nav-text">search package</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Delete-symbolic-link"><span class="nav-number">3.3.</span> <span class="nav-text">Delete symbolic link</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker"><span class="nav-number">4.</span> <span class="nav-text">Docker</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Show-running-container"><span class="nav-number">4.1.</span> <span class="nav-text">Show running container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Show-all-container"><span class="nav-number">4.2.</span> <span class="nav-text">Show all container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Delete-container"><span class="nav-number">4.3.</span> <span class="nav-text">Delete container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Build-image"><span class="nav-number">4.4.</span> <span class="nav-text">Build image</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Delete-image"><span class="nav-number">4.5.</span> <span class="nav-text">Delete image</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Screen"><span class="nav-number">5.</span> <span class="nav-text">Screen</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#show-all-screen"><span class="nav-number">5.1.</span> <span class="nav-text">show all screen</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Start-a-screen-with-special-name"><span class="nav-number">5.2.</span> <span class="nav-text">Start a screen with special name</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exit-from-a-screen-without-aborting-it"><span class="nav-number">5.3.</span> <span class="nav-text">exit from a screen without aborting it</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#entrer-into-a-screen"><span class="nav-number">5.4.</span> <span class="nav-text">entrer into a screen</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#terminate-a-screen"><span class="nav-number">5.5.</span> <span class="nav-text">terminate a screen</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OpenSSL"><span class="nav-number">6.</span> <span class="nav-text">OpenSSL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#password"><span class="nav-number">6.1.</span> <span class="nav-text">password</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Curl"><span class="nav-number">7.</span> <span class="nav-text">Curl</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MacOS"><span class="nav-number">1.</span> <span class="nav-text">MacOS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JDK-fast-switching"><span class="nav-number">1.1.</span> <span class="nav-text">JDK fast switching</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu"><span class="nav-number">2.</span> <span class="nav-text">Ubuntu</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#update-upgrade-package"><span class="nav-number">2.1.</span> <span class="nav-text">update&#x2F;upgrade package</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Environment-variable"><span class="nav-number">2.2.</span> <span class="nav-text">Environment variable</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Debian"><span class="nav-number">3.</span> <span class="nav-text">Debian</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#show-package"><span class="nav-number">3.1.</span> <span class="nav-text">show package</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#search-package"><span class="nav-number">3.2.</span> <span class="nav-text">search package</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Delete-symbolic-link"><span class="nav-number">3.3.</span> <span class="nav-text">Delete symbolic link</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker"><span class="nav-number">4.</span> <span class="nav-text">Docker</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Show-running-container"><span class="nav-number">4.1.</span> <span class="nav-text">Show running container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Show-all-container"><span class="nav-number">4.2.</span> <span class="nav-text">Show all container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Delete-container"><span class="nav-number">4.3.</span> <span class="nav-text">Delete container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Build-image"><span class="nav-number">4.4.</span> <span class="nav-text">Build image</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Delete-image"><span class="nav-number">4.5.</span> <span class="nav-text">Delete image</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH-in-container"><span class="nav-number">5.</span> <span class="nav-text">SSH in container</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Screen"><span class="nav-number">6.</span> <span class="nav-text">Screen</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#show-all-screen"><span class="nav-number">6.1.</span> <span class="nav-text">show all screen</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Start-a-screen-with-special-name"><span class="nav-number">6.2.</span> <span class="nav-text">Start a screen with special name</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exit-from-a-screen-without-aborting-it"><span class="nav-number">6.3.</span> <span class="nav-text">exit from a screen without aborting it</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#entrer-into-a-screen"><span class="nav-number">6.4.</span> <span class="nav-text">entrer into a screen</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#terminate-a-screen"><span class="nav-number">6.5.</span> <span class="nav-text">terminate a screen</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OpenSSL"><span class="nav-number">7.</span> <span class="nav-text">OpenSSL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#password"><span class="nav-number">7.1.</span> <span class="nav-text">password</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Curl"><span class="nav-number">8.</span> <span class="nav-text">Curl</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -412,20 +412,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
