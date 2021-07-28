@@ -46,15 +46,15 @@
   };
 </script>
 
-  <meta name="description" content="MacOSJDK fast switchingedit ~&#x2F;.bash_profile (create one if file not exists), the java home could be different: 123456789export JAVA_7_HOME&#x3D;&#x2F;Library&#x2F;Java&#x2F;JavaVirtualMachines&#x2F;jdk1.7.0_80.jdk&#x2F;Contents&#x2F;Ho">
+  <meta name="description" content="MacOSCan’t open application and show “damaged”1sudo xattr -d com.apple.quarantine &#x2F;Applications&#x2F;appname  JDK fast switchingedit ~&#x2F;.bash_profile (create one if file not exists), the java home could be">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Operation system tooltips">
 <meta property="og:url" content="https://doraemomo.github.io/2020/08/21/operation-system-tooltips/index.html">
 <meta property="og:site_name" content="Doraemomo&#39;s site">
-<meta property="og:description" content="MacOSJDK fast switchingedit ~&#x2F;.bash_profile (create one if file not exists), the java home could be different: 123456789export JAVA_7_HOME&#x3D;&#x2F;Library&#x2F;Java&#x2F;JavaVirtualMachines&#x2F;jdk1.7.0_80.jdk&#x2F;Contents&#x2F;Ho">
+<meta property="og:description" content="MacOSCan’t open application and show “damaged”1sudo xattr -d com.apple.quarantine &#x2F;Applications&#x2F;appname  JDK fast switchingedit ~&#x2F;.bash_profile (create one if file not exists), the java home could be">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-21T14:27:06.000Z">
-<meta property="article:modified_time" content="2021-02-14T16:37:12.892Z">
+<meta property="article:modified_time" content="2021-07-26T13:35:32.969Z">
 <meta property="article:author" content="doraemomo">
 <meta name="twitter:card" content="summary">
 
@@ -140,17 +140,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">18</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">22</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">6</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">10</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">23</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">27</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -219,7 +219,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-02-14 17:37:12" itemprop="dateModified" datetime="2021-02-14T17:37:12+01:00">2021-02-14</time>
+                <time title="Modified: 2021-07-26 15:35:32" itemprop="dateModified" datetime="2021-07-26T15:35:32+02:00">2021-07-26</time>
               </span>
 
           
@@ -247,7 +247,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="MacOS"><a href="#MacOS" class="headerlink" title="MacOS"></a>MacOS</h2><h3 id="JDK-fast-switching"><a href="#JDK-fast-switching" class="headerlink" title="JDK fast switching"></a>JDK fast switching</h3><p>edit ~/.bash_profile (create one if file not exists), the java home could be different:</p>
+        <h2 id="MacOS"><a href="#MacOS" class="headerlink" title="MacOS"></a>MacOS</h2><h3 id="Can’t-open-application-and-show-“damaged”"><a href="#Can’t-open-application-and-show-“damaged”" class="headerlink" title="Can’t open application and show “damaged”"></a>Can’t open application and show “damaged”</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo xattr -d com.apple.quarantine /Applications/appname</span><br></pre></td></tr></table></figure>
+
+<h3 id="JDK-fast-switching"><a href="#JDK-fast-switching" class="headerlink" title="JDK fast switching"></a>JDK fast switching</h3><p>edit ~/.bash_profile (create one if file not exists), the java home could be different:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> JAVA_7_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home</span><br><span class="line"><span class="built_in">export</span> JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home</span><br><span class="line"><span class="built_in">export</span> JAVA_11_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=<span class="variable">$JAVA_11_HOME</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">alias</span> jdk7=<span class="string">"export JAVA_HOME=<span class="variable">$JAVA_7_HOME</span>"</span></span><br><span class="line"><span class="built_in">alias</span> jdk8=<span class="string">"export JAVA_HOME=<span class="variable">$JAVA_8_HOME</span>"</span></span><br><span class="line"><span class="built_in">alias</span> jdk11=<span class="string">"export JAVA_HOME=<span class="variable">$JAVA_11_HOME</span>"</span></span><br></pre></td></tr></table></figure>
 
 <p>after restart, you can use alias to switch java now:</p>
@@ -285,18 +287,6 @@
 <h3 id="search-package"><a href="#search-package" class="headerlink" title="search package"></a>search package</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-cache search &lt;package_name&gt;</span><br></pre></td></tr></table></figure>
 
 <h3 id="Delete-symbolic-link"><a href="#Delete-symbolic-link" class="headerlink" title="Delete symbolic link"></a>Delete symbolic link</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rm &lt;path_to_link&gt;</span><br><span class="line"><span class="comment"># or</span></span><br><span class="line">unlink &lt;path_to_link&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><h3 id="Show-running-container"><a href="#Show-running-container" class="headerlink" title="Show running container"></a>Show running container</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure>
-
-<h3 id="Show-all-container"><a href="#Show-all-container" class="headerlink" title="Show all container"></a>Show all container</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
-
-<h3 id="Delete-container"><a href="#Delete-container" class="headerlink" title="Delete container"></a>Delete container</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker container rm &lt;container_id&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Build-image"><a href="#Build-image" class="headerlink" title="Build image"></a>Build image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t web-server-image .</span><br></pre></td></tr></table></figure>
-
-<h3 id="Delete-image"><a href="#Delete-image" class="headerlink" title="Delete image"></a>Delete image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image rm &lt;image_id&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="SSH-in-container"><a href="#SSH-in-container" class="headerlink" title="SSH in container"></a>SSH in container</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it &lt;container name&gt; /bin/bash</span><br></pre></td></tr></table></figure>
 
 <h2 id="Screen"><a href="#Screen" class="headerlink" title="Screen"></a>Screen</h2><h3 id="show-all-screen"><a href="#show-all-screen" class="headerlink" title="show all screen"></a>show all screen</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen -ls</span><br></pre></td></tr></table></figure>
 
@@ -398,7 +388,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MacOS"><span class="nav-number">1.</span> <span class="nav-text">MacOS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JDK-fast-switching"><span class="nav-number">1.1.</span> <span class="nav-text">JDK fast switching</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu"><span class="nav-number">2.</span> <span class="nav-text">Ubuntu</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#update-upgrade-package"><span class="nav-number">2.1.</span> <span class="nav-text">update&#x2F;upgrade package</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Environment-variable"><span class="nav-number">2.2.</span> <span class="nav-text">Environment variable</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Debian"><span class="nav-number">3.</span> <span class="nav-text">Debian</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#show-package"><span class="nav-number">3.1.</span> <span class="nav-text">show package</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#search-package"><span class="nav-number">3.2.</span> <span class="nav-text">search package</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Delete-symbolic-link"><span class="nav-number">3.3.</span> <span class="nav-text">Delete symbolic link</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker"><span class="nav-number">4.</span> <span class="nav-text">Docker</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Show-running-container"><span class="nav-number">4.1.</span> <span class="nav-text">Show running container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Show-all-container"><span class="nav-number">4.2.</span> <span class="nav-text">Show all container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Delete-container"><span class="nav-number">4.3.</span> <span class="nav-text">Delete container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Build-image"><span class="nav-number">4.4.</span> <span class="nav-text">Build image</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Delete-image"><span class="nav-number">4.5.</span> <span class="nav-text">Delete image</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH-in-container"><span class="nav-number">5.</span> <span class="nav-text">SSH in container</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Screen"><span class="nav-number">6.</span> <span class="nav-text">Screen</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#show-all-screen"><span class="nav-number">6.1.</span> <span class="nav-text">show all screen</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Start-a-screen-with-special-name"><span class="nav-number">6.2.</span> <span class="nav-text">Start a screen with special name</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exit-from-a-screen-without-aborting-it"><span class="nav-number">6.3.</span> <span class="nav-text">exit from a screen without aborting it</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#entrer-into-a-screen"><span class="nav-number">6.4.</span> <span class="nav-text">entrer into a screen</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#terminate-a-screen"><span class="nav-number">6.5.</span> <span class="nav-text">terminate a screen</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OpenSSL"><span class="nav-number">7.</span> <span class="nav-text">OpenSSL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#password"><span class="nav-number">7.1.</span> <span class="nav-text">password</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Curl"><span class="nav-number">8.</span> <span class="nav-text">Curl</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MacOS"><span class="nav-number">1.</span> <span class="nav-text">MacOS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Can’t-open-application-and-show-“damaged”"><span class="nav-number">1.1.</span> <span class="nav-text">Can’t open application and show “damaged”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JDK-fast-switching"><span class="nav-number">1.2.</span> <span class="nav-text">JDK fast switching</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu"><span class="nav-number">2.</span> <span class="nav-text">Ubuntu</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#update-upgrade-package"><span class="nav-number">2.1.</span> <span class="nav-text">update&#x2F;upgrade package</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Environment-variable"><span class="nav-number">2.2.</span> <span class="nav-text">Environment variable</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Debian"><span class="nav-number">3.</span> <span class="nav-text">Debian</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#show-package"><span class="nav-number">3.1.</span> <span class="nav-text">show package</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#search-package"><span class="nav-number">3.2.</span> <span class="nav-text">search package</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Delete-symbolic-link"><span class="nav-number">3.3.</span> <span class="nav-text">Delete symbolic link</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Screen"><span class="nav-number">4.</span> <span class="nav-text">Screen</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#show-all-screen"><span class="nav-number">4.1.</span> <span class="nav-text">show all screen</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Start-a-screen-with-special-name"><span class="nav-number">4.2.</span> <span class="nav-text">Start a screen with special name</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exit-from-a-screen-without-aborting-it"><span class="nav-number">4.3.</span> <span class="nav-text">exit from a screen without aborting it</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#entrer-into-a-screen"><span class="nav-number">4.4.</span> <span class="nav-text">entrer into a screen</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#terminate-a-screen"><span class="nav-number">4.5.</span> <span class="nav-text">terminate a screen</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OpenSSL"><span class="nav-number">5.</span> <span class="nav-text">OpenSSL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#password"><span class="nav-number">5.1.</span> <span class="nav-text">password</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Curl"><span class="nav-number">6.</span> <span class="nav-text">Curl</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -412,20 +402,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
