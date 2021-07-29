@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -136,17 +136,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">22</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">29</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">10</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">16</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">27</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">26</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -185,7 +185,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2021/07/26/docker-notebook-1/">
+    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2021/07/28/upgrade-hexo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -199,7 +199,133 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2021/07/26/docker-notebook-1/" class="post-title-link" itemprop="url">Docker notebook</a>
+            <a href="/2021/07/28/upgrade-hexo/" class="post-title-link" itemprop="url">Upgrade Hexo 更新Hexo</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-28 17:46:08" itemprop="dateCreated datePublished" datetime="2021-07-28T17:46:08+02:00">2021-07-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-07-29 15:50:36" itemprop="dateModified" datetime="2021-07-29T15:50:36+02:00">2021-07-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Blog/" itemprop="url" rel="index">
+                    <span itemprop="name">Blog</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/07/28/upgrade-hexo/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/07/28/upgrade-hexo/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Dependenciese-依赖"><a href="#Dependenciese-依赖" class="headerlink" title="Dependenciese 依赖"></a>Dependenciese 依赖</h2><p>Hexo requires Node.js and Git, especially Hexo version is related to Node.js version, check the <a target="_blank" rel="noopener" href="https://hexo.io/docs/#Minimum-required-Node-js-version">table</a></p>
+<p>so first you may need to upgrade Node.js.</p>
+<h3 id="Upgrade-Node-js-using-Homebrew"><a href="#Upgrade-Node-js-using-Homebrew" class="headerlink" title="Upgrade Node.js using Homebrew"></a>Upgrade Node.js using Homebrew</h3><p>we are going to update Homebrew first:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew update</span><br></pre></td></tr></table></figure>
+
+<p> then upgrade Node.js:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew upgrade node</span><br></pre></td></tr></table></figure>
+
+<h2 id="Upgrade-Hexo-更新Hexo"><a href="#Upgrade-Hexo-更新Hexo" class="headerlink" title="Upgrade Hexo 更新Hexo"></a>Upgrade Hexo 更新Hexo</h2><ul>
+<li>Check Hexo version 检查Hexo版本</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo version</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Upgrade hexo-cli globally 全局升级hexo-cli</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-cli -g</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Check oudated plugins 查看本地包是否需要升级</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm i -g npm-check</span><br><span class="line">npm-check</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Update package.json 更新package.json</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm i -g npm-upgrade</span><br><span class="line">npm-upgrade</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Upgrade packages globally 更新全局包</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm update -g</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Upgrade local packages 更新本地包</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm update --save</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2021/07/26/docker-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="doraemomo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Doraemomo's site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/26/docker-note/" class="post-title-link" itemprop="url">Docker Note Docker笔记</a>
         </h1>
 
         <div class="post-meta">
@@ -216,7 +342,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-07-28 10:27:42" itemprop="dateModified" datetime="2021-07-28T10:27:42+02:00">2021-07-28</time>
+                <time title="Modified: 2021-07-29 15:21:11" itemprop="dateModified" datetime="2021-07-29T15:21:11+02:00">2021-07-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -239,8 +365,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2021/07/26/docker-notebook-1/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/07/26/docker-notebook-1/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2021/07/26/docker-note/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/07/26/docker-note/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -255,17 +381,28 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Show-running-container"><a href="#Show-running-container" class="headerlink" title="Show running container"></a>Show running container</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure>
+          <h2 id="Show-running-container"><a href="#Show-running-container" class="headerlink" title="Show running container"></a>Show running container</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure>
 
-<h2 id="Show-all-container"><a href="#Show-all-container" class="headerlink" title="Show all container"></a>Show all container</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+<h2 id="Show-all-container"><a href="#Show-all-container" class="headerlink" title="Show all container"></a>Show all container</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
 
-<h2 id="Delete-container"><a href="#Delete-container" class="headerlink" title="Delete container"></a>Delete container</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker container rm &lt;container_id&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Delete-container"><a href="#Delete-container" class="headerlink" title="Delete container"></a>Delete container</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker container rm &lt;container_id&gt;</span><br></pre></td></tr></table></figure>
 
-<h2 id="Build-image"><a href="#Build-image" class="headerlink" title="Build image"></a>Build image</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t web-server-image .</span><br></pre></td></tr></table></figure>
+<h2 id="Build-image"><a href="#Build-image" class="headerlink" title="Build image"></a>Build image</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t web-server-image . </span><br></pre></td></tr></table></figure>
 
-<h2 id="Delete-image"><a href="#Delete-image" class="headerlink" title="Delete image"></a>Delete image</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image rm &lt;image_id&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Delete-image"><a href="#Delete-image" class="headerlink" title="Delete image"></a>Delete image</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image rm &lt;image_id&gt;</span><br></pre></td></tr></table></figure>
 
-<h2 id="SSH-in-container"><a href="#SSH-in-container" class="headerlink" title="SSH in container"></a>SSH in container</h2><p>```bash<br>docker exec -it <container name> /bin/bash</p>
+<h2 id="SSH-in-container"><a href="#SSH-in-container" class="headerlink" title="SSH in container"></a>SSH in container</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it &lt;container name&gt; /bin/shell</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> May need to use **sudo** <span class="built_in">command</span>.</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># show container logs 显示容器日志</span></span></span><br><span class="line"></span><br><span class="line">[Official documentation](https://docs.docker.com/engine/reference/commandline/logs/)</span><br><span class="line"></span><br><span class="line">```shell</span><br><span class="line">docker logs [OPTIONS] CONTAINER</span><br></pre></td></tr></table></figure>
+
+<p>continue log:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs --follow</span><br></pre></td></tr></table></figure>
+
+<p>In most cases, log is long, and only the latest log is intrested</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs --follow --tail 10</span><br></pre></td></tr></table></figure>
+
+<p>will always shows the last 10 line logs.</p>
+<h2 id="show-container-thread-显示容器进程"><a href="#show-container-thread-显示容器进程" class="headerlink" title="show container thread 显示容器进程"></a>show container thread 显示容器进程</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure>
+
+<p>vsmpros22.vsm.adml</p>
 
       
     </div>
@@ -285,7 +422,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2021/07/26/ci-cd-notebook/">
+    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2021/07/26/ci-cd-note/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -299,7 +436,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2021/07/26/ci-cd-notebook/" class="post-title-link" itemprop="url">CI CD notebook</a>
+            <a href="/2021/07/26/ci-cd-note/" class="post-title-link" itemprop="url">CI/CD Note 可持续集成/部署笔记</a>
         </h1>
 
         <div class="post-meta">
@@ -316,7 +453,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-07-28 10:27:53" itemprop="dateModified" datetime="2021-07-28T10:27:53+02:00">2021-07-28</time>
+                <time title="Modified: 2021-07-29 15:21:02" itemprop="dateModified" datetime="2021-07-29T15:21:02+02:00">2021-07-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -339,8 +476,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2021/07/26/ci-cd-notebook/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/07/26/ci-cd-notebook/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2021/07/26/ci-cd-note/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/07/26/ci-cd-note/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -355,16 +492,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="GitLab"><a href="#GitLab" class="headerlink" title="GitLab"></a>GitLab</h2><h3 id="related-runner-list-列出所有关联runner"><a href="#related-runner-list-列出所有关联runner" class="headerlink" title="related runner list 列出所有关联runner"></a>related runner list 列出所有关联runner</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">gitlab-runner list</span><br><span class="line"></span><br><span class="line">Runtime platform                                    arch=amd64 os=linux pid=734 revision=e95f89a0 version=13.4.1</span><br><span class="line">Listing configured runners                          ConfigFile=/etc/gitlab-runner/config.toml</span><br><span class="line">BWC DEV Runner                                      Executor=docker Token=2v_Gdb1meaCur8vi73Dt URL=https://git.pentalog.fr/</span><br><span class="line">bwc public web api runner                           Executor=docker Token=ozVN1gQUkjmk6zLMozP7 URL=https://git.pentalog.fr/</span><br></pre></td></tr></table></figure>
+          <h2 id="GitLab"><a href="#GitLab" class="headerlink" title="GitLab"></a>GitLab</h2><h3 id="related-runner-list-列出所有关联runner"><a href="#related-runner-list-列出所有关联runner" class="headerlink" title="related runner list 列出所有关联runner"></a>related runner list 列出所有关联runner</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">gitlab-runner list</span><br><span class="line"></span><br><span class="line">Runtime platform                                    arch=amd64 os=linux pid=734 revision=e95f89a0 version=13.4.1</span><br><span class="line">Listing configured runners                          ConfigFile=/etc/gitlab-runner/config.toml</span><br><span class="line">BWC DEV Runner                                      Executor=docker Token=2v_Gdb1meaCur8vi73Dt URL=https://git.pentalog.fr/</span><br><span class="line">bwc public web api runner                           Executor=docker Token=ozVN1gQUkjmk6zLMozP7 URL=https://git.pentalog.fr/</span><br></pre></td></tr></table></figure>
 
-<h3 id="runner-status-状态"><a href="#runner-status-状态" class="headerlink" title="runner status 状态"></a>runner status 状态</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gitlab-runner status</span><br><span class="line"></span><br><span class="line">Runtime platform                                    arch=amd64 os=linux pid=742 revision=e95f89a0 version=13.4.1</span><br><span class="line">gitlab-runner: Service is not running.</span><br></pre></td></tr></table></figure>
+<h3 id="runner-status-状态"><a href="#runner-status-状态" class="headerlink" title="runner status 状态"></a>runner status 状态</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gitlab-runner status</span><br><span class="line"></span><br><span class="line">Runtime platform                                    arch=amd64 os=linux pid=742 revision=e95f89a0 version=13.4.1</span><br><span class="line">gitlab-runner: Service is not running.</span><br></pre></td></tr></table></figure>
 
 <p>when use gitlab runner with docker image, this “not running” issue is known and not affect the usage.</p>
-<h3 id="check-runner-检查"><a href="#check-runner-检查" class="headerlink" title="check runner 检查"></a>check runner 检查</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gitlab-runner verify</span><br><span class="line"></span><br><span class="line">Runtime platform                                    arch=amd64 os=linux pid=762 revision=e95f89a0 version=13.4.1</span><br><span class="line">Running <span class="keyword">in</span> system-mode.                            </span><br><span class="line">                                                   </span><br><span class="line">Verifying runner... is alive                        runner=2v_Gdb1m</span><br><span class="line">Verifying runner... is alive                        runner=ozVN1gQU</span><br></pre></td></tr></table></figure>
+<h3 id="check-runner-检查"><a href="#check-runner-检查" class="headerlink" title="check runner 检查"></a>check runner 检查</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gitlab-runner verify</span><br><span class="line"></span><br><span class="line">Runtime platform                                    arch=amd64 os=linux pid=762 revision=e95f89a0 version=13.4.1</span><br><span class="line">Running in system-mode.                            </span><br><span class="line">                                                   </span><br><span class="line">Verifying runner... is alive                        runner=2v_Gdb1m</span><br><span class="line">Verifying runner... is alive                        runner=ozVN1gQU</span><br></pre></td></tr></table></figure>
 
-<h3 id="debug-output-调试"><a href="#debug-output-调试" class="headerlink" title="debug output 调试"></a>debug output 调试</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitlab-runner --debug &lt;<span class="built_in">command</span>&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="debug-output-调试"><a href="#debug-output-调试" class="headerlink" title="debug output 调试"></a>debug output 调试</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitlab-runner --debug &lt;command&gt;</span><br></pre></td></tr></table></figure>
 
-<h3 id="register-new-repository-注册新的仓库"><a href="#register-new-repository-注册新的仓库" class="headerlink" title="register new repository 注册新的仓库"></a>register new repository 注册新的仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitlab-runner register</span><br></pre></td></tr></table></figure>
+<h3 id="register-new-repository-注册新的仓库"><a href="#register-new-repository-注册新的仓库" class="headerlink" title="register new repository 注册新的仓库"></a>register new repository 注册新的仓库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitlab-runner register</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -383,7 +521,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2021/07/20/css-notebook/">
+    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2021/07/20/css-note/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -397,7 +535,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2021/07/20/css-notebook/" class="post-title-link" itemprop="url">CSS Notebook</a>
+            <a href="/2021/07/20/css-note/" class="post-title-link" itemprop="url">CSS Note CSS笔记</a>
         </h1>
 
         <div class="post-meta">
@@ -406,10 +544,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-07-20 18:06:11 / Modified: 18:08:35" itemprop="dateCreated datePublished" datetime="2021-07-20T18:06:11+02:00">2021-07-20</time>
+              <time title="Created: 2021-07-20 18:06:11" itemprop="dateCreated datePublished" datetime="2021-07-20T18:06:11+02:00">2021-07-20</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-07-29 12:01:26" itemprop="dateModified" datetime="2021-07-29T12:01:26+02:00">2021-07-29</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -431,8 +575,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2021/07/20/css-notebook/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/07/20/css-notebook/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2021/07/20/css-note/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/07/20/css-note/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -447,118 +591,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Vertical-scrollable"><a href="#Vertical-scrollable" class="headerlink" title="Vertical scrollable"></a>Vertical scrollable</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">flex</span>: 1 1 <span class="selector-tag">auto</span>;</span><br><span class="line"><span class="selector-tag">overflow-y</span>: <span class="selector-tag">auto</span>;</span><br><span class="line"><span class="selector-tag">min-height</span>: 0<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2021/06/24/docker-notebook/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="doraemomo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Doraemomo's site">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/24/docker-notebook/" class="post-title-link" itemprop="url">Docker Notebook</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-06-24 19:51:17" itemprop="dateCreated datePublished" datetime="2021-06-24T19:51:17+02:00">2021-06-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-07-06 12:44:14" itemprop="dateModified" datetime="2021-07-06T12:44:14+02:00">2021-07-06</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Container/" itemprop="url" rel="index">
-                    <span itemprop="name">Container</span>
-                  </a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Container/CI-CD/" itemprop="url" rel="index">
-                    <span itemprop="name">CI/CD</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/06/24/docker-notebook/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/06/24/docker-notebook/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>May need to use <strong>sudo</strong> command.</p>
-</blockquote>
-<h2 id="show-container-logs-显示容器日志"><a href="#show-container-logs-显示容器日志" class="headerlink" title="show container logs 显示容器日志"></a>show container logs 显示容器日志</h2><p><a href="https://docs.docker.com/engine/reference/commandline/logs/" target="_blank" rel="noopener">Official documentation</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs [OPTIONS] CONTAINER</span><br></pre></td></tr></table></figure>
-
-<p>continue log:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs --follow</span><br></pre></td></tr></table></figure>
-
-<p>In most cases, log is long, and only the latest log is intrested</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs --follow --tail 10</span><br></pre></td></tr></table></figure>
-
-<p>will always shows the last 10 line logs.</p>
-<h2 id="show-container-thread-显示容器进程"><a href="#show-container-thread-显示容器进程" class="headerlink" title="show container thread 显示容器进程"></a>show container thread 显示容器进程</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure>
-
-<p>vsmpros22.vsm.adml</p>
+          <h2 id="Vertical-scrollable"><a href="#Vertical-scrollable" class="headerlink" title="Vertical scrollable"></a>Vertical scrollable</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">flex</span>: <span class="number">1</span> <span class="number">1</span> auto;</span><br><span class="line"><span class="attribute">overflow-y</span>: auto;</span><br><span class="line"><span class="attribute">min-height</span>: <span class="number">0px</span>;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -592,7 +625,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2021/06/02/homebrew-note/" class="post-title-link" itemprop="url">Homebrew Note</a>
+            <a href="/2021/06/02/homebrew-note/" class="post-title-link" itemprop="url">Homebrew Note Homebrew笔记</a>
         </h1>
 
         <div class="post-meta">
@@ -601,10 +634,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-06-02 14:30:12 / Modified: 15:21:24" itemprop="dateCreated datePublished" datetime="2021-06-02T14:30:12+02:00">2021-06-02</time>
+              <time title="Created: 2021-06-02 14:30:12" itemprop="dateCreated datePublished" datetime="2021-06-02T14:30:12+02:00">2021-06-02</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-07-29 15:21:17" itemprop="dateModified" datetime="2021-07-29T15:21:17+02:00">2021-07-29</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -642,8 +681,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Show-package-list"><a href="#Show-package-list" class="headerlink" title="Show package list"></a>Show package list</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew list</span><br></pre></td></tr></table></figure>
+          <h2 id="Show-packages-installed-using-Homebrew-显示通过Homebrew安装的包"><a href="#Show-packages-installed-using-Homebrew-显示通过Homebrew安装的包" class="headerlink" title="Show packages installed using Homebrew 显示通过Homebrew安装的包"></a>Show packages installed using Homebrew 显示通过Homebrew安装的包</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew list</span><br></pre></td></tr></table></figure>
 
+<h2 id="Show-outdated-packages-显示可以更新的包"><a href="#Show-outdated-packages-显示可以更新的包" class="headerlink" title="Show outdated packages 显示可以更新的包"></a>Show outdated packages 显示可以更新的包</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew outdated</span><br></pre></td></tr></table></figure>
+
+<h2 id="Upgrade-all-outdated-packages-更新所有过期的包"><a href="#Upgrade-all-outdated-packages-更新所有过期的包" class="headerlink" title="Upgrade all outdated packages 更新所有过期的包"></a>Upgrade all outdated packages 更新所有过期的包</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew upgrade</span><br></pre></td></tr></table></figure>
+
+<h2 id="Upgrade-specified-package-更新指定的包"><a href="#Upgrade-specified-package-更新指定的包" class="headerlink" title="Upgrade specified package 更新指定的包"></a>Upgrade specified package 更新指定的包</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew upgrade &lt;package name&gt;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -677,7 +721,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2021/02/14/standard-protocol/" class="post-title-link" itemprop="url">Standard, protocol</a>
+            <a href="/2021/02/14/standard-protocol/" class="post-title-link" itemprop="url">Standard, protocol 协议</a>
         </h1>
 
         <div class="post-meta">
@@ -694,7 +738,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-26 16:09:48" itemprop="dateModified" datetime="2021-04-26T16:09:48+02:00">2021-04-26</time>
+                <time title="Modified: 2021-07-29 12:04:37" itemprop="dateModified" datetime="2021-07-29T12:04:37+02:00">2021-07-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -733,13 +777,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><a href="https://tools.ietf.org/html/rfc7519" target="_blank" rel="noopener">JSON Web Token (JWT)</a></p>
-<p><a href="https://tools.ietf.org/html/rfc5849" target="_blank" rel="noopener">The OAuth 1.0 Protocol</a></p>
-<p><a href="https://tools.ietf.org/html/rfc6749" target="_blank" rel="noopener">The OAuth 2.0 Authorization Framework</a></p>
-<p><a href="https://tools.ietf.org/html/rfc2616" target="_blank" rel="noopener">Hypertext Transfer Protocol – HTTP/1.1</a></p>
-<p><a href="https://tools.ietf.org/html/rfc7231" target="_blank" rel="noopener">Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content</a></p>
-<p><a href="https://tools.ietf.org/html/rfc2817" target="_blank" rel="noopener">Upgrading to TLS Within HTTP/1.1</a></p>
-<p><a href="https://tools.ietf.org/html/rfc3548" target="_blank" rel="noopener">The Base16, Base32, and Base64 Data Encodings</a></p>
+          <p><a target="_blank" rel="noopener" href="https://tools.ietf.org/html/rfc7519">JSON Web Token (JWT)</a></p>
+<p><a target="_blank" rel="noopener" href="https://tools.ietf.org/html/rfc5849">The OAuth 1.0 Protocol</a></p>
+<p><a target="_blank" rel="noopener" href="https://tools.ietf.org/html/rfc6749">The OAuth 2.0 Authorization Framework</a></p>
+<p><a target="_blank" rel="noopener" href="https://tools.ietf.org/html/rfc2616">Hypertext Transfer Protocol – HTTP/1.1</a></p>
+<p><a target="_blank" rel="noopener" href="https://tools.ietf.org/html/rfc7231">Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content</a></p>
+<p><a target="_blank" rel="noopener" href="https://tools.ietf.org/html/rfc2817">Upgrading to TLS Within HTTP/1.1</a></p>
+<p><a target="_blank" rel="noopener" href="https://tools.ietf.org/html/rfc3548">The Base16, Base32, and Base64 Data Encodings</a></p>
 
       
     </div>
@@ -759,7 +803,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2020/11/30/spring-tooltips/">
+    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2020/11/30/spring-note/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -773,7 +817,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/30/spring-tooltips/" class="post-title-link" itemprop="url">Spring Tooltips</a>
+            <a href="/2020/11/30/spring-note/" class="post-title-link" itemprop="url">Spring Note Spring笔记</a>
         </h1>
 
         <div class="post-meta">
@@ -790,7 +834,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-12-02 21:54:58" itemprop="dateModified" datetime="2020-12-02T21:54:58+01:00">2020-12-02</time>
+                <time title="Modified: 2021-07-29 12:04:13" itemprop="dateModified" datetime="2021-07-29T12:04:13+02:00">2021-07-29</time>
               </span>
 
           
@@ -802,8 +846,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2020/11/30/spring-tooltips/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/11/30/spring-tooltips/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2020/11/30/spring-note/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/11/30/spring-note/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -818,7 +862,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://spring.io/projects/spring-cloud-netflix" target="_blank" rel="noopener">https://spring.io/projects/spring-cloud-netflix</a></p>
+          <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a target="_blank" rel="noopener" href="https://spring.io/projects/spring-cloud-netflix">https://spring.io/projects/spring-cloud-netflix</a></p>
 <h2 id="REST"><a href="#REST" class="headerlink" title="REST"></a>REST</h2><p>status 400: request’s format is not correct (header, parameter, body etc.).</p>
 <h2 id="Eureka-server"><a href="#Eureka-server" class="headerlink" title="Eureka server"></a>Eureka server</h2>
       
@@ -839,7 +883,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2020/11/25/db-tooltips/">
+    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2020/11/25/mongodb-note/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -853,7 +897,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/25/db-tooltips/" class="post-title-link" itemprop="url">Database Tooltips</a>
+            <a href="/2020/11/25/mongodb-note/" class="post-title-link" itemprop="url">MongoDB Note MongoDB笔记</a>
         </h1>
 
         <div class="post-meta">
@@ -870,7 +914,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-06-02 09:45:45" itemprop="dateModified" datetime="2021-06-02T09:45:45+02:00">2021-06-02</time>
+                <time title="Modified: 2021-07-29 15:21:20" itemprop="dateModified" datetime="2021-07-29T15:21:20+02:00">2021-07-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -893,8 +937,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2020/11/25/db-tooltips/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/11/25/db-tooltips/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2020/11/25/mongodb-note/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/11/25/mongodb-note/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -909,33 +953,33 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h2><h3 id="Start-shell"><a href="#Start-shell" class="headerlink" title="Start shell"></a>Start shell</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongo --port 27017</span><br></pre></td></tr></table></figure>
+          <h3 id="Start-shell"><a href="#Start-shell" class="headerlink" title="Start shell"></a>Start shell</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongo --port 27017</span><br></pre></td></tr></table></figure>
 
-<h3 id="Count-entities-in-collection"><a href="#Count-entities-in-collection" class="headerlink" title="Count entities in collection"></a>Count entities in collection</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.getCollection(<span class="string">'collection_name'</span>).count()</span><br></pre></td></tr></table></figure>
+<h3 id="Count-entities-in-collection"><a href="#Count-entities-in-collection" class="headerlink" title="Count entities in collection"></a>Count entities in collection</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.getCollection(&#x27;collection_name&#x27;).count()</span><br></pre></td></tr></table></figure>
 
 <p>could also be a combination</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.getCollection(<span class="string">'collection_name'</span>).find(&#123;<span class="string">'field_name'</span>:<span class="string">'value'</span>&#125;).count()</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.getCollection(&#x27;collection_name&#x27;).find(&#123;&#x27;field_name&#x27;:&#x27;value&#x27;&#125;).count()</span><br></pre></td></tr></table></figure>
 
-<h3 id="Modify-more-than-one-entity"><a href="#Modify-more-than-one-entity" class="headerlink" title="Modify more than one entity"></a>Modify more than one entity</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.test.updateMany(&#123;<span class="string">'field_name'</span>: <span class="string">'value'</span>&#125;, &#123;<span class="variable">$set</span>: &#123;<span class="string">'field_name'</span>: <span class="string">'value'</span>&#125;&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="Modify-more-than-one-entity"><a href="#Modify-more-than-one-entity" class="headerlink" title="Modify more than one entity"></a>Modify more than one entity</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.test.updateMany(&#123;&#x27;field_name&#x27;: &#x27;value&#x27;&#125;, &#123;$set: &#123;&#x27;field_name&#x27;: &#x27;value&#x27;&#125;&#125;)</span><br></pre></td></tr></table></figure>
 
-<h3 id="Restore-mongodb"><a href="#Restore-mongodb" class="headerlink" title="Restore mongodb"></a>Restore mongodb</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongorestore &lt;path&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="Restore-mongodb"><a href="#Restore-mongodb" class="headerlink" title="Restore mongodb"></a>Restore mongodb</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongorestore &lt;path&gt;</span><br></pre></td></tr></table></figure>
 
-<h3 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Date()</span><br></pre></td></tr></table></figure>
+<h3 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Date()</span><br></pre></td></tr></table></figure>
 
-<h3 id="Clean-all-reccord-in-collection"><a href="#Clean-all-reccord-in-collection" class="headerlink" title="Clean all reccord in collection"></a>Clean all reccord in collection</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.&#123;collection&#125;.remove(&#123;&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="Clean-all-reccord-in-collection"><a href="#Clean-all-reccord-in-collection" class="headerlink" title="Clean all reccord in collection"></a>Clean all reccord in collection</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.&#123;collection&#125;.remove(&#123;&#125;)</span><br></pre></td></tr></table></figure>
 
-<h3 id="Install-mongodb-on-Ubuntu"><a href="#Install-mongodb-on-Ubuntu" class="headerlink" title="Install mongodb on Ubuntu"></a>Install mongodb on Ubuntu</h3><p><a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/" target="_blank" rel="noopener">https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/</a></p>
-<h3 id="remove-database"><a href="#remove-database" class="headerlink" title="remove database"></a>remove database</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&gt; show dbs</span><br><span class="line">admin 0.000GB</span><br><span class="line"><span class="built_in">local</span> 0.000GB</span><br><span class="line">tutorialkart 0.000GB</span><br><span class="line"></span><br><span class="line">&gt; use tutorialkart</span><br><span class="line">switched to db tutorialkart</span><br><span class="line"></span><br><span class="line">&gt; db.dropDatabase()</span><br><span class="line">&#123; <span class="string">"dropped"</span> : <span class="string">"tutorialkart"</span>, <span class="string">"ok"</span> : 1 &#125;</span><br><span class="line"></span><br><span class="line">&gt; show dbs</span><br><span class="line">admin 0.000GB</span><br><span class="line"><span class="built_in">local</span> 0.000GB</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="Install-mongodb-on-Ubuntu"><a href="#Install-mongodb-on-Ubuntu" class="headerlink" title="Install mongodb on Ubuntu"></a>Install mongodb on Ubuntu</h3><p><a target="_blank" rel="noopener" href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/">https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/</a></p>
+<h3 id="remove-database"><a href="#remove-database" class="headerlink" title="remove database"></a>remove database</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> show dbs</span></span><br><span class="line">admin 0.000GB</span><br><span class="line">local 0.000GB</span><br><span class="line">tutorialkart 0.000GB</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> use tutorialkart</span></span><br><span class="line">switched to db tutorialkart</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> db.dropDatabase()</span></span><br><span class="line">&#123; &quot;dropped&quot; : &quot;tutorialkart&quot;, &quot;ok&quot; : 1 &#125;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> show dbs</span></span><br><span class="line">admin 0.000GB</span><br><span class="line">local 0.000GB</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> </span> </span><br></pre></td></tr></table></figure>
 
 <h3 id="Connect-to-mongodb-remotely"><a href="#Connect-to-mongodb-remotely" class="headerlink" title="Connect to mongodb remotely"></a>Connect to mongodb remotely</h3><h4 id="add-user"><a href="#add-user" class="headerlink" title="add user"></a>add user</h4><p>Choose the database that you want to connect into, and add the user with read and write roles.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">use &lt;db_name&gt;</span><br><span class="line"></span><br><span class="line">db.createUser(&#123;</span><br><span class="line">    user: <span class="string">'my_user_name'</span>,</span><br><span class="line">    <span class="built_in">pwd</span>: <span class="string">'my_password'</span>,</span><br><span class="line">    roles: [&#123; role: <span class="string">'readWrite'</span>, db:<span class="string">'da_name'</span>&#125;]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">use &lt;db_name&gt;</span><br><span class="line"></span><br><span class="line">db.createUser(&#123;</span><br><span class="line">    user: &#x27;my_user_name&#x27;,</span><br><span class="line">    pwd: &#x27;my_password&#x27;,</span><br><span class="line">    roles: [&#123; role: &#x27;readWrite&#x27;, db:&#x27;da_name&#x27;&#125;]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-<h4 id="find-by-object-reference"><a href="#find-by-object-reference" class="headerlink" title="find by object reference"></a>find by object reference</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.getCollection(<span class="string">'DeviceObservationReport'</span>).find(&#123;<span class="string">'subject.patient.$id'</span>:ObjectId(<span class="string">'602557cdf0c1310001c3ba77'</span>)&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="find-by-object-reference"><a href="#find-by-object-reference" class="headerlink" title="find by object reference"></a>find by object reference</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.getCollection(&#x27;DeviceObservationReport&#x27;).find(&#123;&#x27;subject.patient.$id&#x27;:ObjectId(&#x27;602557cdf0c1310001c3ba77&#x27;)&#125;)</span><br></pre></td></tr></table></figure>
 
 <h4 id="change-mongodb-configuration-file"><a href="#change-mongodb-configuration-file" class="headerlink" title="change mongodb configuration file"></a>change mongodb configuration file</h4><p>It is important to enable the security.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># network interfaces</span></span><br><span class="line">net:</span><br><span class="line">  port: 27017</span><br><span class="line">  bindIp: 0.0.0.0</span><br><span class="line"></span><br><span class="line">security:</span><br><span class="line">  authorization: <span class="string">'enabled'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> network interfaces</span></span><br><span class="line">net:</span><br><span class="line">  port: 27017</span><br><span class="line">  bindIp: 0.0.0.0</span><br><span class="line"></span><br><span class="line">security:</span><br><span class="line">  authorization: &#x27;enabled&#x27;</span><br></pre></td></tr></table></figure>
 
-<h3 id="restart-mongodb"><a href="#restart-mongodb" class="headerlink" title="restart mongodb"></a>restart mongodb</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service mongod restart</span><br></pre></td></tr></table></figure>
+<h3 id="restart-mongodb"><a href="#restart-mongodb" class="headerlink" title="restart mongodb"></a>restart mongodb</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service mongod restart</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -955,7 +999,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2020/11/18/mac-tomcat/">
+    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2020/11/18/tomcat-note/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -969,7 +1013,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/18/mac-tomcat/" class="post-title-link" itemprop="url">Tomcat Tooltips</a>
+            <a href="/2020/11/18/tomcat-note/" class="post-title-link" itemprop="url">Tomcat Note Tomcat笔记</a>
         </h1>
 
         <div class="post-meta">
@@ -978,10 +1022,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-11-18 17:22:45 / Modified: 23:17:53" itemprop="dateCreated datePublished" datetime="2020-11-18T17:22:45+01:00">2020-11-18</time>
+              <time title="Created: 2020-11-18 17:22:45" itemprop="dateCreated datePublished" datetime="2020-11-18T17:22:45+01:00">2020-11-18</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-07-29 15:22:08" itemprop="dateModified" datetime="2021-07-29T15:22:08+02:00">2021-07-29</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -1003,8 +1053,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2020/11/18/mac-tomcat/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/11/18/mac-tomcat/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2020/11/18/tomcat-note/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/11/18/tomcat-note/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1019,27 +1069,27 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Install-with-HomeBrew"><a href="#Install-with-HomeBrew" class="headerlink" title="Install with HomeBrew"></a>Install with HomeBrew</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install tomcat</span><br></pre></td></tr></table></figure>
+          <h2 id="Install-with-HomeBrew"><a href="#Install-with-HomeBrew" class="headerlink" title="Install with HomeBrew"></a>Install with HomeBrew</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install tomcat</span><br></pre></td></tr></table></figure>
 
 <p>To specify a version, for example:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install tomcat@7</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install tomcat@7</span><br></pre></td></tr></table></figure>
 
 <p>To log the tomcat directory:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew ls tomcat</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew ls tomcat</span><br></pre></td></tr></table></figure>
 
 <p>To start/stop tomcat:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew services start/stop tomcat</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew services start/stop tomcat</span><br></pre></td></tr></table></figure>
 
 <h2 id="Use-manager-page-for-the-deployment"><a href="#Use-manager-page-for-the-deployment" class="headerlink" title="Use manager page for the deployment"></a>Use manager page for the deployment</h2><p>Add role and user in /usr/local/Cellar/../libexec/conf/tomcat-users.xml:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">tomcat-users</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"manager-gui"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"manager-script"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">user</span> <span class="attr">username</span>=<span class="string">"admin"</span> <span class="attr">password</span>=<span class="string">"admin"</span> <span class="attr">roles</span>=<span class="string">"manager-gui, manager-script"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tomcat-users</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">tomcat-users</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">&quot;manager-gui&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">&quot;manager-script&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">user</span> <span class="attr">username</span>=<span class="string">&quot;admin&quot;</span> <span class="attr">password</span>=<span class="string">&quot;admin&quot;</span> <span class="attr">roles</span>=<span class="string">&quot;manager-gui, manager-script&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tomcat-users</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>To modify the default maximum file size to deploy (50M), change file /usr/local/Cellar/../libexec/webapps/manager/WEB-INF/web.xml</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">multipart-config</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">max-file-size</span>&gt;</span>desired size<span class="tag">&lt;/<span class="name">max-file-size</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">max-request-size</span>&gt;</span>desired size<span class="tag">&lt;/<span class="name">max-request-size</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">file-size-threshold</span>&gt;</span>0<span class="tag">&lt;/<span class="name">file-size-threshold</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">multipart-config</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>To display tomcat information:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">catalina -h</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">catalina -h</span><br></pre></td></tr></table></figure>
 
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://tomcat.apache.org/" target="_blank" rel="noopener">http://tomcat.apache.org/</a></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a target="_blank" rel="noopener" href="http://tomcat.apache.org/">http://tomcat.apache.org/</a></p>
 
       
     </div>
@@ -1073,7 +1123,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/10/19/trie/" class="post-title-link" itemprop="url">trie</a>
+            <a href="/2020/10/19/trie/" class="post-title-link" itemprop="url">Trie 字典树</a>
         </h1>
 
         <div class="post-meta">
@@ -1082,9 +1132,26 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-10-19 17:58:59 / Modified: 18:06:26" itemprop="dateCreated datePublished" datetime="2020-10-19T17:58:59+02:00">2020-10-19</time>
+              <time title="Created: 2020-10-19 17:58:59" itemprop="dateCreated datePublished" datetime="2020-10-19T17:58:59+02:00">2020-10-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-07-29 12:05:42" itemprop="dateModified" datetime="2021-07-29T12:05:42+02:00">2021-07-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
+                  </a>
+                </span>
             </span>
 
           
@@ -1113,7 +1180,7 @@
 
       
           <h2 id="Minimum-node"><a href="#Minimum-node" class="headerlink" title="Minimum node"></a>Minimum node</h2><p>The minimum representation of a trie node can have only two elements, a pointer to its child trie (default alphabetical order) and a Boolean value (indicating whether the current string is a word).</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://www.geeksforgeeks.org/trie-insert-and-search/" target="_blank" rel="noopener">https://www.geeksforgeeks.org/trie-insert-and-search/</a></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/trie-insert-and-search/">https://www.geeksforgeeks.org/trie-insert-and-search/</a></p>
 
       
     </div>
@@ -1199,20 +1266,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">26</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">29</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
