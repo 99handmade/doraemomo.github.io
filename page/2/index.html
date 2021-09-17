@@ -141,7 +141,7 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">17</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">18</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
@@ -216,8 +216,19 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-17 10:53:16" itemprop="dateModified" datetime="2021-09-17T10:53:16+02:00">2021-09-17</time>
+                <time title="Modified: 2021-09-17 11:18:30" itemprop="dateModified" datetime="2021-09-17T11:18:30+02:00">2021-09-17</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Backend/" itemprop="url" rel="index">
+                    <span itemprop="name">Backend</span>
+                  </a>
+                </span>
+            </span>
 
           
   
@@ -246,8 +257,6 @@
       
           <h2 id="Reference-参考"><a href="#Reference-参考" class="headerlink" title="Reference 参考"></a>Reference 参考</h2><p><a target="_blank" rel="noopener" href="https://spring.io/projects/spring-cloud-netflix">Spring Cloud Netflix</a></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/spring-cloud/spring-cloud-netflix">Spring Cloud Netflix Repository</a></p>
-<p><a target="_blank" rel="noopener" href="https://spring.io/blog/2020/04/15/announcing-the-spring-authorization-server">Announcing the Spring Authorization Server</a></p>
-<p><a target="_blank" rel="noopener" href="https://spring.io/blog/2019/11/14/spring-security-oauth-2-0-roadmap-update">https://spring.io/blog/2019/11/14/spring-security-oauth-2-0-roadmap-update</a></p>
 <h2 id="Visual-Studio-Code-configuration-VSCode配置"><a href="#Visual-Studio-Code-configuration-VSCode配置" class="headerlink" title="Visual Studio Code configuration VSCode配置"></a>Visual Studio Code configuration VSCode配置</h2><h3 id="Extensions-扩展"><a href="#Extensions-扩展" class="headerlink" title="Extensions 扩展"></a>Extensions 扩展</h3><ul>
 <li>Spring Boot Extension Pack</li>
 </ul>
@@ -263,12 +272,14 @@
 <p>and add this task in tasks.json, add create file if it not exists:<br>并且添加这个任务到<strong>tasks.json</strong>这个文件,如果文件不存在,创建他:</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;version&quot;</span>: <span class="string">&quot;2.0.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;tasks&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;label&quot;</span>: <span class="string">&quot;task label&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;type&quot;</span>: <span class="string">&quot;shell&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;command&quot;</span>: [</span><br><span class="line">                <span class="string">&quot;mvn -f $&#123;workspaceFolder&#125;/pom.xml clean; mvn -f $&#123;workspaceFolder&#125;/pom.xml compile; mvn -f $&#123;workspaceFolder&#125;/pom.xml package&quot;</span></span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="Authorization-server-授权服务器"><a href="#Authorization-server-授权服务器" class="headerlink" title="Authorization server 授权服务器"></a>Authorization server 授权服务器</h2><p>Spring authorization server is no longger offcially supported, from the <a target="_blank" rel="noopener" href="https://spring.io/blog/2020/04/15/announcing-the-spring-authorization-server">announce</a> in April, 2020, it is now community-driven project let by the SPring Security team.</p>
-<p>which mentioned in this announce</p>
+<h2 id="Authorization-server-授权服务器"><a href="#Authorization-server-授权服务器" class="headerlink" title="Authorization server 授权服务器"></a>Authorization server 授权服务器</h2><p><a target="_blank" rel="noopener" href="https://github.com/spring-projects/spring-authorization-server">Spring Authorization Server repository</a></p>
+<p>Spring authorization server is no longger offcially supported, from the <a target="_blank" rel="noopener" href="https://spring.io/blog/2020/04/15/announcing-the-spring-authorization-server">announce</a> in April, 2020, it is now community-driven project let by the SPring Security team.<br>依据2020年四月份的这篇<a target="_blank" rel="noopener" href="https://spring.io/blog/2020/04/15/announcing-the-spring-authorization-server">声明</a>, 授权服务器项目已经不再官方支持了,现在的项目是社区项目.</p>
+<p>which mentioned in this announce:<br>文章中提到:</p>
 <blockquote>
-<p>Nor did we feel like it was appropriate to provide authorization support within a framework with no library support. After careful consideration, the Spring Security team decided that we would not formally support creating authorization servers.</p>
+<p>Nor did we feel like it was appropriate to provide authorization support within a framework with no library support. After careful consideration, the Spring Security team decided that we would not formally support creating authorization servers.<br>我们也不觉得在没有库支持的情况下, 在框架内提供授权服务支持是合适的. 经过谨慎的考虑, 团队决定我们不再官方支持创建授服务器.</p>
 </blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/spring-projects/spring-authorization-server">Spring Authorization Server repository</a></p>
+<p>Indded there are lots of different voices… so the project turn to community-driven.<br>当然会有像我这样的,持不同意见的吃瓜群众,而且很多,所以现在授权服务器项目是社区版.</p>
+<p>The <a href="%5Bhttps://spring.io/blog/2019/11/14/spring-security-oauth-2-0-roadmap-update%5D(https://spring.io/blog/2019/11/14/spring-security-oauth-2-0-roadmap-update)">Roadmap</a> talked more informations.<br>Spring的规划中也证实授权服务已经从现有框架中移除了.</p>
 
       
     </div>
@@ -1339,7 +1350,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
