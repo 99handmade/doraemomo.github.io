@@ -136,17 +136,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">31</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">37</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">18</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">24</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">30</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">36</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -181,6 +181,686 @@
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2021/10/04/gitlab-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="doraemomo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Doraemomo's site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/10/04/gitlab-note/" class="post-title-link" itemprop="url">Gitlab Note Gitlab笔记</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-10-04 16:18:19 / Modified: 16:27:33" itemprop="dateCreated datePublished" datetime="2021-10-04T16:18:19+02:00">2021-10-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CI-CD/" itemprop="url" rel="index">
+                    <span itemprop="name">CI/CD</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/10/04/gitlab-note/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/10/04/gitlab-note/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="About-docker-image-关于Docker镜像"><a href="#About-docker-image-关于Docker镜像" class="headerlink" title="About docker image 关于Docker镜像"></a>About docker image 关于Docker镜像</h2><p>Every Gitlab repository has an associated <strong>Container Registory</strong> for storing Docker images. 每个Gitlab仓库都有一个相关联的<strong>Container Registory</strong>用于存储Docker镜像.</p>
+<p>Gitlab CI provides predefined variables to your CI jobs such as CI_REGISTRY, CI_REGISTRY_IMAGE, CI_REGISTRY_USER, CI_REGISTRY_PASSOWRD. Gitlab提供了预定义变量.</p>
+<h2 id="Related-runner-list-列出所有关联runner"><a href="#Related-runner-list-列出所有关联runner" class="headerlink" title="Related runner list 列出所有关联runner"></a>Related runner list 列出所有关联runner</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">gitlab-runner list</span><br><span class="line"></span><br><span class="line">Runtime platform                                    arch=amd64 os=linux pid=734 revision=e95f89a0 version=13.4.1</span><br><span class="line">Listing configured runners                          ConfigFile=/etc/gitlab-runner/config.toml</span><br><span class="line">BWC DEV Runner                                      Executor=docker Token=2v_Gdb1meaCur8vi73Dt URL=https://git.pentalog.fr/</span><br><span class="line">bwc public web api runner                           Executor=docker Token=ozVN1gQUkjmk6zLMozP7 URL=https://git.pentalog.fr/</span><br></pre></td></tr></table></figure>
+
+<h2 id="Runner-status-状态"><a href="#Runner-status-状态" class="headerlink" title="Runner status 状态"></a>Runner status 状态</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gitlab-runner status</span><br><span class="line"></span><br><span class="line">Runtime platform                                    arch=amd64 os=linux pid=742 revision=e95f89a0 version=13.4.1</span><br><span class="line">gitlab-runner: Service is not running.</span><br></pre></td></tr></table></figure>
+
+<p>when use gitlab runner with docker image, this “not running” issue is known and not affect the usage.</p>
+<h2 id="Check-runner-检查"><a href="#Check-runner-检查" class="headerlink" title="Check runner 检查"></a>Check runner 检查</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gitlab-runner verify</span><br><span class="line"></span><br><span class="line">Runtime platform                                    arch=amd64 os=linux pid=762 revision=e95f89a0 version=13.4.1</span><br><span class="line">Running in system-mode.                            </span><br><span class="line">                                                   </span><br><span class="line">Verifying runner... is alive                        runner=2v_Gdb1m</span><br><span class="line">Verifying runner... is alive                        runner=ozVN1gQU</span><br></pre></td></tr></table></figure>
+
+<h2 id="Debug-output-调试"><a href="#Debug-output-调试" class="headerlink" title="Debug output 调试"></a>Debug output 调试</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitlab-runner --debug &lt;command&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Register-new-repository-注册新的仓库"><a href="#Register-new-repository-注册新的仓库" class="headerlink" title="Register new repository 注册新的仓库"></a>Register new repository 注册新的仓库</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitlab-runner register</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2021/10/01/web-security-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="doraemomo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Doraemomo's site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/10/01/web-security-note/" class="post-title-link" itemprop="url">Web Security Note 网络安全笔记</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-10-01 16:13:59 / Modified: 16:35:51" itemprop="dateCreated datePublished" datetime="2021-10-01T16:13:59+02:00">2021-10-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web-Security/" itemprop="url" rel="index">
+                    <span itemprop="name">Web Security</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/10/01/web-security-note/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/10/01/web-security-note/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="UserInfo-endpoint-or-ID-token"><a href="#UserInfo-endpoint-or-ID-token" class="headerlink" title="UserInfo endpoint or ID token"></a>UserInfo endpoint or ID token</h2><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/active-directory/develop/userinfo">https://docs.microsoft.com/en-us/azure/active-directory/develop/userinfo</a></p>
+<p>As mentioned in this document:</p>
+<blockquote>
+<p>The information available in the ID token that your app can receive is a superset of the information it can get from the UserInfo endpoint. Because you can get an ID token at the same time you get a token to call the UserInfo endpoint, we suggest that you use that ID token to get information about the user instead of calling the UserInfo endpoint. Using the ID token will eliminate one to two network requests from your application launch, reducing latency in your application. ID token中包含的用户信息,可以看作是从用户信息接口中获得信息的子集. 一般情况下,我们可以在为了访问用户信息接口拿到access token的同时拿到ID token,文章建议直接使用ID token中的用户信息来代替进一步访问用户信息接口.其中一个原因就是这样服务器就少发送一条请求,从另一方面优化了性能.</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2021/09/30/calculus-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="doraemomo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Doraemomo's site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/30/calculus-note/" class="post-title-link" itemprop="url">Calculus Note 微积分笔记</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-09-30 11:09:35 / Modified: 12:18:06" itemprop="dateCreated datePublished" datetime="2021-09-30T11:09:35+02:00">2021-09-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mathematics/" itemprop="url" rel="index">
+                    <span itemprop="name">Mathematics</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/09/30/calculus-note/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/09/30/calculus-note/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="https://www.eet-china.com/mp/a10563.html">https://www.eet-china.com/mp/a10563.html</a></p>
+<p>对于微积分的思考可以追述到阿基米德( Archimedes)的时代,阿基米德首先考虑的是,如何求抛物线和直线围城的面积.</p>
+<p>阿基米德的方法是无线的用三角形去逼近,先用一个大三角形,然后两个更小的,然后四个…阿基米德发现,每次新画的三角形面积,都是上一次三角形的四分之一</p>
+<img src="/2021/09/30/calculus-note/parabolic_area.png" class="" title="This is an example image">
+
+<p>那么大弓形的面积,就是</p>
+<p>$$ S = S_1 + \frac{1}{4}S_1 + (\frac{1}{4})^2S_1… $$</p>
+<p>这是个无穷级数和的问题,阿基米德用反证法证明了面积等于$(\frac{4}{3})S_1$.</p>
+<p>这样又过了一千八百年…</p>
+<p>大家统一用矩形去做逼近了,以抛物线$y=x^2$为例</p>
+<p>$$ S = \frac{1}{n}(\frac{1}{n})^2 + \frac{1}{n}(\frac{2}{n})^2 + \frac{1}{n}(\frac{3}{n})^2…  $$</p>
+<p>从直觉上来讲,当n趋于无穷大的时候,面积就只剩下$\frac{1}{3}$了.然而,这正是问题所在:不是我不想讲清楚,而是在这个时候根本就讲不清楚.别说我讲不清楚,牛顿和莱布尼茨也讲不清楚,这跟阿基米德用穷竭法求面积时的那种精确形成了鲜明的对比.使用穷竭法求面积,比如为了得到4/3S_1，阿基米德就去证明如果它大于4/3会出现矛盾,小于4/3也会出现矛盾,所以你就必须等于4/3.这是非常严密的,虽然操作上麻烦了点,但是逻辑上无懈可击.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2021/09/27/image-processing/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="doraemomo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Doraemomo's site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/27/image-processing/" class="post-title-link" itemprop="url">Image Processing 图像处理</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-09-27 17:37:11" itemprop="dateCreated datePublished" datetime="2021-09-27T17:37:11+02:00">2021-09-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-30 11:10:52" itemprop="dateModified" datetime="2021-09-30T11:10:52+02:00">2021-09-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Image/" itemprop="url" rel="index">
+                    <span itemprop="name">Image</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/09/27/image-processing/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/09/27/image-processing/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Bacis-基础"><a href="#Bacis-基础" class="headerlink" title="Bacis 基础"></a>Bacis 基础</h2><h3 id="Notions"><a href="#Notions" class="headerlink" title="Notions"></a>Notions</h3><p>A brief for three terms, where I found from this presentation :</p>
+<ul>
+<li><strong>Image Processing</strong> is to transform one or more images into new image(s).</li>
+<li><strong>Computer Vision</strong> is to analyze one or more images to get information about what is depicted in the image(s).</li>
+<li><strong>Computer Graphics</strong> is to generate images from description of what should be depicted.</li>
+</ul>
+<p>$I(i,j)$ presents the intensity of pixels, for example:</p>
+<ul>
+<li>Binary image, Intensity value is 0 or 1.</li>
+<li>8-bits image, Intensity is from 0 to 255.</li>
+<li>24-bits image, Intensity for each primary color is from 0 to 255.</li>
+</ul>
+<h3 id="colorimetric-conversion-to-grayscale-灰度图像"><a href="#colorimetric-conversion-to-grayscale-灰度图像" class="headerlink" title="colorimetric conversion to grayscale 灰度图像"></a>colorimetric conversion to grayscale 灰度图像</h3><p>matplotlib’s formula:</p>
+<p>$$Y’ = 0.2989R + 0.5870G + 0.1140B$$</p>
+<p>and which mentioned in Pillow’s document:</p>
+<blockquote>
+<p>When translating a color image to greyscale (mode “L”), the library uses the ITU-R 601-2 luma transform:<br>$$L = R <em>299/1000 + G</em> 587/1000 + B * 114/1000$$</p>
+</blockquote>
+<h2 id="Autocontrast-自动调整对比度"><a href="#Autocontrast-自动调整对比度" class="headerlink" title="Autocontrast 自动调整对比度"></a>Autocontrast 自动调整对比度</h2><p>The histogram $H(x)$ presents total number of pixels who have intensity value x.</p>
+<p>Normalized histogram $H_n(x)\ =\ H(x),/,toal,pixels,number$</p>
+<p>Dynamic range expansion:</p>
+<ul>
+<li>min, minima of gray level of this image.</li>
+<li>max, maxima of gray level of this image.</li>
+</ul>
+<p>You will see often the formular like this:</p>
+<p>$$I_{exp}(i,j) = (I(i,j) - min)\frac{255}{max - min}$$</p>
+<p>actually, it is eaier to understand if you see like this:</p>
+<p>$$I_{exp}(i,j) = \frac{I(i,j) - min}{max - min} * 255$$</p>
+<p>which means we calculate the percentage of the gray level according to the current range $max - min$, then we apply the designed range $0-255$.</p>
+<h2 id="Histogram-Equalization-直方图均衡化"><a href="#Histogram-Equalization-直方图均衡化" class="headerlink" title="Histogram Equalization 直方图均衡化"></a>Histogram Equalization 直方图均衡化</h2><p>$i$ gray level , and $n_i$ number of pixels which have this gray level.</p>
+<p>then probability</p>
+<p>$$p_x(i) = p(x=i) = \frac{n_i}{n}$$</p>
+<p>actually it is the normalized histogram.</p>
+<p>so accumulative histogram</p>
+<!-- TODO https://zh.wikipedia.org/wiki/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1%E5%8C%96 -->
+<p>$$cdf_x(i) = \sum_{j=1}^i p_i(i=j)$$</p>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a target="_blank" rel="noopener" href="https://www.cs.auckland.ac.nz/courses/compsci373s1c/PatricesLectures/2013/CS373-IP-01.pdf">https://www.cs.auckland.ac.nz/courses/compsci373s1c/PatricesLectures/2013/CS373-IP-01.pdf</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2021/09/27/python-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="doraemomo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Doraemomo's site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/27/python-note/" class="post-title-link" itemprop="url">Python Note Python笔记</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-09-27 15:28:42 / Modified: 16:00:46" itemprop="dateCreated datePublished" datetime="2021-09-27T15:28:42+02:00">2021-09-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Language/" itemprop="url" rel="index">
+                    <span itemprop="name">Language</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/09/27/python-note/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/09/27/python-note/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="List-Installed-Packages-显示已经安装的包"><a href="#List-Installed-Packages-显示已经安装的包" class="headerlink" title="List Installed Packages 显示已经安装的包"></a>List Installed Packages 显示已经安装的包</h2><p><a target="_blank" rel="noopener" href="https://packaging.python.org/tutorials/installing-packages/****">https://packaging.python.org/tutorials/installing-packages/</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip list</span><br></pre></td></tr></table></figure>
+
+<p>or</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip freeze</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2021/09/23/curl-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="doraemomo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Doraemomo's site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/23/curl-note/" class="post-title-link" itemprop="url">cURL Note cURL笔记</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-09-23 15:14:27 / Modified: 15:23:14" itemprop="dateCreated datePublished" datetime="2021-09-23T15:14:27+02:00">2021-09-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/" itemprop="url" rel="index">
+                    <span itemprop="name">Network</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/HTTP/" itemprop="url" rel="index">
+                    <span itemprop="name">HTTP</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/09/23/curl-note/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/09/23/curl-note/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Only-show-response-header-只显示HTTP头"><a href="#Only-show-response-header-只显示HTTP头" class="headerlink" title="Only show response header 只显示HTTP头"></a>Only show response header 只显示HTTP头</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -I &lt;URL&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Include-response-header-同时显示HTTP头"><a href="#Include-response-header-同时显示HTTP头" class="headerlink" title="Include response header 同时显示HTTP头"></a>Include response header 同时显示HTTP头</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -i &lt;URL&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Use-proxy-使用代理"><a href="#Use-proxy-使用代理" class="headerlink" title="Use proxy 使用代理"></a>Use proxy 使用代理</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl &lt;URL&gt; --proxy &lt;proxy&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2021/09/21/gradle-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="doraemomo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Doraemomo's site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/21/gradle-note/" class="post-title-link" itemprop="url">gradle-note</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-09-21 11:26:00 / Modified: 12:29:00" itemprop="dateCreated datePublished" datetime="2021-09-21T11:26:00+02:00">2021-09-21</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Dependencies-Management/" itemprop="url" rel="index">
+                    <span itemprop="name">Dependencies Management</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/09/21/gradle-note/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/09/21/gradle-note/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Init-project-with-gradle-support-初始化项目"><a href="#Init-project-with-gradle-support-初始化项目" class="headerlink" title="Init project with gradle support 初始化项目"></a>Init project with gradle support 初始化项目</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradle init</span><br></pre></td></tr></table></figure>
+
+<p>Run <strong>gradle init</strong> will trigger several command line prompts, like type of project, language, build script DSL etc.<br><strong>gradle init</strong>是个配置命令,包括多个子项目,比如选择项目类型,语言,编译脚本等.</p>
+<h2 id="Show-all-tasks-显示任务列表"><a href="#Show-all-tasks-显示任务列表" class="headerlink" title="Show all tasks 显示任务列表"></a>Show all tasks 显示任务列表</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradle tasks</span><br></pre></td></tr></table></figure>
+
+<h3 id="reload-dependencies-重新下载所有依赖"><a href="#reload-dependencies-重新下载所有依赖" class="headerlink" title="reload dependencies 重新下载所有依赖"></a>reload dependencies 重新下载所有依赖</h3><p>local dependencies:<br>本地资源:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">HOME/.gradle/caches</span></span><br></pre></td></tr></table></figure>
+
+<p>reload 重载</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./gradlew build --refresh-dependencies</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
         
   
   
@@ -281,10 +961,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-09-16 10:58:09 / Modified: 12:05:01" itemprop="dateCreated datePublished" datetime="2021-09-16T10:58:09+02:00">2021-09-16</time>
+              <time title="Created: 2021-09-16 10:58:09" itemprop="dateCreated datePublished" datetime="2021-09-16T10:58:09+02:00">2021-09-16</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-24 15:23:59" itemprop="dateModified" datetime="2021-09-24T15:23:59+02:00">2021-09-24</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -337,8 +1023,26 @@
 <h2 id="package-打包"><a href="#package-打包" class="headerlink" title="package 打包"></a>package 打包</h2><p>Take the compiled code and package it in its distributable format, such as a JAR.<br>打包编译好的文件, 比如JAR.</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn package</span><br></pre></td></tr></table></figure>
 
+<p>skip test during the package 打包时跳过测试</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn package -DskipTests</span><br></pre></td></tr></table></figure>
+
 <h2 id="force-TLS-version-指定TLS版本"><a href="#force-TLS-version-指定TLS版本" class="headerlink" title="force TLS version 指定TLS版本"></a>force TLS version 指定TLS版本</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean install -Dhttps.protocols=TLSv1.2</span><br></pre></td></tr></table></figure>
 
+<h2 id="POM-Project-Object-Model"><a href="#POM-Project-Object-Model" class="headerlink" title="POM (Project Object Model)"></a>POM (Project Object Model)</h2><h3 id="Scope-作用范围"><a href="#Scope-作用范围" class="headerlink" title="Scope 作用范围"></a>Scope 作用范围</h3><p><a target="_blank" rel="noopener" href="https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html">https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html</a></p>
+<ul>
+<li><p>compile: This is the default scope, used if none is specified. Compile dependencies are available in all classpaths of a project. Furthermore, those dependencies are propagated to dependent projects.</p>
+</li>
+<li><p>provided: This is much like compile, but indicates you expect the JDK or a container to provide the dependency at runtime. For example, when building a web application for the Java Enterprise Edition, you would set the dependency on the Servlet API and related Java EE APIs to scope provided because the web container provides those classes. A dependency with this scope is added to the classpath used for compilation and test, but not the runtime classpath. It is not transitive.</p>
+</li>
+<li><p>runtime: This scope indicates that the dependency is not required for compilation, but is for execution. Maven includes a dependency with this scope in the runtime and test classpaths, but not the compile classpath.</p>
+</li>
+<li><p>test: This scope indicates that the dependency is not required for normal use of the application, and is only available for the test compilation and execution phases. This scope is not transitive. Typically this scope is used for test libraries such as JUnit and Mockito. It is also used for non-test libraries such as Apache Commons IO if those libraries are used in unit tests (src/test/java) but not in the model code (src/main/java).</p>
+</li>
+<li><p>system: This scope is similar to provided except that you have to provide the JAR which contains it explicitly. The artifact is always available and is not looked up in a repository.</p>
+</li>
+<li><p>import: This scope is only supported on a dependency of type pom in the <dependencyManagement> section. It indicates the dependency is to be replaced with the effective list of dependencies in the specified POM’s <dependencyManagement> section. Since they are replaced, dependencies with a scope of import do not actually participate in limiting the transitivity of a dependency.</p>
+</li>
+</ul>
 
       
     </div>
@@ -381,10 +1085,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-08-25 15:01:48 / Modified: 15:03:40" itemprop="dateCreated datePublished" datetime="2021-08-25T15:01:48+02:00">2021-08-25</time>
+              <time title="Created: 2021-08-25 15:01:48" itemprop="dateCreated datePublished" datetime="2021-08-25T15:01:48+02:00">2021-08-25</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-28 17:14:48" itemprop="dateModified" datetime="2021-09-28T17:14:48+02:00">2021-09-28</time>
+              </span>
 
           
   
@@ -412,734 +1122,7 @@
 
       
           <h2 id="Unicode"><a href="#Unicode" class="headerlink" title="Unicode"></a>Unicode</h2><p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/List_of_Unicode_characters">https://en.wikipedia.org/wiki/List_of_Unicode_characters</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2021/07/29/spring-cloud/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="doraemomo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Doraemomo's site">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/29/spring-cloud/" class="post-title-link" itemprop="url">Sprig Cloud</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-07-29 16:56:49 / Modified: 18:01:52" itemprop="dateCreated datePublished" datetime="2021-07-29T16:56:49+02:00">2021-07-29</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Microservices/" itemprop="url" rel="index">
-                    <span itemprop="name">Microservices</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/07/29/spring-cloud/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/07/29/spring-cloud/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Before-we-start-前言"><a href="#Before-we-start-前言" class="headerlink" title="Before we start 前言"></a>Before we start 前言</h2><p>Microserices architecture is excellent, but it is not the silver bullet, compare with monolithic architecture, microservices means you need to spend more time minding communication between services, and according to the reality, microservices, sometimes, means you need to pay more for deployment.</p>
-<ul>
-<li>Something important but not often saying, take care the dependencies version revolution, when you start or during the development, different version could be huge different in the implementation.</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="https://12factor.ne/">https://12factor.ne</a></p>
-<h2 id="Panorama-概论"><a href="#Panorama-概论" class="headerlink" title="Panorama 概论"></a>Panorama 概论</h2><p><a target="_blank" rel="noopener" href="https://spring.io/cloud">Spring IO</a><br><a target="_blank" rel="noopener" href="https://github.com/spring-projects"></a></p>
-<p>We will principally use <a target="_blank" rel="noopener" href="https://github.com/spring-cloud/spring-cloud-netflix">Spring Cloud Netflix</a>.</p>
-<h2 id="Topics-题目"><a href="#Topics-题目" class="headerlink" title="Topics 题目"></a>Topics 题目</h2><p><a href="dd">Discovery Service</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2021/07/28/upgrade-hexo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="doraemomo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Doraemomo's site">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/28/upgrade-hexo/" class="post-title-link" itemprop="url">Upgrade Hexo 更新Hexo</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-07-28 17:46:08" itemprop="dateCreated datePublished" datetime="2021-07-28T17:46:08+02:00">2021-07-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-07-29 15:50:36" itemprop="dateModified" datetime="2021-07-29T15:50:36+02:00">2021-07-29</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Blog/" itemprop="url" rel="index">
-                    <span itemprop="name">Blog</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/07/28/upgrade-hexo/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/07/28/upgrade-hexo/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Dependenciese-依赖"><a href="#Dependenciese-依赖" class="headerlink" title="Dependenciese 依赖"></a>Dependenciese 依赖</h2><p>Hexo requires Node.js and Git, especially Hexo version is related to Node.js version, check the <a target="_blank" rel="noopener" href="https://hexo.io/docs/#Minimum-required-Node-js-version">table</a></p>
-<p>so first you may need to upgrade Node.js.</p>
-<h3 id="Upgrade-Node-js-using-Homebrew"><a href="#Upgrade-Node-js-using-Homebrew" class="headerlink" title="Upgrade Node.js using Homebrew"></a>Upgrade Node.js using Homebrew</h3><p>we are going to update Homebrew first:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew update</span><br></pre></td></tr></table></figure>
-
-<p> then upgrade Node.js:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew upgrade node</span><br></pre></td></tr></table></figure>
-
-<h2 id="Upgrade-Hexo-更新Hexo"><a href="#Upgrade-Hexo-更新Hexo" class="headerlink" title="Upgrade Hexo 更新Hexo"></a>Upgrade Hexo 更新Hexo</h2><ul>
-<li>Check Hexo version 检查Hexo版本</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo version</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>Upgrade hexo-cli globally 全局升级hexo-cli</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-cli -g</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>Check oudated plugins 查看本地包是否需要升级</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm i -g npm-check</span><br><span class="line">npm-check</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>Update package.json 更新package.json</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm i -g npm-upgrade</span><br><span class="line">npm-upgrade</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>Upgrade packages globally 更新全局包</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm update -g</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>Upgrade local packages 更新本地包</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm update --save</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2021/07/26/docker-note/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="doraemomo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Doraemomo's site">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/26/docker-note/" class="post-title-link" itemprop="url">Docker Note Docker笔记</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-07-26 15:34:57" itemprop="dateCreated datePublished" datetime="2021-07-26T15:34:57+02:00">2021-07-26</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-07-29 15:21:11" itemprop="dateModified" datetime="2021-07-29T15:21:11+02:00">2021-07-29</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CI-CD/" itemprop="url" rel="index">
-                    <span itemprop="name">CI/CD</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/07/26/docker-note/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/07/26/docker-note/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Show-running-container"><a href="#Show-running-container" class="headerlink" title="Show running container"></a>Show running container</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure>
-
-<h2 id="Show-all-container"><a href="#Show-all-container" class="headerlink" title="Show all container"></a>Show all container</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
-
-<h2 id="Delete-container"><a href="#Delete-container" class="headerlink" title="Delete container"></a>Delete container</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker container rm &lt;container_id&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Build-image"><a href="#Build-image" class="headerlink" title="Build image"></a>Build image</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t web-server-image . </span><br></pre></td></tr></table></figure>
-
-<h2 id="Delete-image"><a href="#Delete-image" class="headerlink" title="Delete image"></a>Delete image</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image rm &lt;image_id&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="SSH-in-container"><a href="#SSH-in-container" class="headerlink" title="SSH in container"></a>SSH in container</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it &lt;container name&gt; /bin/shell</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> May need to use **sudo** <span class="built_in">command</span>.</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># show container logs 显示容器日志</span></span></span><br><span class="line"></span><br><span class="line">[Official documentation](https://docs.docker.com/engine/reference/commandline/logs/)</span><br><span class="line"></span><br><span class="line">```shell</span><br><span class="line">docker logs [OPTIONS] CONTAINER</span><br></pre></td></tr></table></figure>
-
-<p>continue log:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs --follow</span><br></pre></td></tr></table></figure>
-
-<p>In most cases, log is long, and only the latest log is intrested</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs --follow --tail 10</span><br></pre></td></tr></table></figure>
-
-<p>will always shows the last 10 line logs.</p>
-<h2 id="show-container-thread-显示容器进程"><a href="#show-container-thread-显示容器进程" class="headerlink" title="show container thread 显示容器进程"></a>show container thread 显示容器进程</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure>
-
-<p>vsmpros22.vsm.adml</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2021/07/26/ci-cd-note/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="doraemomo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Doraemomo's site">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/26/ci-cd-note/" class="post-title-link" itemprop="url">CI/CD Note 可持续集成/部署笔记</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-07-26 14:49:53" itemprop="dateCreated datePublished" datetime="2021-07-26T14:49:53+02:00">2021-07-26</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-07-29 15:21:02" itemprop="dateModified" datetime="2021-07-29T15:21:02+02:00">2021-07-29</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CI-CD/" itemprop="url" rel="index">
-                    <span itemprop="name">CI/CD</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/07/26/ci-cd-note/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/07/26/ci-cd-note/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="GitLab"><a href="#GitLab" class="headerlink" title="GitLab"></a>GitLab</h2><h3 id="related-runner-list-列出所有关联runner"><a href="#related-runner-list-列出所有关联runner" class="headerlink" title="related runner list 列出所有关联runner"></a>related runner list 列出所有关联runner</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">gitlab-runner list</span><br><span class="line"></span><br><span class="line">Runtime platform                                    arch=amd64 os=linux pid=734 revision=e95f89a0 version=13.4.1</span><br><span class="line">Listing configured runners                          ConfigFile=/etc/gitlab-runner/config.toml</span><br><span class="line">BWC DEV Runner                                      Executor=docker Token=2v_Gdb1meaCur8vi73Dt URL=https://git.pentalog.fr/</span><br><span class="line">bwc public web api runner                           Executor=docker Token=ozVN1gQUkjmk6zLMozP7 URL=https://git.pentalog.fr/</span><br></pre></td></tr></table></figure>
-
-<h3 id="runner-status-状态"><a href="#runner-status-状态" class="headerlink" title="runner status 状态"></a>runner status 状态</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gitlab-runner status</span><br><span class="line"></span><br><span class="line">Runtime platform                                    arch=amd64 os=linux pid=742 revision=e95f89a0 version=13.4.1</span><br><span class="line">gitlab-runner: Service is not running.</span><br></pre></td></tr></table></figure>
-
-<p>when use gitlab runner with docker image, this “not running” issue is known and not affect the usage.</p>
-<h3 id="check-runner-检查"><a href="#check-runner-检查" class="headerlink" title="check runner 检查"></a>check runner 检查</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gitlab-runner verify</span><br><span class="line"></span><br><span class="line">Runtime platform                                    arch=amd64 os=linux pid=762 revision=e95f89a0 version=13.4.1</span><br><span class="line">Running in system-mode.                            </span><br><span class="line">                                                   </span><br><span class="line">Verifying runner... is alive                        runner=2v_Gdb1m</span><br><span class="line">Verifying runner... is alive                        runner=ozVN1gQU</span><br></pre></td></tr></table></figure>
-
-<h3 id="debug-output-调试"><a href="#debug-output-调试" class="headerlink" title="debug output 调试"></a>debug output 调试</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitlab-runner --debug &lt;command&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="register-new-repository-注册新的仓库"><a href="#register-new-repository-注册新的仓库" class="headerlink" title="register new repository 注册新的仓库"></a>register new repository 注册新的仓库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitlab-runner register</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2021/07/20/css-note/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="doraemomo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Doraemomo's site">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/20/css-note/" class="post-title-link" itemprop="url">CSS Note CSS笔记</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-07-20 18:06:11" itemprop="dateCreated datePublished" datetime="2021-07-20T18:06:11+02:00">2021-07-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-07-29 12:01:26" itemprop="dateModified" datetime="2021-07-29T12:01:26+02:00">2021-07-29</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Frontend/" itemprop="url" rel="index">
-                    <span itemprop="name">Frontend</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/07/20/css-note/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/07/20/css-note/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Vertical-scrollable"><a href="#Vertical-scrollable" class="headerlink" title="Vertical scrollable"></a>Vertical scrollable</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">flex</span>: <span class="number">1</span> <span class="number">1</span> auto;</span><br><span class="line"><span class="attribute">overflow-y</span>: auto;</span><br><span class="line"><span class="attribute">min-height</span>: <span class="number">0px</span>;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2021/06/02/homebrew-note/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="doraemomo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Doraemomo's site">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/02/homebrew-note/" class="post-title-link" itemprop="url">Homebrew Note Homebrew笔记</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-06-02 14:30:12" itemprop="dateCreated datePublished" datetime="2021-06-02T14:30:12+02:00">2021-06-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-17 16:41:15" itemprop="dateModified" datetime="2021-08-17T16:41:15+02:00">2021-08-17</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Package-Management/" itemprop="url" rel="index">
-                    <span itemprop="name">Package Management</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/06/02/homebrew-note/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/06/02/homebrew-note/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Homebrew is a MacOS package manager developed using Ruby.<br>Homebrew是使用Ruby开发的MacOS软件包管理器.</p>
-<h2 id="Basic-基础命令"><a href="#Basic-基础命令" class="headerlink" title="Basic 基础命令"></a>Basic 基础命令</h2><h3 id="Show-packages-installed-using-Homebrew-显示通过Homebrew安装的包"><a href="#Show-packages-installed-using-Homebrew-显示通过Homebrew安装的包" class="headerlink" title="Show packages installed using Homebrew 显示通过Homebrew安装的包"></a>Show packages installed using Homebrew 显示通过Homebrew安装的包</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew list</span><br></pre></td></tr></table></figure>
-
-<h3 id="Show-outdated-packages-显示可以更新的包"><a href="#Show-outdated-packages-显示可以更新的包" class="headerlink" title="Show outdated packages 显示可以更新的包"></a>Show outdated packages 显示可以更新的包</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew outdated</span><br></pre></td></tr></table></figure>
-
-<h3 id="Upgrade-all-outdated-packages-更新所有过期的包"><a href="#Upgrade-all-outdated-packages-更新所有过期的包" class="headerlink" title="Upgrade all outdated packages 更新所有过期的包"></a>Upgrade all outdated packages 更新所有过期的包</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew upgrade</span><br></pre></td></tr></table></figure>
-
-<h3 id="Upgrade-specified-package-更新指定的包"><a href="#Upgrade-specified-package-更新指定的包" class="headerlink" title="Upgrade specified package 更新指定的包"></a>Upgrade specified package 更新指定的包</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew upgrade &lt;package name&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Edit-package-configuration-file-编辑包配置文件"><a href="#Edit-package-configuration-file-编辑包配置文件" class="headerlink" title="Edit package configuration file 编辑包配置文件"></a>Edit package configuration file 编辑包配置文件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew edit &lt;package name&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Package-info-包信息"><a href="#Package-info-包信息" class="headerlink" title="Package info 包信息"></a>Package info 包信息</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew info &lt;package name&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="TAPs-Third-Party-Repositories-第三方库"><a href="#TAPs-Third-Party-Repositories-第三方库" class="headerlink" title="TAPs (Third-Party Repositories) 第三方库"></a>TAPs (Third-Party Repositories) 第三方库</h2><h3 id="Lists-the-currently-tapped-repositories-显示当前的第三方库列表"><a href="#Lists-the-currently-tapped-repositories-显示当前的第三方库列表" class="headerlink" title="Lists the currently tapped repositories 显示当前的第三方库列表"></a>Lists the currently tapped repositories 显示当前的第三方库列表</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew tap</span><br></pre></td></tr></table></figure>
-
-<h3 id="Add-tap-添加库"><a href="#Add-tap-添加库" class="headerlink" title="Add tap 添加库"></a>Add tap 添加库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew tap &lt;user/repo&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Remove-tap-删除库"><a href="#Remove-tap-删除库" class="headerlink" title="Remove tap 删除库"></a>Remove tap 删除库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew untap &lt;user/repo&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Add-Background-service-management-tap-添加后台服务管理库"><a href="#Add-Background-service-management-tap-添加后台服务管理库" class="headerlink" title="Add Background service management tap 添加后台服务管理库"></a>Add Background service management tap 添加后台服务管理库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew tap homebrew/services</span><br></pre></td></tr></table></figure>
-
-<h3 id="Show-background-service-list-installed-using-Homebrew-显示通过Homerew管理的后台服务列表"><a href="#Show-background-service-list-installed-using-Homebrew-显示通过Homerew管理的后台服务列表" class="headerlink" title="Show background service list installed using Homebrew 显示通过Homerew管理的后台服务列表"></a>Show background service list installed using Homebrew 显示通过Homerew管理的后台服务列表</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew services list</span><br></pre></td></tr></table></figure>
-
-<h3 id="Services-status-management-服务状态管理"><a href="#Services-status-management-服务状态管理" class="headerlink" title="Services status management 服务状态管理"></a>Services status management 服务状态管理</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew services (start/restart/stop) &lt;service&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Cleanup-清除无用的服务配置"><a href="#Cleanup-清除无用的服务配置" class="headerlink" title="Cleanup 清除无用的服务配置"></a>Cleanup 清除无用的服务配置</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew services cleanup</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2021/02/14/standard-protocol/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="doraemomo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Doraemomo's site">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/14/standard-protocol/" class="post-title-link" itemprop="url">Standard, protocol 协议</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-02-14 17:38:32" itemprop="dateCreated datePublished" datetime="2021-02-14T17:38:32+01:00">2021-02-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-07-29 12:04:37" itemprop="dateModified" datetime="2021-07-29T12:04:37+02:00">2021-07-29</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Standard/" itemprop="url" rel="index">
-                    <span itemprop="name">Standard</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/02/14/standard-protocol/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/02/14/standard-protocol/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="https://tools.ietf.org/html/rfc7519">JSON Web Token (JWT)</a></p>
-<p><a target="_blank" rel="noopener" href="https://tools.ietf.org/html/rfc5849">The OAuth 1.0 Protocol</a></p>
-<p><a target="_blank" rel="noopener" href="https://tools.ietf.org/html/rfc6749">The OAuth 2.0 Authorization Framework</a></p>
-<p><a target="_blank" rel="noopener" href="https://tools.ietf.org/html/rfc2616">Hypertext Transfer Protocol – HTTP/1.1</a></p>
-<p><a target="_blank" rel="noopener" href="https://tools.ietf.org/html/rfc7231">Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content</a></p>
-<p><a target="_blank" rel="noopener" href="https://tools.ietf.org/html/rfc2817">Upgrading to TLS Within HTTP/1.1</a></p>
-<p><a target="_blank" rel="noopener" href="https://tools.ietf.org/html/rfc3548">The Base16, Base32, and Base64 Data Encodings</a></p>
+<h2 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h2><p><a target="_blank" rel="noopener" href="https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown">https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown</a></p>
 
       
     </div>
@@ -1159,7 +1142,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1225,20 +1208,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-count">36</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-count">37</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
