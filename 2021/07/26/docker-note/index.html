@@ -46,12 +46,12 @@
   };
 </script>
 
-  <meta name="description" content="Show running container 现实运行中容器1docker ps  Show all container 显示所有容器1docker ps -a  Delete container 删除容器1docker container rm &lt;container_id&gt;  Build image 构造镜像1docker build -t web-server-image .">
+  <meta name="description" content="Show running container 现实运行中容器 1docker ps Show all container 显示所有容器 1docker ps -a Delete container 删除容器 1docker container rm &lt;container_id&gt; Build image 构造镜像 1docker build -t web-server-image .">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker Note Docker笔记">
 <meta property="og:url" content="https://doraemomo.github.io/2021/07/26/docker-note/index.html">
 <meta property="og:site_name" content="Doraemomo&#39;s site">
-<meta property="og:description" content="Show running container 现实运行中容器1docker ps  Show all container 显示所有容器1docker ps -a  Delete container 删除容器1docker container rm &lt;container_id&gt;  Build image 构造镜像1docker build -t web-server-image .">
+<meta property="og:description" content="Show running container 现实运行中容器 1docker ps Show all container 显示所有容器 1docker ps -a Delete container 删除容器 1docker container rm &lt;container_id&gt; Build image 构造镜像 1docker build -t web-server-image .">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-07-26T13:34:57.000Z">
 <meta property="article:modified_time" content="2021-10-26T12:09:02.115Z">
@@ -259,41 +259,40 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Show-running-container-现实运行中容器"><a href="#Show-running-container-现实运行中容器" class="headerlink" title="Show running container 现实运行中容器"></a>Show running container 现实运行中容器</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure>
-
-<h2 id="Show-all-container-显示所有容器"><a href="#Show-all-container-显示所有容器" class="headerlink" title="Show all container 显示所有容器"></a>Show all container 显示所有容器</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
-
-<h2 id="Delete-container-删除容器"><a href="#Delete-container-删除容器" class="headerlink" title="Delete container 删除容器"></a>Delete container 删除容器</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker container rm &lt;container_id&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Build-image-构造镜像"><a href="#Build-image-构造镜像" class="headerlink" title="Build image 构造镜像"></a>Build image 构造镜像</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t web-server-image . </span><br></pre></td></tr></table></figure>
-
-<h2 id="Delete-image-删除镜像"><a href="#Delete-image-删除镜像" class="headerlink" title="Delete image 删除镜像"></a>Delete image 删除镜像</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image rm &lt;image_id&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="SSH-in-container-进入到容器中的shell"><a href="#SSH-in-container-进入到容器中的shell" class="headerlink" title="SSH in container 进入到容器中的shell"></a>SSH in container 进入到容器中的shell</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it &lt;container name&gt; /bin/shell</span><br></pre></td></tr></table></figure>
-
+        <h2 id="show-running-container-现实运行中容器">Show running container 现实运行中容器</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure>
+<h2 id="show-all-container-显示所有容器">Show all container 显示所有容器</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+<h2 id="delete-container-删除容器">Delete container 删除容器</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker container rm &lt;container_id&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="build-image-构造镜像">Build image 构造镜像</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t web-server-image . </span><br></pre></td></tr></table></figure>
+<h2 id="delete-image-删除镜像">Delete image 删除镜像</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image rm &lt;image_id&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="ssh-in-container-进入到容器中的shell">SSH in container 进入到容器中的shell</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it &lt;container name&gt; /bin/shell</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>May need to use <strong>sudo</strong> command.</p>
 </blockquote>
-<h2 id="show-container-logs-显示容器日志"><a href="#show-container-logs-显示容器日志" class="headerlink" title="show container logs 显示容器日志"></a>show container logs 显示容器日志</h2><p><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/reference/commandline/logs/">Official documentation</a></p>
+<h2 id="show-container-logs-显示容器日志">show container logs 显示容器日志</h2>
+<p><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/reference/commandline/logs/">Official documentation</a></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs [OPTIONS] CONTAINER</span><br></pre></td></tr></table></figure>
-
 <p>continue log: 持续日志</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs --follow</span><br></pre></td></tr></table></figure>
-
 <p>In most cases, log is long, and only the latest log is intrested 大多时候,日志很长,我们只需要显示最新的日志:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs --follow --tail 10</span><br></pre></td></tr></table></figure>
-
 <p>will always shows the last 10 line logs. 上面的命令只显示最近的10行命令.</p>
-<h2 id="Networking-in-Docker-Compose-Docker-Compose中的网络"><a href="#Networking-in-Docker-Compose-Docker-Compose中的网络" class="headerlink" title="Networking in Docker Compose Docker Compose中的网络"></a>Networking in Docker Compose Docker Compose中的网络</h2><p><a target="_blank" rel="noopener" href="https://docs.docker.com/compose/networking/">https://docs.docker.com/compose/networking/</a></p>
+<h2 id="networking-in-docker-compose-docker-compose中的网络">Networking in Docker Compose Docker Compose中的网络</h2>
+<p><a target="_blank" rel="noopener" href="https://docs.docker.com/compose/networking/">https://docs.docker.com/compose/networking/</a></p>
 <p>According to the document: 依据文档:</p>
 <blockquote>
-<p>Your app’s network is given a name based on the “project name”, which is based on the name of the directory it lives in. You can override the project name with either the –project-name flag or the COMPOSE_PROJECT_NAME environment variable.</p>
+<p>Your app’s network is given a name based on the “project name”, which is based on the name of the directory it lives in. You can override the project name with either the --project-name flag or the COMPOSE_PROJECT_NAME environment variable.</p>
 </blockquote>
 <p>so basically, in Docker Compose, net work name is like <project name>_<network name in docker file>. 在Docker Compose中的网络名需要在前面加上项目名称.</p>
 <p>check the network list: 查看网络列表:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker network ls</span><br></pre></td></tr></table></figure>
-
-<h2 id="Docker-machine-has-been-deprecated"><a href="#Docker-machine-has-been-deprecated" class="headerlink" title="Docker machine has been deprecated"></a>Docker machine has been deprecated</h2><p>Docker machine has been deprecated, so as homebrew installation has been archieved, now we use Docker Desktop for MAC instead.</p>
+<h2 id="docker-machine-has-been-deprecated">Docker machine has been deprecated</h2>
+<p>Docker machine has been deprecated, so as homebrew installation has been archieved, now we use Docker Desktop for MAC instead.</p>
 <p><a target="_blank" rel="noopener" href="https://docs.docker.com/machine/">https://docs.docker.com/machine/</a></p>
 
     </div>
@@ -317,8 +316,8 @@
       <i class="fa fa-chevron-left"></i> CSS Note CSS笔记
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/07/28/upgrade-hexo/" rel="next" title="Upgrade Hexo 更新Hexo">
-      Upgrade Hexo 更新Hexo <i class="fa fa-chevron-right"></i>
+    <a href="/2021/07/28/hexo-note/" rel="next" title="Hexo Note Hexo笔记">
+      Hexo Note Hexo笔记 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -386,7 +385,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Show-running-container-%E7%8E%B0%E5%AE%9E%E8%BF%90%E8%A1%8C%E4%B8%AD%E5%AE%B9%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">Show running container 现实运行中容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Show-all-container-%E6%98%BE%E7%A4%BA%E6%89%80%E6%9C%89%E5%AE%B9%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">Show all container 显示所有容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Delete-container-%E5%88%A0%E9%99%A4%E5%AE%B9%E5%99%A8"><span class="nav-number">3.</span> <span class="nav-text">Delete container 删除容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Build-image-%E6%9E%84%E9%80%A0%E9%95%9C%E5%83%8F"><span class="nav-number">4.</span> <span class="nav-text">Build image 构造镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Delete-image-%E5%88%A0%E9%99%A4%E9%95%9C%E5%83%8F"><span class="nav-number">5.</span> <span class="nav-text">Delete image 删除镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH-in-container-%E8%BF%9B%E5%85%A5%E5%88%B0%E5%AE%B9%E5%99%A8%E4%B8%AD%E7%9A%84shell"><span class="nav-number">6.</span> <span class="nav-text">SSH in container 进入到容器中的shell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#show-container-logs-%E6%98%BE%E7%A4%BA%E5%AE%B9%E5%99%A8%E6%97%A5%E5%BF%97"><span class="nav-number">7.</span> <span class="nav-text">show container logs 显示容器日志</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Networking-in-Docker-Compose-Docker-Compose%E4%B8%AD%E7%9A%84%E7%BD%91%E7%BB%9C"><span class="nav-number">8.</span> <span class="nav-text">Networking in Docker Compose Docker Compose中的网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-machine-has-been-deprecated"><span class="nav-number">9.</span> <span class="nav-text">Docker machine has been deprecated</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#show-running-container-%E7%8E%B0%E5%AE%9E%E8%BF%90%E8%A1%8C%E4%B8%AD%E5%AE%B9%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">Show running container 现实运行中容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#show-all-container-%E6%98%BE%E7%A4%BA%E6%89%80%E6%9C%89%E5%AE%B9%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">Show all container 显示所有容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#delete-container-%E5%88%A0%E9%99%A4%E5%AE%B9%E5%99%A8"><span class="nav-number">3.</span> <span class="nav-text">Delete container 删除容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#build-image-%E6%9E%84%E9%80%A0%E9%95%9C%E5%83%8F"><span class="nav-number">4.</span> <span class="nav-text">Build image 构造镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#delete-image-%E5%88%A0%E9%99%A4%E9%95%9C%E5%83%8F"><span class="nav-number">5.</span> <span class="nav-text">Delete image 删除镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ssh-in-container-%E8%BF%9B%E5%85%A5%E5%88%B0%E5%AE%B9%E5%99%A8%E4%B8%AD%E7%9A%84shell"><span class="nav-number">6.</span> <span class="nav-text">SSH in container 进入到容器中的shell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#show-container-logs-%E6%98%BE%E7%A4%BA%E5%AE%B9%E5%99%A8%E6%97%A5%E5%BF%97"><span class="nav-number">7.</span> <span class="nav-text">show container logs 显示容器日志</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#networking-in-docker-compose-docker-compose%E4%B8%AD%E7%9A%84%E7%BD%91%E7%BB%9C"><span class="nav-number">8.</span> <span class="nav-text">Networking in Docker Compose Docker Compose中的网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-machine-has-been-deprecated"><span class="nav-number">9.</span> <span class="nav-text">Docker machine has been deprecated</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

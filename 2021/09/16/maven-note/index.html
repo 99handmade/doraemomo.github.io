@@ -46,12 +46,12 @@
   };
 </script>
 
-  <meta name="description" content="referencehttps:&#x2F;&#x2F;maven.apache.org&#x2F;guides&#x2F;getting-started&#x2F;maven-in-five-minutes.html 一个Maven仓库实际上就是一个遵循包名的文件系统,不需要任何额外的软件支持. Local maven repository 本地Maven仓库The default position of Maven repository in">
+  <meta name="description" content="reference https:&#x2F;&#x2F;maven.apache.org&#x2F;guides&#x2F;getting-started&#x2F;maven-in-five-minutes.html 一个Maven仓库实际上就是一个遵循包名的文件系统,不需要任何额外的软件支持. Local maven repository 本地Maven仓库 The default position of Maven repository i">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Maven Note Maven笔记">
 <meta property="og:url" content="https://doraemomo.github.io/2021/09/16/maven-note/index.html">
 <meta property="og:site_name" content="Doraemomo&#39;s site">
-<meta property="og:description" content="referencehttps:&#x2F;&#x2F;maven.apache.org&#x2F;guides&#x2F;getting-started&#x2F;maven-in-five-minutes.html 一个Maven仓库实际上就是一个遵循包名的文件系统,不需要任何额外的软件支持. Local maven repository 本地Maven仓库The default position of Maven repository in">
+<meta property="og:description" content="reference https:&#x2F;&#x2F;maven.apache.org&#x2F;guides&#x2F;getting-started&#x2F;maven-in-five-minutes.html 一个Maven仓库实际上就是一个遵循包名的文件系统,不需要任何额外的软件支持. Local maven repository 本地Maven仓库 The default position of Maven repository i">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-09-16T08:58:09.000Z">
 <meta property="article:modified_time" content="2021-09-24T13:23:59.884Z">
@@ -259,40 +259,36 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h2><p><a target="_blank" rel="noopener" href="https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html">https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html</a></p>
+        <h2 id="reference">reference</h2>
+<p><a target="_blank" rel="noopener" href="https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html" class="uri">https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html</a></p>
 <p>一个Maven仓库实际上就是一个遵循包名的文件系统,不需要任何额外的软件支持.</p>
-<h2 id="Local-maven-repository-本地Maven仓库"><a href="#Local-maven-repository-本地Maven仓库" class="headerlink" title="Local maven repository 本地Maven仓库"></a>Local maven repository 本地Maven仓库</h2><p>The default position of Maven repository in Mac OS:<br>Mac系统中Maven仓库的默认地址:</p>
+<h2 id="local-maven-repository-本地maven仓库">Local maven repository 本地Maven仓库</h2>
+<p>The default position of Maven repository in Mac OS: Mac系统中Maven仓库的默认地址:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">HOME/.m2/repository</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="version-版本信息"><a href="#version-版本信息" class="headerlink" title="version 版本信息"></a>version 版本信息</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn --version</span><br></pre></td></tr></table></figure>
-
-<h2 id="Clean-清理"><a href="#Clean-清理" class="headerlink" title="Clean 清理"></a>Clean 清理</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean</span><br></pre></td></tr></table></figure>
-
-<h2 id="compile-编译"><a href="#compile-编译" class="headerlink" title="compile 编译"></a>compile 编译</h2><p>Compile the source code of the project.<br>编译项目源代码.</p>
+<h2 id="version-版本信息">version 版本信息</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn --version</span><br></pre></td></tr></table></figure>
+<h2 id="clean-清理">Clean 清理</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean</span><br></pre></td></tr></table></figure>
+<h2 id="compile-编译">compile 编译</h2>
+<p>Compile the source code of the project. 编译项目源代码.</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn compile</span><br></pre></td></tr></table></figure>
-
-<h2 id="package-打包"><a href="#package-打包" class="headerlink" title="package 打包"></a>package 打包</h2><p>Take the compiled code and package it in its distributable format, such as a JAR.<br>打包编译好的文件, 比如JAR.</p>
+<h2 id="package-打包">package 打包</h2>
+<p>Take the compiled code and package it in its distributable format, such as a JAR. 打包编译好的文件, 比如JAR.</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn package</span><br></pre></td></tr></table></figure>
-
 <p>skip test during the package 打包时跳过测试</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn package -DskipTests</span><br></pre></td></tr></table></figure>
-
-<h2 id="force-TLS-version-指定TLS版本"><a href="#force-TLS-version-指定TLS版本" class="headerlink" title="force TLS version 指定TLS版本"></a>force TLS version 指定TLS版本</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean install -Dhttps.protocols=TLSv1.2</span><br></pre></td></tr></table></figure>
-
-<h2 id="POM-Project-Object-Model"><a href="#POM-Project-Object-Model" class="headerlink" title="POM (Project Object Model)"></a>POM (Project Object Model)</h2><h3 id="Scope-作用范围"><a href="#Scope-作用范围" class="headerlink" title="Scope 作用范围"></a>Scope 作用范围</h3><p><a target="_blank" rel="noopener" href="https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html">https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html</a></p>
+<h2 id="force-tls-version-指定tls版本">force TLS version 指定TLS版本</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean install -Dhttps.protocols=TLSv1.2</span><br></pre></td></tr></table></figure>
+<h2 id="pom-project-object-model">POM (Project Object Model)</h2>
+<h3 id="scope-作用范围">Scope 作用范围</h3>
+<p><a target="_blank" rel="noopener" href="https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html">https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html</a></p>
 <ul>
-<li><p>compile: This is the default scope, used if none is specified. Compile dependencies are available in all classpaths of a project. Furthermore, those dependencies are propagated to dependent projects.</p>
-</li>
-<li><p>provided: This is much like compile, but indicates you expect the JDK or a container to provide the dependency at runtime. For example, when building a web application for the Java Enterprise Edition, you would set the dependency on the Servlet API and related Java EE APIs to scope provided because the web container provides those classes. A dependency with this scope is added to the classpath used for compilation and test, but not the runtime classpath. It is not transitive.</p>
-</li>
-<li><p>runtime: This scope indicates that the dependency is not required for compilation, but is for execution. Maven includes a dependency with this scope in the runtime and test classpaths, but not the compile classpath.</p>
-</li>
-<li><p>test: This scope indicates that the dependency is not required for normal use of the application, and is only available for the test compilation and execution phases. This scope is not transitive. Typically this scope is used for test libraries such as JUnit and Mockito. It is also used for non-test libraries such as Apache Commons IO if those libraries are used in unit tests (src/test/java) but not in the model code (src/main/java).</p>
-</li>
-<li><p>system: This scope is similar to provided except that you have to provide the JAR which contains it explicitly. The artifact is always available and is not looked up in a repository.</p>
-</li>
-<li><p>import: This scope is only supported on a dependency of type pom in the <dependencyManagement> section. It indicates the dependency is to be replaced with the effective list of dependencies in the specified POM’s <dependencyManagement> section. Since they are replaced, dependencies with a scope of import do not actually participate in limiting the transitivity of a dependency.</p>
-</li>
+<li><p>compile: This is the default scope, used if none is specified. Compile dependencies are available in all classpaths of a project. Furthermore, those dependencies are propagated to dependent projects.</p></li>
+<li><p>provided: This is much like compile, but indicates you expect the JDK or a container to provide the dependency at runtime. For example, when building a web application for the Java Enterprise Edition, you would set the dependency on the Servlet API and related Java EE APIs to scope provided because the web container provides those classes. A dependency with this scope is added to the classpath used for compilation and test, but not the runtime classpath. It is not transitive.</p></li>
+<li><p>runtime: This scope indicates that the dependency is not required for compilation, but is for execution. Maven includes a dependency with this scope in the runtime and test classpaths, but not the compile classpath.</p></li>
+<li><p>test: This scope indicates that the dependency is not required for normal use of the application, and is only available for the test compilation and execution phases. This scope is not transitive. Typically this scope is used for test libraries such as JUnit and Mockito. It is also used for non-test libraries such as Apache Commons IO if those libraries are used in unit tests (src/test/java) but not in the model code (src/main/java).</p></li>
+<li><p>system: This scope is similar to provided except that you have to provide the JAR which contains it explicitly. The artifact is always available and is not looked up in a repository.</p></li>
+<li><p>import: This scope is only supported on a dependency of type pom in the <dependencyManagement> section. It indicates the dependency is to be replaced with the effective list of dependencies in the specified POM's <dependencyManagement> section. Since they are replaced, dependencies with a scope of import do not actually participate in limiting the transitivity of a dependency.</p></li>
 </ul>
 
     </div>
@@ -385,7 +381,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#reference"><span class="nav-number">1.</span> <span class="nav-text">reference</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Local-maven-repository-%E6%9C%AC%E5%9C%B0Maven%E4%BB%93%E5%BA%93"><span class="nav-number">2.</span> <span class="nav-text">Local maven repository 本地Maven仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#version-%E7%89%88%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="nav-number">3.</span> <span class="nav-text">version 版本信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Clean-%E6%B8%85%E7%90%86"><span class="nav-number">4.</span> <span class="nav-text">Clean 清理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compile-%E7%BC%96%E8%AF%91"><span class="nav-number">5.</span> <span class="nav-text">compile 编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#package-%E6%89%93%E5%8C%85"><span class="nav-number">6.</span> <span class="nav-text">package 打包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#force-TLS-version-%E6%8C%87%E5%AE%9ATLS%E7%89%88%E6%9C%AC"><span class="nav-number">7.</span> <span class="nav-text">force TLS version 指定TLS版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#POM-Project-Object-Model"><span class="nav-number">8.</span> <span class="nav-text">POM (Project Object Model)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Scope-%E4%BD%9C%E7%94%A8%E8%8C%83%E5%9B%B4"><span class="nav-number">8.1.</span> <span class="nav-text">Scope 作用范围</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#reference"><span class="nav-number">1.</span> <span class="nav-text">reference</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#local-maven-repository-%E6%9C%AC%E5%9C%B0maven%E4%BB%93%E5%BA%93"><span class="nav-number">2.</span> <span class="nav-text">Local maven repository 本地Maven仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#version-%E7%89%88%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="nav-number">3.</span> <span class="nav-text">version 版本信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#clean-%E6%B8%85%E7%90%86"><span class="nav-number">4.</span> <span class="nav-text">Clean 清理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compile-%E7%BC%96%E8%AF%91"><span class="nav-number">5.</span> <span class="nav-text">compile 编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#package-%E6%89%93%E5%8C%85"><span class="nav-number">6.</span> <span class="nav-text">package 打包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#force-tls-version-%E6%8C%87%E5%AE%9Atls%E7%89%88%E6%9C%AC"><span class="nav-number">7.</span> <span class="nav-text">force TLS version 指定TLS版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pom-project-object-model"><span class="nav-number">8.</span> <span class="nav-text">POM (Project Object Model)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#scope-%E4%BD%9C%E7%94%A8%E8%8C%83%E5%9B%B4"><span class="nav-number">8.1.</span> <span class="nav-text">Scope 作用范围</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

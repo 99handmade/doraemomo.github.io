@@ -46,12 +46,12 @@
   };
 </script>
 
-  <meta name="description" content="UserInfo endpoint or ID tokenhttps:&#x2F;&#x2F;docs.microsoft.com&#x2F;en-us&#x2F;azure&#x2F;active-directory&#x2F;develop&#x2F;userinfo As mentioned in this document:  The information available in the ID token that your app can receiv">
+  <meta name="description" content="UserInfo endpoint or ID token https:&#x2F;&#x2F;docs.microsoft.com&#x2F;en-us&#x2F;azure&#x2F;active-directory&#x2F;develop&#x2F;userinfo As mentioned in this document:  The information available in the ID token that your app can recei">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Web Security Note 网络安全笔记">
 <meta property="og:url" content="https://doraemomo.github.io/2021/10/01/web-security-note/index.html">
 <meta property="og:site_name" content="Doraemomo&#39;s site">
-<meta property="og:description" content="UserInfo endpoint or ID tokenhttps:&#x2F;&#x2F;docs.microsoft.com&#x2F;en-us&#x2F;azure&#x2F;active-directory&#x2F;develop&#x2F;userinfo As mentioned in this document:  The information available in the ID token that your app can receiv">
+<meta property="og:description" content="UserInfo endpoint or ID token https:&#x2F;&#x2F;docs.microsoft.com&#x2F;en-us&#x2F;azure&#x2F;active-directory&#x2F;develop&#x2F;userinfo As mentioned in this document:  The information available in the ID token that your app can recei">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-10-01T14:13:59.000Z">
 <meta property="article:modified_time" content="2021-10-21T14:23:50.147Z">
@@ -260,20 +260,24 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="UserInfo-endpoint-or-ID-token"><a href="#UserInfo-endpoint-or-ID-token" class="headerlink" title="UserInfo endpoint or ID token"></a>UserInfo endpoint or ID token</h2><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/active-directory/develop/userinfo">https://docs.microsoft.com/en-us/azure/active-directory/develop/userinfo</a></p>
+        <h2 id="userinfo-endpoint-or-id-token">UserInfo endpoint or ID token</h2>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/active-directory/develop/userinfo">https://docs.microsoft.com/en-us/azure/active-directory/develop/userinfo</a></p>
 <p>As mentioned in this document:</p>
 <blockquote>
 <p>The information available in the ID token that your app can receive is a superset of the information it can get from the UserInfo endpoint. Because you can get an ID token at the same time you get a token to call the UserInfo endpoint, we suggest that you use that ID token to get information about the user instead of calling the UserInfo endpoint. Using the ID token will eliminate one to two network requests from your application launch, reducing latency in your application. ID token中包含的用户信息,可以看作是从用户信息接口中获得信息的子集. 一般情况下,我们可以在为了访问用户信息接口拿到access token的同时拿到ID token,文章建议直接使用ID token中的用户信息来代替进一步访问用户信息接口.其中一个原因就是这样服务器就少发送一条请求,从另一方面优化了性能.</p>
 </blockquote>
-<h2 id="Token-best-practices-Token指南"><a href="#Token-best-practices-Token指南" class="headerlink" title="Token best practices Token指南"></a>Token best practices Token指南</h2><p><a target="_blank" rel="noopener" href="https://auth0.com/docs/best-practices/token-best-practices">https://auth0.com/docs/best-practices/token-best-practices</a></p>
+<h2 id="token-best-practices-token指南">Token best practices Token指南</h2>
+<p><a target="_blank" rel="noopener" href="https://auth0.com/docs/best-practices/token-best-practices">https://auth0.com/docs/best-practices/token-best-practices</a></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/HTML5_Security_Cheat_Sheet.md#local-storage">https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/HTML5_Security_Cheat_Sheet.md#local-storage</a></p>
 <p><a target="_blank" rel="noopener" href="https://auth0.com/docs/security/data-security/token-storage#don-t-store-tokens-in-local-storage">https://auth0.com/docs/security/data-security/token-storage#don-t-store-tokens-in-local-storage</a></p>
 <p><a target="_blank" rel="noopener" href="https://speakerdeck.com/rdegges/jwts-suck?slide=35">https://speakerdeck.com/rdegges/jwts-suck?slide=35</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.logrocket.com/jwt-authentication-best-practices/#store-jwts-securely">https://blog.logrocket.com/jwt-authentication-best-practices/#store-jwts-securely</a></p>
 <p><a target="_blank" rel="noopener" href="https://datatracker.ietf.org/doc/html/draft-ietf-oauth-browser-based-apps-03">https://datatracker.ietf.org/doc/html/draft-ietf-oauth-browser-based-apps-03</a></p>
-<h2 id="OpenID-logout"><a href="#OpenID-logout" class="headerlink" title="OpenID logout"></a>OpenID logout</h2><p>OpenID automatical login is managed at server side.</p>
-<p><a target="_blank" rel="noopener" href="https://oa.dnc.global/-fr-.html?page=unarticle&id_article=89&lang=fr">https://oa.dnc.global/-fr-.html?page=unarticle&amp;id_article=89&amp;lang=fr</a></p>
-<h2 id="AWS-HDS"><a href="#AWS-HDS" class="headerlink" title="AWS HDS"></a>AWS HDS</h2><p>Amazon servers are certificated for a while ago.</p>
+<h2 id="openid-logout">OpenID logout</h2>
+<p>OpenID automatical login is managed at server side.</p>
+<p><a target="_blank" rel="noopener" href="https://oa.dnc.global/-fr-.html?page=unarticle&amp;id_article=89&amp;lang=fr">https://oa.dnc.global/-fr-.html?page=unarticle&amp;id_article=89&amp;lang=fr</a></p>
+<h2 id="aws-hds">AWS HDS</h2>
+<p>Amazon servers are certificated for a while ago.</p>
 <p><a target="_blank" rel="noopener" href="https://aws.amazon.com/fr/compliance/hds/">https://aws.amazon.com/fr/compliance/hds/</a></p>
 <p><a target="_blank" rel="noopener" href="https://aws.amazon.com/compliance/iso-certified/">https://aws.amazon.com/compliance/iso-certified/</a></p>
 
@@ -368,7 +372,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#UserInfo-endpoint-or-ID-token"><span class="nav-number">1.</span> <span class="nav-text">UserInfo endpoint or ID token</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Token-best-practices-Token%E6%8C%87%E5%8D%97"><span class="nav-number">2.</span> <span class="nav-text">Token best practices Token指南</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OpenID-logout"><span class="nav-number">3.</span> <span class="nav-text">OpenID logout</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-HDS"><span class="nav-number">4.</span> <span class="nav-text">AWS HDS</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#userinfo-endpoint-or-id-token"><span class="nav-number">1.</span> <span class="nav-text">UserInfo endpoint or ID token</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#token-best-practices-token%E6%8C%87%E5%8D%97"><span class="nav-number">2.</span> <span class="nav-text">Token best practices Token指南</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#openid-logout"><span class="nav-number">3.</span> <span class="nav-text">OpenID logout</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#aws-hds"><span class="nav-number">4.</span> <span class="nav-text">AWS HDS</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

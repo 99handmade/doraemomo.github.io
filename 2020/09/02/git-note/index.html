@@ -46,12 +46,12 @@
   };
 </script>
 
-  <meta name="description" content="Repository info 仓库信息Local 本地this will only display the remote URL, works without network connection or can’t reach the remote repository: 1git config --get remote.origin.url  Remote 远程first we are goi">
+  <meta name="description" content="Repository info 仓库信息 Local 本地 this will only display the remote URL, works without network connection or can&#39;t reach the remote repository: 1git config --get remote.origin.url Remote 远程 first we are g">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git Note Git笔记">
 <meta property="og:url" content="https://doraemomo.github.io/2020/09/02/git-note/index.html">
 <meta property="og:site_name" content="Doraemomo&#39;s site">
-<meta property="og:description" content="Repository info 仓库信息Local 本地this will only display the remote URL, works without network connection or can’t reach the remote repository: 1git config --get remote.origin.url  Remote 远程first we are goi">
+<meta property="og:description" content="Repository info 仓库信息 Local 本地 this will only display the remote URL, works without network connection or can&#39;t reach the remote repository: 1git config --get remote.origin.url Remote 远程 first we are g">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-09-02T15:21:11.000Z">
 <meta property="article:modified_time" content="2021-07-29T13:21:15.347Z">
@@ -259,69 +259,60 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Repository-info-仓库信息"><a href="#Repository-info-仓库信息" class="headerlink" title="Repository info 仓库信息"></a>Repository info 仓库信息</h2><h3 id="Local-本地"><a href="#Local-本地" class="headerlink" title="Local 本地"></a>Local 本地</h3><p>this will only display the remote URL, works without network connection or can’t reach the remote repository:</p>
+        <h2 id="repository-info-仓库信息">Repository info 仓库信息</h2>
+<h3 id="local-本地">Local 本地</h3>
+<p>this will only display the remote URL, works without network connection or can't reach the remote repository:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --get remote.origin.url</span><br></pre></td></tr></table></figure>
-
-<h3 id="Remote-远程"><a href="#Remote-远程" class="headerlink" title="Remote 远程"></a>Remote 远程</h3><p>first we are going to check the remote name:</p>
+<h3 id="remote-远程">Remote 远程</h3>
+<p>first we are going to check the remote name:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote show</span><br></pre></td></tr></table></figure>
-
-<p>the default name is “origin”, so for the most part, we can use:</p>
+<p>the default name is "origin", so for the most part, we can use:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote show origin</span><br></pre></td></tr></table></figure>
-
-<h2 id="Show-configuration-显示配置"><a href="#Show-configuration-显示配置" class="headerlink" title="Show configuration 显示配置"></a>Show configuration 显示配置</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure>
-
-<h2 id="Uncommit-commit-取消提交"><a href="#Uncommit-commit-取消提交" class="headerlink" title="Uncommit commit 取消提交"></a>Uncommit commit 取消提交</h2><p>keep change:</p>
+<h2 id="show-configuration-显示配置">Show configuration 显示配置</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure>
+<h2 id="uncommit-commit-取消提交">Uncommit commit 取消提交</h2>
+<p>keep change:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --soft HEAD^</span><br></pre></td></tr></table></figure>
-
 <p>remove all:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD^</span><br></pre></td></tr></table></figure>
-
 <p>can also jump to more than one commit:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --soft HEAD~2</span><br></pre></td></tr></table></figure>
-
 <p>if the commit is already pushed to remote, to also apply this change remotely:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -f</span><br></pre></td></tr></table></figure>
-
-<h2 id="Unstage-added-file-取消已经添加的文件"><a href="#Unstage-added-file-取消已经添加的文件" class="headerlink" title="Unstage added file 取消已经添加的文件"></a>Unstage added file 取消已经添加的文件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset</span><br></pre></td></tr></table></figure>
-
+<h2 id="unstage-added-file-取消已经添加的文件">Unstage added file 取消已经添加的文件</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset</span><br></pre></td></tr></table></figure>
 <p>will unstage all added files.</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset &lt;file_name&gt;</span><br></pre></td></tr></table></figure>
-
 <p>will unstage current file.</p>
-<h2 id="Tag-加标签"><a href="#Tag-加标签" class="headerlink" title="Tag 加标签"></a>Tag 加标签</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git tag -a &lt;tag_name&gt; -m &quot;&lt;comment&gt;&quot;</span><br><span class="line">git push origin --tags</span><br></pre></td></tr></table></figure>
-
+<h2 id="tag-加标签">Tag 加标签</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git tag -a &lt;tag_name&gt; -m &quot;&lt;comment&gt;&quot;</span><br><span class="line">git push origin --tags</span><br></pre></td></tr></table></figure>
 <p>tags will not be pushed with commits, need to be pushed explicitly.</p>
-<h2 id="Delete-remote-branch-删除远程分支"><a href="#Delete-remote-branch-删除远程分支" class="headerlink" title="Delete remote branch 删除远程分支"></a>Delete remote branch 删除远程分支</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin --delete &lt;branch_name&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Submodule-子模块"><a href="#Submodule-子模块" class="headerlink" title="Submodule 子模块"></a>Submodule 子模块</h2><p>To add new submodule:</p>
+<h2 id="delete-remote-branch-删除远程分支">Delete remote branch 删除远程分支</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin --delete &lt;branch_name&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="submodule-子模块">Submodule 子模块</h2>
+<p>To add new submodule:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule add &lt;repository url&gt;</span><br></pre></td></tr></table></figure>
-
-<p>“foreach” command allows to controll all submodule together, and it is also a convenient way to get the list of submodules that used in the project:</p>
+<p>"foreach" command allows to controll all submodule together, and it is also a convenient way to get the list of submodules that used in the project:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git foreach &#x27;git status&#x27;</span><br></pre></td></tr></table></figure>
-
 <p>to remove a submodule:</p>
-<p>Delete the relevant line from the .gitmodules file.<br>Delete the relevant section from .git/config.<br>Run git rm –cached pathtosubmodule (no trailing slash).<br>Commit the superproject.<br>Delete the now untracked submodule files.</p>
-<h2 id="Stash-暂存"><a href="#Stash-暂存" class="headerlink" title="Stash 暂存"></a>Stash 暂存</h2><p>To save codes that you don’t want to commit, for example, when switch branch, when you forget to pull and need to pull but have a conflict…</p>
+<p>Delete the relevant line from the .gitmodules file. Delete the relevant section from .git/config. Run git rm --cached pathtosubmodule (no trailing slash). Commit the superproject. Delete the now untracked submodule files.</p>
+<h2 id="stash-暂存">Stash 暂存</h2>
+<p>To save codes that you don't want to commit, for example, when switch branch, when you forget to pull and need to pull but have a conflict...</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash</span><br></pre></td></tr></table></figure>
-
 <p>check stash list:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash list</span><br></pre></td></tr></table></figure>
-
 <p>get back the modifications:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash apply</span><br></pre></td></tr></table></figure>
-
-<h2 id="update-gitignore-and-related-files-更新忽略文件列表"><a href="#update-gitignore-and-related-files-更新忽略文件列表" class="headerlink" title="update .gitignore and related files 更新忽略文件列表"></a>update .gitignore and related files 更新忽略文件列表</h2><p>After update and commit <strong>.gitignore</strong> file:</p>
+<h2 id="update-.gitignore-and-related-files-更新忽略文件列表">update .gitignore and related files 更新忽略文件列表</h2>
+<p>After update and commit <strong>.gitignore</strong> file:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached .</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;&quot;</span><br></pre></td></tr></table></figure>
-
-<h2 id="merge-commits-合并多个提交"><a href="#merge-commits-合并多个提交" class="headerlink" title="merge commits 合并多个提交"></a>merge commits 合并多个提交</h2><p>merge with commits number from current commit:</p>
+<h2 id="merge-commits-合并多个提交">merge commits 合并多个提交</h2>
+<p>merge with commits number from current commit:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase -i HEAD~3</span><br></pre></td></tr></table></figure>
-
 <p>merge from a commit number to current commit:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase -i [commit number]</span><br></pre></td></tr></table></figure>
-
 <p>Once stat the previous command, there will be a file to edit, to choose the merge strategy, in fact we can do more specific work here, if you check the command manual in the editing file.</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">pick 125225d correct gitlab CI</span><br><span class="line">pick de1aa8c remove variables in gitlab CI</span><br><span class="line">pick 01482a1 add proxy file for build runner</span><br><span class="line">pick 7242698 update gitlab CI</span><br><span class="line">pick c863f70 update .gitignore</span><br><span class="line"></span><br><span class="line"># Rebase a25ed09..c863f70 onto c863f70 (5 commands)</span><br><span class="line">#</span><br><span class="line"># Commands:</span><br><span class="line"># p, pick &lt;commit&gt; = use commit</span><br><span class="line"># r, reword &lt;commit&gt; = use commit, but edit the commit message</span><br><span class="line"># e, edit &lt;commit&gt; = use commit, but stop for amending</span><br><span class="line"># s, squash &lt;commit&gt; = use commit, but meld into previous commit</span><br><span class="line"># f, fixup &lt;commit&gt; = like &quot;squash&quot;, but discard this commit&#x27;s log message</span><br><span class="line"># x, exec &lt;command&gt; = run command (the rest of the line) using shell</span><br><span class="line"># b, break = stop here (continue rebase later with &#x27;git rebase --continue&#x27;)</span><br><span class="line"># d, drop &lt;commit&gt; = remove commit</span><br><span class="line"># l, label &lt;label&gt; = label current HEAD with a name</span><br><span class="line"># t, reset &lt;label&gt; = reset HEAD to a label</span><br><span class="line"># m, merge [-C &lt;commit&gt; | -c &lt;commit&gt;] &lt;label&gt; [# &lt;oneline&gt;]</span><br><span class="line"># .       create a merge commit using the original merge commit&#x27;s</span><br><span class="line"># .       message (or the oneline, if no original merge commit was</span><br><span class="line"># .       specified). Use -c &lt;commit&gt; to reword the commit message.</span><br><span class="line">#</span><br><span class="line"># These lines can be re-ordered; they are executed from top to bottom.</span><br><span class="line">#</span><br><span class="line"># If you remove a line here THAT COMMIT WILL BE LOST.</span><br><span class="line">#</span><br><span class="line"># However, if you remove everything, the rebase will be aborted.</span><br><span class="line">#</span><br><span class="line"># Note that empty commits are commented out</span><br></pre></td></tr></table></figure>
-
 <p>Here I want to merge all previous commits to one, and also change the commit comment, so change <strong>pick</strong> to <strong>s</strong>, and the commit which I want to change comment, from <strong>pick</strong> to <strong>r</strong>.</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s 125225d correct gitlab CI</span><br><span class="line">s de1aa8c remove variables in gitlab CI</span><br><span class="line">s 01482a1 add proxy file for build runner</span><br><span class="line">s 7242698 update gitlab CI</span><br><span class="line">r c863f70 beta version, deployed on test server</span><br></pre></td></tr></table></figure>
 
@@ -415,7 +406,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Repository-info-%E4%BB%93%E5%BA%93%E4%BF%A1%E6%81%AF"><span class="nav-number">1.</span> <span class="nav-text">Repository info 仓库信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Local-%E6%9C%AC%E5%9C%B0"><span class="nav-number">1.1.</span> <span class="nav-text">Local 本地</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Remote-%E8%BF%9C%E7%A8%8B"><span class="nav-number">1.2.</span> <span class="nav-text">Remote 远程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Show-configuration-%E6%98%BE%E7%A4%BA%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">Show configuration 显示配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Uncommit-commit-%E5%8F%96%E6%B6%88%E6%8F%90%E4%BA%A4"><span class="nav-number">3.</span> <span class="nav-text">Uncommit commit 取消提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unstage-added-file-%E5%8F%96%E6%B6%88%E5%B7%B2%E7%BB%8F%E6%B7%BB%E5%8A%A0%E7%9A%84%E6%96%87%E4%BB%B6"><span class="nav-number">4.</span> <span class="nav-text">Unstage added file 取消已经添加的文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tag-%E5%8A%A0%E6%A0%87%E7%AD%BE"><span class="nav-number">5.</span> <span class="nav-text">Tag 加标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Delete-remote-branch-%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF"><span class="nav-number">6.</span> <span class="nav-text">Delete remote branch 删除远程分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Submodule-%E5%AD%90%E6%A8%A1%E5%9D%97"><span class="nav-number">7.</span> <span class="nav-text">Submodule 子模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stash-%E6%9A%82%E5%AD%98"><span class="nav-number">8.</span> <span class="nav-text">Stash 暂存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#update-gitignore-and-related-files-%E6%9B%B4%E6%96%B0%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8"><span class="nav-number">9.</span> <span class="nav-text">update .gitignore and related files 更新忽略文件列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#merge-commits-%E5%90%88%E5%B9%B6%E5%A4%9A%E4%B8%AA%E6%8F%90%E4%BA%A4"><span class="nav-number">10.</span> <span class="nav-text">merge commits 合并多个提交</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#repository-info-%E4%BB%93%E5%BA%93%E4%BF%A1%E6%81%AF"><span class="nav-number">1.</span> <span class="nav-text">Repository info 仓库信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#local-%E6%9C%AC%E5%9C%B0"><span class="nav-number">1.1.</span> <span class="nav-text">Local 本地</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#remote-%E8%BF%9C%E7%A8%8B"><span class="nav-number">1.2.</span> <span class="nav-text">Remote 远程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#show-configuration-%E6%98%BE%E7%A4%BA%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">Show configuration 显示配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#uncommit-commit-%E5%8F%96%E6%B6%88%E6%8F%90%E4%BA%A4"><span class="nav-number">3.</span> <span class="nav-text">Uncommit commit 取消提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unstage-added-file-%E5%8F%96%E6%B6%88%E5%B7%B2%E7%BB%8F%E6%B7%BB%E5%8A%A0%E7%9A%84%E6%96%87%E4%BB%B6"><span class="nav-number">4.</span> <span class="nav-text">Unstage added file 取消已经添加的文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tag-%E5%8A%A0%E6%A0%87%E7%AD%BE"><span class="nav-number">5.</span> <span class="nav-text">Tag 加标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#delete-remote-branch-%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF"><span class="nav-number">6.</span> <span class="nav-text">Delete remote branch 删除远程分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#submodule-%E5%AD%90%E6%A8%A1%E5%9D%97"><span class="nav-number">7.</span> <span class="nav-text">Submodule 子模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stash-%E6%9A%82%E5%AD%98"><span class="nav-number">8.</span> <span class="nav-text">Stash 暂存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#update-.gitignore-and-related-files-%E6%9B%B4%E6%96%B0%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8"><span class="nav-number">9.</span> <span class="nav-text">update .gitignore and related files 更新忽略文件列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#merge-commits-%E5%90%88%E5%B9%B6%E5%A4%9A%E4%B8%AA%E6%8F%90%E4%BA%A4"><span class="nav-number">10.</span> <span class="nav-text">merge commits 合并多个提交</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

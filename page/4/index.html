@@ -255,25 +255,34 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Installation-amp-Update-amp-Development"><a href="#Installation-amp-Update-amp-Development" class="headerlink" title="Installation &amp; Update &amp; Development"></a>Installation &amp; Update &amp; Development</h2><p>[Build configuration] <a target="_blank" rel="noopener" href="https://angular.io/guide/build">https://angular.io/guide/build</a></p>
-<h3 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall -g angular-cli</span><br><span class="line">npm cache verify</span><br><span class="line">npm install -g @angular/cli@latest</span><br></pre></td></tr></table></figure>
-
-<h3 id="Running"><a href="#Running" class="headerlink" title="Running"></a>Running</h3><p>from Angular 9, ng serve can only be used with a single locale</p>
+          <h2 id="installation-update-development">Installation &amp; Update &amp; Development</h2>
+<p>[Build configuration] <a target="_blank" rel="noopener" href="https://angular.io/guide/build">https://angular.io/guide/build</a></p>
+<h3 id="update">Update</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall -g angular-cli</span><br><span class="line">npm cache verify</span><br><span class="line">npm install -g @angular/cli@latest</span><br></pre></td></tr></table></figure>
+<h3 id="running">Running</h3>
+<p>from Angular 9, ng serve can only be used with a single locale</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng serve --configuration=en --port 4200</span><br></pre></td></tr></table></figure>
-
 <p>to launch at 80 port, use sudo</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ng serve --configuration=local --port 80</span><br></pre></td></tr></table></figure>
-
-<h3 id="VSCode-debug-with-chrome-disable-web-security"><a href="#VSCode-debug-with-chrome-disable-web-security" class="headerlink" title="VSCode debug, with chrome disable web security"></a>VSCode debug, with chrome disable web security</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;version&quot;</span>: <span class="string">&quot;0.2.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;configurations&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;type&quot;</span>: <span class="string">&quot;chrome&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;request&quot;</span>: <span class="string">&quot;launch&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;Launch Chrome against localhost&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;url&quot;</span>: <span class="string">&quot;http://localhost:4200&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;webRoot&quot;</span>: <span class="string">&quot;$&#123;workspaceFolder&#125;&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;runtimeArgs&quot;</span>: [</span><br><span class="line">                <span class="string">&quot;--disable-web-security&quot;</span></span><br><span class="line">             ],</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;type&quot;</span>: <span class="string">&quot;chrome&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;request&quot;</span>: <span class="string">&quot;attach&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;Attach to Chrome&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;port&quot;</span>: <span class="number">9222</span>,</span><br><span class="line">            <span class="attr">&quot;webRoot&quot;</span>: <span class="string">&quot;$&#123;workspaceFolder&#125;&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h2><h3 id="Flex-layout"><a href="#Flex-layout" class="headerlink" title="Flex layout"></a>Flex layout</h3><p><a target="_blank" rel="noopener" href="https://github.com/angular/flex-layout">Github</a></p>
-<h2 id="Configuration-配置"><a href="#Configuration-配置" class="headerlink" title="Configuration 配置"></a>Configuration 配置</h2><h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><p>version strategy in package.json</p>
-<p>~ fixs miner version<br>^ fixs majer version</p>
-<h3 id="angular-json"><a href="#angular-json" class="headerlink" title="angular.json"></a>angular.json</h3><p>Angular 12 changed the default <strong>ng build</strong> to use the <strong>production</strong> configuration, to activate <strong>sourcemap</strong>, add this to <strong>configurations</strong></p>
+<h3 id="vscode-debug-with-chrome-disable-web-security">VSCode debug, with chrome disable web security</h3>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;version&quot;</span>: <span class="string">&quot;0.2.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;configurations&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;type&quot;</span>: <span class="string">&quot;chrome&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;request&quot;</span>: <span class="string">&quot;launch&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;Launch Chrome against localhost&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;url&quot;</span>: <span class="string">&quot;http://localhost:4200&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;webRoot&quot;</span>: <span class="string">&quot;$&#123;workspaceFolder&#125;&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;runtimeArgs&quot;</span>: [</span><br><span class="line">                <span class="string">&quot;--disable-web-security&quot;</span></span><br><span class="line">             ],</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;type&quot;</span>: <span class="string">&quot;chrome&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;request&quot;</span>: <span class="string">&quot;attach&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;Attach to Chrome&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;port&quot;</span>: <span class="number">9222</span>,</span><br><span class="line">            <span class="attr">&quot;webRoot&quot;</span>: <span class="string">&quot;$&#123;workspaceFolder&#125;&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="ui">UI</h2>
+<h3 id="flex-layout">Flex layout</h3>
+<p><a target="_blank" rel="noopener" href="https://github.com/angular/flex-layout">Github</a></p>
+<h2 id="configuration-配置">Configuration 配置</h2>
+<h3 id="package.json">package.json</h3>
+<dl>
+<dt>version strategy in package.json</dt>
+<dd><p>fixs miner version<br />
+^ fixs majer version</p>
+</dd>
+</dl>
+<h3 id="angular.json">angular.json</h3>
+<p>Angular 12 changed the default <strong>ng build</strong> to use the <strong>production</strong> configuration, to activate <strong>sourcemap</strong>, add this to <strong>configurations</strong></p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;development&quot;</span>: &#123;</span><br><span class="line">  <span class="attr">&quot;buildOptimizer&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">&quot;optimization&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">&quot;vendorChunk&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">&quot;extractLicenses&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">&quot;sourceMap&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">&quot;namedChunks&quot;</span>: <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Coding"><a href="#Coding" class="headerlink" title="Coding"></a>Coding</h2><h3 id="Stop-event-propagation"><a href="#Stop-event-propagation" class="headerlink" title="Stop event propagation"></a>Stop event propagation</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> (<span class="attr">click</span>)=<span class="string">&quot;method($event)&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="coding">Coding</h2>
+<h3 id="stop-event-propagation">Stop event propagation</h3>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> (<span class="attr">click</span>)=<span class="string">&quot;method($event)&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">method(event: Event): <span class="built_in">void</span> &#123;</span><br><span class="line">    event.stopPropagation();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
@@ -353,8 +362,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Windows-with-limited-app"><a href="#Windows-with-limited-app" class="headerlink" title="Windows with limited app"></a>Windows with limited app</h2><p>Windows Configuration Designer</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows/configuration/provisioning-packages/provisioning-install-icd#install-windows-configuration-designer-1">https://docs.microsoft.com/en-us/windows/configuration/provisioning-packages/provisioning-install-icd#install-windows-configuration-designer-1</a></p>
+          <h2 id="windows-with-limited-app">Windows with limited app</h2>
+<p>Windows Configuration Designer</p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows/configuration/provisioning-packages/provisioning-install-icd#install-windows-configuration-designer-1" class="uri">https://docs.microsoft.com/en-us/windows/configuration/provisioning-packages/provisioning-install-icd#install-windows-configuration-designer-1</a></p>
 
       
     </div>
@@ -444,69 +454,72 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="keytool"><a href="#keytool" class="headerlink" title="keytool"></a>keytool</h2><h3 id="Check-APK-signature-information"><a href="#Check-APK-signature-information" class="headerlink" title="Check APK signature information"></a>Check APK signature information</h3><p>keytool -printcert -jarfile [apk_file_name]</p>
-<h3 id="Check-keystore-file-information"><a href="#Check-keystore-file-information" class="headerlink" title="Check keystore file information"></a>Check keystore file information</h3><p>keytool -list -alias [alias_name] -keystore [keysotre_file_name]</p>
+          <h2 id="keytool">keytool</h2>
+<h3 id="check-apk-signature-information">Check APK signature information</h3>
+<p>keytool -printcert -jarfile [apk_file_name]</p>
+<h3 id="check-keystore-file-information">Check keystore file information</h3>
+<p>keytool -list -alias [alias_name] -keystore [keysotre_file_name]</p>
 <p>This needs to entrer password.</p>
-<h3 id="Sign-an-apk"><a href="#Sign-an-apk" class="headerlink" title="Sign an apk"></a>Sign an apk</h3><p>jarsigner -verbose -keystore [keysotre_file_name] [apk_file_name] [alias_name]</p>
-<h3 id="Verify-a-signed-apk"><a href="#Verify-a-signed-apk" class="headerlink" title="Verify a signed apk"></a>Verify a signed apk</h3><p>jarsigner -verify [apk_file_name]</p>
-<h3 id="About-zipalign"><a href="#About-zipalign" class="headerlink" title="About zipalign"></a>About zipalign</h3><p><a target="_blank" rel="noopener" href="https://developer.android.com/studio/command-line/zipalign">zipalign</a></p>
-<h2 id="ADB"><a href="#ADB" class="headerlink" title="ADB"></a>ADB</h2><h3 id="Use-for-multiple-device-connected"><a href="#Use-for-multiple-device-connected" class="headerlink" title="Use for multiple device connected"></a>Use for multiple device connected</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb -s &lt;serial&gt; &lt;command&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell getprop ro.product.model</span><br></pre></td></tr></table></figure>
-
-<h3 id="Battery-information"><a href="#Battery-information" class="headerlink" title="Battery information"></a>Battery information</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys battery</span><br></pre></td></tr></table></figure>
-
-<h3 id="Scrren-resoluton"><a href="#Scrren-resoluton" class="headerlink" title="Scrren resoluton"></a>Scrren resoluton</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell wm size</span><br></pre></td></tr></table></figure>
-
-<h3 id="Screen-density"><a href="#Screen-density" class="headerlink" title="Screen density"></a>Screen density</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell wm density</span><br></pre></td></tr></table></figure>
-
-<h3 id="Screen-information"><a href="#Screen-information" class="headerlink" title="Screen information"></a>Screen information</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys window displays</span><br></pre></td></tr></table></figure>
-
-<h3 id="Android-ID"><a href="#Android-ID" class="headerlink" title="Android ID"></a>Android ID</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings get secure android_id</span><br></pre></td></tr></table></figure>
-
-<h3 id="IMEI"><a href="#IMEI" class="headerlink" title="IMEI"></a>IMEI</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys iphonesubinfo</span><br></pre></td></tr></table></figure>
-
+<h3 id="sign-an-apk">Sign an apk</h3>
+<p>jarsigner -verbose -keystore [keysotre_file_name] [apk_file_name] [alias_name]</p>
+<h3 id="verify-a-signed-apk">Verify a signed apk</h3>
+<p>jarsigner -verify [apk_file_name]</p>
+<h3 id="about-zipalign">About zipalign</h3>
+<p><a target="_blank" rel="noopener" href="https://developer.android.com/studio/command-line/zipalign">zipalign</a></p>
+<h2 id="adb">ADB</h2>
+<h3 id="use-for-multiple-device-connected">Use for multiple device connected</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb -s &lt;serial&gt; &lt;command&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="model">Model</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell getprop ro.product.model</span><br></pre></td></tr></table></figure>
+<h3 id="battery-information">Battery information</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys battery</span><br></pre></td></tr></table></figure>
+<h3 id="scrren-resoluton">Scrren resoluton</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell wm size</span><br></pre></td></tr></table></figure>
+<h3 id="screen-density">Screen density</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell wm density</span><br></pre></td></tr></table></figure>
+<h3 id="screen-information">Screen information</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys window displays</span><br></pre></td></tr></table></figure>
+<h3 id="android-id">Android ID</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings get secure android_id</span><br></pre></td></tr></table></figure>
+<h3 id="imei">IMEI</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys iphonesubinfo</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>Android version &lt;= 4.4</p>
 </blockquote>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell service call iphonesubinfo 1</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>Android version &gt; 4.4</p>
 </blockquote>
-<h3 id="Android-system-version"><a href="#Android-system-version" class="headerlink" title="Android system version"></a>Android system version</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell getprop ro.build.version.release</span><br></pre></td></tr></table></figure>
-
-<h3 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell ifconfig | grep Mask</span><br></pre></td></tr></table></figure>
-
+<h3 id="android-system-version">Android system version</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell getprop ro.build.version.release</span><br></pre></td></tr></table></figure>
+<h3 id="ip">IP</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell ifconfig | grep Mask</span><br></pre></td></tr></table></figure>
 <p>or</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell ifconfig wlan0</span><br></pre></td></tr></table></figure>
-
 <p>or</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell netcfg</span><br></pre></td></tr></table></figure>
-
-<h3 id="MAC"><a href="#MAC" class="headerlink" title="MAC"></a>MAC</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell cat /sys/class/net/wlan0/address</span><br></pre></td></tr></table></figure>
-
-<h3 id="CPU-information"><a href="#CPU-information" class="headerlink" title="CPU information"></a>CPU information</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell cat /proc/cpuinfo</span><br></pre></td></tr></table></figure>
-
-<h3 id="Memmory-information"><a href="#Memmory-information" class="headerlink" title="Memmory information"></a>Memmory information</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell cat /proc/meminfo</span><br></pre></td></tr></table></figure>
-
-<h3 id="Connect-to-device-shell"><a href="#Connect-to-device-shell" class="headerlink" title="Connect to device shell"></a>Connect to device shell</h3><p>Command can be executed directly in shell, use</p>
+<h3 id="mac">MAC</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell cat /sys/class/net/wlan0/address</span><br></pre></td></tr></table></figure>
+<h3 id="cpu-information">CPU information</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell cat /proc/cpuinfo</span><br></pre></td></tr></table></figure>
+<h3 id="memmory-information">Memmory information</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell cat /proc/meminfo</span><br></pre></td></tr></table></figure>
+<h3 id="connect-to-device-shell">Connect to device shell</h3>
+<p>Command can be executed directly in shell, use</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell</span><br></pre></td></tr></table></figure>
-
 <p>will connect to device shell and use</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit</span><br></pre></td></tr></table></figure>
-
 <p>back to local shell.</p>
 <p>or if you want, send the command by using adb like</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell &lt;command&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="install-apk-force-downgrade-replace"><a href="#install-apk-force-downgrade-replace" class="headerlink" title="install apk, force downgrade, replace"></a>install apk, force downgrade, replace</h3><p>adb install -d -r [apk file]</p>
-<h3 id="list-packages"><a href="#list-packages" class="headerlink" title="list packages"></a>list packages</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm list packages</span><br></pre></td></tr></table></figure>
-
+<h3 id="install-apk-force-downgrade-replace">install apk, force downgrade, replace</h3>
+<p>adb install -d -r [apk file]</p>
+<h3 id="list-packages">list packages</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm list packages</span><br></pre></td></tr></table></figure>
 <p>and sure pipeline can be used here to filte result</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm list packages | grep &lt;keyword&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="unexcepted-EOF"><a href="#unexcepted-EOF" class="headerlink" title="unexcepted EOF"></a>unexcepted EOF</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb logcat -G 1m</span><br></pre></td></tr></table></figure>
+<h3 id="unexcepted-eof">unexcepted EOF</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb logcat -G 1m</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -596,16 +609,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-gb/dotnet/framework/windows-services/how-to-debug-windows-service-applications">How to: Debug Windows Service Applications</a></p>
-<h2 id="How-to"><a href="#How-to" class="headerlink" title="How to"></a>How to</h2><p>Let me be straightforward, although you can attach to a service process and debug it, everyone wants to debug the service as before (I mean, classic approach…), click the debug button and done!</p>
+          <h2 id="reference">Reference</h2>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-gb/dotnet/framework/windows-services/how-to-debug-windows-service-applications">How to: Debug Windows Service Applications</a></p>
+<h2 id="how-to">How to</h2>
+<p>Let me be straightforward, although you can attach to a service process and debug it, everyone wants to debug the service as before (I mean, classic approach...), click the debug button and done!</p>
 <p>Fortunately, you can easily change the service to a console application and then revert it to a service when you want to publish the product.</p>
-<h3 id="step-1"><a href="#step-1" class="headerlink" title="step 1"></a>step 1</h3><p>Add this method to service class:</p>
+<h3 id="step-1">step 1</h3>
+<p>Add this method to service class:</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">internal</span> <span class="keyword">void</span> <span class="title">TestStartupAndStop</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span>  </span><br><span class="line">&#123;  </span><br><span class="line">    <span class="keyword">this</span>.OnStart(args);  </span><br><span class="line">    Console.ReadLine();  </span><br><span class="line">    <span class="keyword">this</span>.OnStop();  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="step-2"><a href="#step-2" class="headerlink" title="step 2"></a>step 2</h3><p>Rewrite the main method, send null if the service takes no parameters:</p>
+<h3 id="step-2">step 2</h3>
+<p>Rewrite the main method, send null if the service takes no parameters:</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span>  </span><br><span class="line">&#123;  </span><br><span class="line">    <span class="keyword">if</span> (Environment.UserInteractive)  </span><br><span class="line">    &#123;  </span><br><span class="line">        MyNewService service1 = <span class="keyword">new</span> MyNewService(args);  </span><br><span class="line">        service1.TestStartupAndStop(args);  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">else</span>  </span><br><span class="line">    &#123;  </span><br><span class="line">        <span class="comment">// Put the body of your old Main method here.  </span></span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="step-3"><a href="#step-3" class="headerlink" title="step 3"></a>step 3</h3><p>In the <strong>Application</strong> tab of the project’s properties, set the <strong>Output type</strong> to <strong>Console Application</strong>.</p>
+<h3 id="step-3">step 3</h3>
+<p>In the <strong>Application</strong> tab of the project's properties, set the <strong>Output type</strong> to <strong>Console Application</strong>.</p>
 
       
     </div>
@@ -684,9 +700,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/fr-fr/windows/win32/http/http-api-start-page">HTTP Server API</a></p>
-<h2 id="Feasibility"><a href="#Feasibility" class="headerlink" title="Feasibility"></a>Feasibility</h2><p>It is rarely necessary to call a DLL directly from a web application, but if needed, developing a Windows application (which exposes the REST service in localhost, to call the function from the DLL) is an option.</p>
-<h2 id="Technology-stack"><a href="#Technology-stack" class="headerlink" title="Technology stack"></a>Technology stack</h2><p>C, Angular.</p>
+          <h2 id="reference">Reference</h2>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/fr-fr/windows/win32/http/http-api-start-page">HTTP Server API</a></p>
+<h2 id="feasibility">Feasibility</h2>
+<p>It is rarely necessary to call a DLL directly from a web application, but if needed, developing a Windows application (which exposes the REST service in localhost, to call the function from the DLL) is an option.</p>
+<h2 id="technology-stack">Technology stack</h2>
+<p>C, Angular.</p>
 <p>Some poeple likes to write in C when they can, I am among them, encouragingly, we can still use the latest Visual Studio 2019 to develop in C.</p>
 
       
@@ -766,10 +785,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a target="_blank" rel="noopener" href="https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#websocket">Spring Web MVC with WebSocket</a><br><a target="_blank" rel="noopener" href="https://stomp-js.github.io/api-docs/latest/classes/RxStomp.html">STOMP JS with RxSTOMP</a><br><a target="_blank" rel="noopener" href="https://stomp.github.io/stomp-specification-1.2.html">STOMP v1.2 specification</a></p>
-<h2 id="Enable-Heart-beating"><a href="#Enable-Heart-beating" class="headerlink" title="Enable Heart-beating"></a>Enable Heart-beating</h2><p>STOMP heart-beating is supported by simple broker, using heart-beating allows to detect and faster response to disconnection (for example, network connection lost).</p>
-<h2 id="Enable-ACK"><a href="#Enable-ACK" class="headerlink" title="Enable ACK"></a>Enable ACK</h2><p>Remember that simple broker is build-in broker, too enable ACK, we need a full-featured broker instead of a simple broker, which need to be a external broker, and Spring application runs as a relay on it.</p>
-<p><a target="_blank" rel="noopener" href="https://www.rabbitmq.com/stomp.html">RabbitMQ with STOMP plugin</a><br><a target="_blank" rel="noopener" href="https://activemq.apache.org/stomp.html">ActiveMQ</a></p>
+          <h2 id="reference">Reference</h2>
+<p><a target="_blank" rel="noopener" href="https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#websocket">Spring Web MVC with WebSocket</a> <a target="_blank" rel="noopener" href="https://stomp-js.github.io/api-docs/latest/classes/RxStomp.html">STOMP JS with RxSTOMP</a> <a target="_blank" rel="noopener" href="https://stomp.github.io/stomp-specification-1.2.html">STOMP v1.2 specification</a></p>
+<h2 id="enable-heart-beating">Enable Heart-beating</h2>
+<p>STOMP heart-beating is supported by simple broker, using heart-beating allows to detect and faster response to disconnection (for example, network connection lost).</p>
+<h2 id="enable-ack">Enable ACK</h2>
+<p>Remember that simple broker is build-in broker, too enable ACK, we need a full-featured broker instead of a simple broker, which need to be a external broker, and Spring application runs as a relay on it.</p>
+<p><a target="_blank" rel="noopener" href="https://www.rabbitmq.com/stomp.html">RabbitMQ with STOMP plugin</a> <a target="_blank" rel="noopener" href="https://activemq.apache.org/stomp.html">ActiveMQ</a></p>
 
       
     </div>
