@@ -1028,7 +1028,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-27 11:24:55" itemprop="dateModified" datetime="2021-09-27T11:24:55+02:00">2021-09-27</time>
+                <time title="Modified: 2021-10-28 11:16:51" itemprop="dateModified" datetime="2021-10-28T11:16:51+02:00">2021-10-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1070,6 +1070,8 @@
           <h2 id="general-综合">General 综合</h2>
 <h3 id="os-release-file-系统信息">OS release file 系统信息</h3>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /ect/os-release</span><br></pre></td></tr></table></figure>
+<h3 id="secure-copy">Secure copy</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -i &quot;bewellxpert_keypair_test.pem&quot;  BewellXpert.zip  ubuntu@ec2-13-37-234-34.eu-west-3.compute.amazonaws.com:/home/ubuntu</span><br></pre></td></tr></table></figure>
 <h2 id="alpine-linux">Alpine Linux</h2>
 <p><a target="_blank" rel="noopener" href="https://fr.wikipedia.org/wiki/Alpine_Linux">https://fr.wikipedia.org/wiki/Alpine_Linux</a></p>
 <p>Alpine Linux is a Linux distribution based on musl and BusyBox, designed for security, simplicity, and resource efficiency. Alpine Linux是一个由社区开发的基于musl和BusyBox的Linux操作系统，该操作系统以安全为理念，面向x86路由器、防火墙、虚拟专用网、IP电话盒及服务器而设计。</p>
@@ -1090,6 +1092,15 @@
 <p>after restart, you can use alias to switch java now:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">jdk7</span><br><span class="line">java -version</span><br></pre></td></tr></table></figure>
 <h2 id="ubuntu">Ubuntu</h2>
+<h3 id="packages-包">Packages 包</h3>
+<p>list all available packages 显示所有可以用的包</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt list</span><br></pre></td></tr></table></figure>
+<p>list all installed packages:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt list --installed</span><br></pre></td></tr></table></figure>
+<p>filter:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt list | grep &lt;key&gt;</span><br></pre></td></tr></table></figure>
+<p>result pagination:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt list | more</span><br></pre></td></tr></table></figure>
 <h3 id="updateupgrade-package">update/upgrade package</h3>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get upgrade</span><br></pre></td></tr></table></figure>
 <h3 id="environment-variable">Environment variable</h3>

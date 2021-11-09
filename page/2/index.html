@@ -660,7 +660,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-10-26 14:09:02" itemprop="dateModified" datetime="2021-10-26T14:09:02+02:00">2021-10-26</time>
+                <time title="Modified: 2021-11-09 10:58:29" itemprop="dateModified" datetime="2021-11-09T10:58:29+01:00">2021-11-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -699,22 +699,23 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="show-running-container-现实运行中容器">Show running container 现实运行中容器</h2>
+          <h2 id="docker-engine-docker-desktop">Docker engine, Docker Desktop</h2>
+<h3 id="show-running-container-现实运行中容器">Show running container 现实运行中容器</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure>
-<h2 id="show-all-container-显示所有容器">Show all container 显示所有容器</h2>
+<h3 id="show-all-container-显示所有容器">Show all container 显示所有容器</h3>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
-<h2 id="delete-container-删除容器">Delete container 删除容器</h2>
+<h3 id="delete-container-删除容器">Delete container 删除容器</h3>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker container rm &lt;container_id&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="build-image-构造镜像">Build image 构造镜像</h2>
+<h3 id="build-image-构造镜像">Build image 构造镜像</h3>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t web-server-image . </span><br></pre></td></tr></table></figure>
-<h2 id="delete-image-删除镜像">Delete image 删除镜像</h2>
+<h3 id="delete-image-删除镜像">Delete image 删除镜像</h3>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image rm &lt;image_id&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="ssh-in-container-进入到容器中的shell">SSH in container 进入到容器中的shell</h2>
+<h3 id="ssh-in-container-进入到容器中的shell">SSH in container 进入到容器中的shell</h3>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it &lt;container name&gt; /bin/shell</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>May need to use <strong>sudo</strong> command.</p>
 </blockquote>
-<h2 id="show-container-logs-显示容器日志">show container logs 显示容器日志</h2>
+<h3 id="show-container-logs-显示容器日志">show container logs 显示容器日志</h3>
 <p><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/reference/commandline/logs/">Official documentation</a></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs [OPTIONS] CONTAINER</span><br></pre></td></tr></table></figure>
 <p>continue log: 持续日志</p>
@@ -731,9 +732,14 @@
 <p>so basically, in Docker Compose, net work name is like <project name>_<network name in docker file>. 在Docker Compose中的网络名需要在前面加上项目名称.</p>
 <p>check the network list: 查看网络列表:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker network ls</span><br></pre></td></tr></table></figure>
-<h2 id="docker-machine-has-been-deprecated">Docker machine has been deprecated</h2>
+<h3 id="docker-machine-has-been-deprecated">Docker machine has been deprecated</h3>
 <p>Docker machine has been deprecated, so as homebrew installation has been archieved, now we use Docker Desktop for MAC instead.</p>
 <p><a target="_blank" rel="noopener" href="https://docs.docker.com/machine/">https://docs.docker.com/machine/</a></p>
+<h2 id="docker-compose">Docker Compose</h2>
+<h3 id="down">down</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose down</span><br></pre></td></tr></table></figure>
+<h3 id="up">up</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
 
       
     </div>

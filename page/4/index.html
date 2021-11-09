@@ -415,7 +415,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-07-29 15:20:56" itemprop="dateModified" datetime="2021-07-29T15:20:56+02:00">2021-07-29</time>
+                <time title="Modified: 2021-11-02 10:35:23" itemprop="dateModified" datetime="2021-11-02T10:35:23+01:00">2021-11-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -454,7 +454,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="keytool">keytool</h2>
+          <h2 id="add-a-module-manually">Add a module manually</h2>
+<p>edit settings.gradle</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">include <span class="string">&#x27;:app&#x27;</span>, <span class="string">&#x27;:module_name&#x27;</span></span><br><span class="line">project(<span class="string">&#x27;:project_name&#x27;</span>).projectDir = <span class="keyword">new</span> File(<span class="string">&#x27;lib&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="keytool">keytool</h2>
 <h3 id="check-apk-signature-information">Check APK signature information</h3>
 <p>keytool -printcert -jarfile [apk_file_name]</p>
 <h3 id="check-keystore-file-information">Check keystore file information</h3>
