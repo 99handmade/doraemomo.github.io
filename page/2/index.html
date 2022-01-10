@@ -216,7 +216,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-24 15:23:59" itemprop="dateModified" datetime="2021-09-24T15:23:59+02:00">2021-09-24</time>
+                <time title="Modified: 2021-11-23 17:36:57" itemprop="dateModified" datetime="2021-11-23T17:36:57+01:00">2021-11-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -660,7 +660,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-11-09 17:27:57" itemprop="dateModified" datetime="2021-11-09T17:27:57+01:00">2021-11-09</time>
+                <time title="Modified: 2021-12-07 10:01:48" itemprop="dateModified" datetime="2021-12-07T10:01:48+01:00">2021-12-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -710,6 +710,8 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
 <h3 id="delete-container-删除容器">Delete container 删除容器</h3>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker container rm &lt;container_id&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="stop-and-remove-a-container-停止并删除一个容器">Stop and remove a container 停止并删除一个容器</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm -f &lt;container_id&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="build-image-构造镜像">Build image 构造镜像</h3>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t web-server-image . </span><br></pre></td></tr></table></figure>
 <h3 id="delete-image-删除镜像">Delete image 删除镜像</h3>
@@ -739,6 +741,10 @@
 <h3 id="docker-machine-has-been-deprecated">Docker machine has been deprecated</h3>
 <p>Docker machine has been deprecated, so as homebrew installation has been archieved, now we use Docker Desktop for MAC instead.</p>
 <p><a target="_blank" rel="noopener" href="https://docs.docker.com/machine/">https://docs.docker.com/machine/</a></p>
+<h3 id="show-volume">Show volume</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker volume ls</span><br></pre></td></tr></table></figure>
+<h3 id="show-volume-detail-information">Show volume detail information</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker volume inspect &lt;volume_name&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="docker-compose">Docker Compose</h2>
 <h3 id="down">down</h3>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose down</span><br></pre></td></tr></table></figure>
@@ -1126,7 +1132,7 @@ Homebrew是使用Ruby开发的MacOS软件包管理器.</p>
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-10-18 17:51:30" itemprop="dateModified" datetime="2021-10-18T17:51:30+02:00">2021-10-18</time>
+                <time title="Modified: 2021-11-30 15:06:35" itemprop="dateModified" datetime="2021-11-30T15:06:35+01:00">2021-11-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1165,7 +1171,11 @@ Homebrew是使用Ruby开发的MacOS软件包管理器.</p>
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="authentication-to-admin-登录到管理员数据库">Authentication to admin 登录到管理员数据库</h2>
+          <h2 id="general-综合">General 综合</h2>
+<ul>
+<li>Comparing terminal output format, <strong>findOne</strong> has better output format that <strong>find</strong>. <br> <strong>findOne</strong>命令的控制台格式化输出比<strong>find</strong>命令要好一点.</li>
+</ul>
+<h2 id="authentication-to-admin-登录到管理员数据库">Authentication to admin 登录到管理员数据库</h2>
 <p>first choose admin database: 首先选择管理员数据库:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use admin</span><br></pre></td></tr></table></figure>
 <p>then authenticate: 然后认证:</p>
@@ -1192,6 +1202,8 @@ Homebrew是使用Ruby开发的MacOS软件包管理器.</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongo</span><br></pre></td></tr></table></figure>
 <p>specific port 自定义端口</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongo --port 27017</span><br></pre></td></tr></table></figure>
+<h2 id="insert-documents">Insert documents</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.client.details.insert(&#123;</span><br><span class="line">    &quot;&quot; : &quot;&quot;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <h3 id="count-entities-in-collection">Count entities in collection</h3>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.getCollection(&#x27;collection_name&#x27;).count()</span><br></pre></td></tr></table></figure>
 <p>could also be a combination</p>
@@ -1451,7 +1463,7 @@ Homebrew是使用Ruby开发的MacOS软件包管理器.</p>
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

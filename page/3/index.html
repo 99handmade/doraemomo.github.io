@@ -750,7 +750,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-11-12 14:45:19" itemprop="dateModified" datetime="2021-11-12T14:45:19+01:00">2021-11-12</time>
+                <time title="Modified: 2022-01-10 10:58:24" itemprop="dateModified" datetime="2022-01-10T10:58:24+01:00">2022-01-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -826,6 +826,11 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git foreach &#x27;git status&#x27;</span><br></pre></td></tr></table></figure>
 <p>to remove a submodule:</p>
 <p>Delete the relevant line from the .gitmodules file. Delete the relevant section from .git/config. Run git rm --cached pathtosubmodule (no trailing slash). Commit the superproject. Delete the now untracked submodule files.</p>
+<h3 id="update-submodule-url">update submodule URL</h3>
+<p>modify the .gitmodules file then:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule sync --recursive</span><br></pre></td></tr></table></figure>
+<h2 id="ignore-filemode-changes-忽略文件模式改变">Ignore filemode changes 忽略文件模式改变</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config core.filemode false</span><br></pre></td></tr></table></figure>
 <h2 id="stash-暂存">Stash 暂存</h2>
 <p>To save codes that you don't want to commit, for example, when switch branch, when you forget to pull and need to pull but have a conflict...</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash</span><br></pre></td></tr></table></figure>
@@ -1038,7 +1043,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-10-28 11:16:51" itemprop="dateModified" datetime="2021-10-28T11:16:51+02:00">2021-10-28</time>
+                <time title="Modified: 2022-01-10 14:56:56" itemprop="dateModified" datetime="2022-01-10T14:56:56+01:00">2022-01-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1094,6 +1099,9 @@
 <p>Dekete package 删除软件包</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete &lt;package&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="macos">MacOS</h2>
+<h2 id="manually-add-host-手动添加dns记录">Manually add host 手动添加DNS记录</h2>
+<p>Edit first <strong>/etc/hosts</strong>, then flush DNS cache:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dscacheutil -flushcache</span><br></pre></td></tr></table></figure>
 <h3 id="cant-open-application-and-show-damaged">Can't open application and show "damaged"</h3>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo xattr -d com.apple.quarantine /Applications/appname</span><br></pre></td></tr></table></figure>
 <h3 id="jdk-fast-switching">JDK fast switching</h3>
@@ -1115,6 +1123,8 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get upgrade</span><br></pre></td></tr></table></figure>
 <h3 id="environment-variable">Environment variable</h3>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export JFROG_HOME=&quot;/opt/jfrog&quot;</span><br><span class="line">echo $JFROG_HOME</span><br></pre></td></tr></table></figure>
+<h3 id="show-disk-information-显示磁盘信息">Show disk information 显示磁盘信息</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df -h</span><br></pre></td></tr></table></figure>
 <h2 id="debian">Debian</h2>
 <h3 id="show-package">show package</h3>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dpkg -l</span><br><span class="line">dpkg -l | grep &lt;search_name&gt;</span><br></pre></td></tr></table></figure>
@@ -1477,7 +1487,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
