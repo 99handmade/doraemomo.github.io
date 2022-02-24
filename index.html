@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 6.0.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -136,17 +136,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">37</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">38</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">24</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">26</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">36</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">38</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -181,6 +181,193 @@
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2022/02/08/reverse-engineering-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="doraemomo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Doraemomo's site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/08/reverse-engineering-note/" class="post-title-link" itemprop="url">Reverse Engineering Note</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-02-08 17:43:31" itemprop="dateCreated datePublished" datetime="2022-02-08T17:43:31+01:00">2022-02-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-02-10 14:46:43" itemprop="dateModified" datetime="2022-02-10T14:46:43+01:00">2022-02-10</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Reverse-Engineering/" itemprop="url" rel="index">
+                    <span itemprop="name">Reverse Engineering</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2022/02/08/reverse-engineering-note/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/02/08/reverse-engineering-note/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="android-安卓">Android 安卓</h2>
+<p>Apktool is generally for resource reversing, dex2jar is for getting source code, both of them support homebrew instalation. JD-GUI can use to browser .class file after using dex2jar.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install apktool</span><br><span class="line">brew install dex2jar</span><br></pre></td></tr></table></figure>
+<h3 id="resources-资源">Resources 资源</h3>
+<p><a target="_blank" rel="noopener" href="https://ibotpeaches.github.io/Apktool/">Apktool</a> <a target="_blank" rel="noopener" href="https://github.com/pxb1988/dex2jar">dex2jar</a> <a target="_blank" rel="noopener" href="https://java-decompiler.github.io/">JD-GUI</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2022/02/07/smtp-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="doraemomo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Doraemomo's site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/07/smtp-note/" class="post-title-link" itemprop="url">SMTP Note SMTP笔记</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-02-07 12:17:27 / Modified: 15:20:40" itemprop="dateCreated datePublished" datetime="2022-02-07T12:17:27+01:00">2022-02-07</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SMTP/" itemprop="url" rel="index">
+                    <span itemprop="name">SMTP</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2022/02/07/smtp-note/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/02/07/smtp-note/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="install-msmtp-in-macos">Install msmtp in MacOS</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install msmtp</span><br></pre></td></tr></table></figure>
+<p>/etc/mail.rc</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set sendmail=/usr/local/bin/msmtp</span><br></pre></td></tr></table></figure>
+<p>~/.msmtprc</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># </span><span class="language-bash">Use an external SMTP server with insecure authentication.</span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">(manually choose an insecure authentication method.)</span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">Note that the password contains blanks.</span></span><br><span class="line"> </span><br><span class="line">defaults</span><br><span class="line"><span class="meta"> </span></span><br><span class="line"><span class="meta">#</span><span class="language-bash"><span class="comment">###################################################################</span></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">A sample configuration using Gmail</span></span><br><span class="line"><span class="meta">#</span><span class="language-bash"><span class="comment">###################################################################</span></span></span><br><span class="line"><span class="meta"> </span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">account name is <span class="string">&quot;gmail&quot;</span>.</span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">You can select this account by using <span class="string">&quot;-a gmail&quot;</span> <span class="keyword">in</span> your <span class="built_in">command</span> line.</span></span><br><span class="line">account gmail</span><br><span class="line">host smtp.gmail.com</span><br><span class="line">tls on</span><br><span class="line">tls_certcheck off</span><br><span class="line">port 587</span><br><span class="line">auth login</span><br><span class="line">from yourname@gmail.com</span><br><span class="line">user yourname</span><br><span class="line">password yourpassword</span><br><span class="line"><span class="meta"> </span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">If you don<span class="string">&#x27;t use any &quot;-a&quot; parameter in your command line,</span></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash"><span class="string">the default account &quot;gmail&quot; will be used.</span></span></span><br><span class="line">account default: gmail</span><br></pre></td></tr></table></figure>
+<p>~/.msmtprc 需要设置正确的访问权限</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- lang: shell --&gt;</span><br><span class="line"><span class="meta">$ </span><span class="language-bash"><span class="built_in">chmod</span> 600 ~/.msmtprc</span></span><br></pre></td></tr></table></figure>
+<p>test</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- lang: shell --&gt;</span><br><span class="line"><span class="meta">$ </span><span class="language-bash"><span class="built_in">echo</span> <span class="string">&quot;Hello world&quot;</span> | mail -s <span class="string">&quot;msmtp test`&quot;</span> yourfriend®@gmail.com</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
         
   
   
@@ -999,181 +1186,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2021/09/21/gradle-note/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="doraemomo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Doraemomo's site">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/09/21/gradle-note/" class="post-title-link" itemprop="url">gradle-note</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-09-21 11:26:00" itemprop="dateCreated datePublished" datetime="2021-09-21T11:26:00+02:00">2021-09-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-11-23 17:40:47" itemprop="dateModified" datetime="2021-11-23T17:40:47+01:00">2021-11-23</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Dependencies-Management/" itemprop="url" rel="index">
-                    <span itemprop="name">Dependencies Management</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/09/21/gradle-note/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/09/21/gradle-note/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="init-project-with-gradle-support-初始化项目">Init project with gradle support 初始化项目</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradle init</span><br></pre></td></tr></table></figure>
-<p>Run <strong>gradle init</strong> will trigger several command line prompts, like type of project, language, build script DSL etc. <strong>gradle init</strong>是个配置命令,包括多个子项目,比如选择项目类型,语言,编译脚本等.</p>
-<h2 id="show-all-tasks-显示任务列表">Show all tasks 显示任务列表</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradle tasks</span><br></pre></td></tr></table></figure>
-<h2 id="reload-dependencies-重新下载所有依赖">reload dependencies 重新下载所有依赖</h2>
-<p>local dependencies: 本地资源:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">HOME/.gradle/caches</span></span><br></pre></td></tr></table></figure>
-<p>reload 重载</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./gradlew build --refresh-dependencies</span><br></pre></td></tr></table></figure>
-<h2 id="gradle-7-versions-use-http-gradle-7以后的版本使用http-url作为仓库地址">Gradle 7+ versions, use HTTP Gradle 7以后的版本使用HTTP URL作为仓库地址</h2>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">repositories &#123;</span><br><span class="line">    maven &#123;</span><br><span class="line">        url <span class="string">&quot;&quot;</span></span><br><span class="line">        allowInsecureProtocol = <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2021/09/16/html-note/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="doraemomo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Doraemomo's site">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/09/16/html-note/" class="post-title-link" itemprop="url">html-note</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-09-16 17:49:16 / Modified: 17:49:26" itemprop="dateCreated datePublished" datetime="2021-09-16T17:49:16+02:00">2021-09-16</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/09/16/html-note/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/09/16/html-note/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="rest">REST</h2>
-<p>status 400: request's format is not correct (header, parameter, body etc.). 标准上只提到格式不正确,没有提到数据错误.</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1244,20 +1256,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-count">38</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-count">26</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-count">38</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
