@@ -46,15 +46,15 @@
   };
 </script>
 
-  <meta name="description" content="Repository info 仓库信息 Local 本地 this will only display the remote URL, works without network connection or can&#39;t reach the remote repository: 1git config --get remote.origin.url Remote 远程 first we are g">
+  <meta name="description" content="Git book很全面, 有很多语言版本, 还有pdf, epub, mobi等各种格式下载, 比任何参考都好用 https:&#x2F;&#x2F;git-scm.com&#x2F;book&#x2F; Config 首先用git config来查看下这个命令的具体信息, 比如查看全局设置时, 要加上--global. 命令git config --list可以显示列表, 不过不是包括所有的设置. 显示远程仓库的地址 1git con">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git Note Git笔记">
 <meta property="og:url" content="https://doraemomo.github.io/2020/09/02/git-note/index.html">
 <meta property="og:site_name" content="Doraemomo&#39;s site">
-<meta property="og:description" content="Repository info 仓库信息 Local 本地 this will only display the remote URL, works without network connection or can&#39;t reach the remote repository: 1git config --get remote.origin.url Remote 远程 first we are g">
+<meta property="og:description" content="Git book很全面, 有很多语言版本, 还有pdf, epub, mobi等各种格式下载, 比任何参考都好用 https:&#x2F;&#x2F;git-scm.com&#x2F;book&#x2F; Config 首先用git config来查看下这个命令的具体信息, 比如查看全局设置时, 要加上--global. 命令git config --list可以显示列表, 不过不是包括所有的设置. 显示远程仓库的地址 1git con">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-09-02T15:21:11.000Z">
-<meta property="article:modified_time" content="2022-01-10T09:58:24.673Z">
+<meta property="article:modified_time" content="2022-03-03T15:26:07.150Z">
 <meta property="article:author" content="doraemomo">
 <meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
@@ -141,17 +141,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">38</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">39</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">26</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">28</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">38</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">40</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -220,7 +220,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-01-10 10:58:24" itemprop="dateModified" datetime="2022-01-10T10:58:24+01:00">2022-01-10</time>
+                <time title="Modified: 2022-03-03 16:26:07" itemprop="dateModified" datetime="2022-03-03T16:26:07+01:00">2022-03-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -259,17 +259,34 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="repository-info-仓库信息">Repository info 仓库信息</h2>
-<h3 id="local-本地">Local 本地</h3>
-<p>this will only display the remote URL, works without network connection or can't reach the remote repository:</p>
+        <p>Git book很全面, 有很多语言版本, 还有pdf, epub, mobi等各种格式下载, 比任何参考都好用</p>
+<p><a target="_blank" rel="noopener" href="https://git-scm.com/book/">https://git-scm.com/book/</a></p>
+<h2 id="config">Config</h2>
+<p>首先用<code>git config</code>来查看下这个命令的具体信息, 比如查看全局设置时, 要加上<code>--global</code>. 命令<code>git config --list</code>可以显示列表, 不过不是包括所有的设置.</p>
+<h3 id="显示远程仓库的地址">显示远程仓库的地址</h3>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --get remote.origin.url</span><br></pre></td></tr></table></figure>
-<h3 id="remote-远程">Remote 远程</h3>
-<p>first we are going to check the remote name:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote show</span><br></pre></td></tr></table></figure>
-<p>the default name is "origin", so for the most part, we can use:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote show origin</span><br></pre></td></tr></table></figure>
-<h2 id="show-configuration-显示配置">Show configuration 显示配置</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure>
+<p>更全面的仓库信息,需要使用命令<code>git remote show</code>, 根据remote的名称, 比如一般都叫origin, 在用命令<code>git remote show origin</code>显示仓库信息.</p>
+<h3 id="ignore-filemode-changes-忽略文件模式改变">Ignore filemode changes 忽略文件模式改变</h3>
+<p>当这个值为<code>true</code>时,文件的mode值改变也被认为是文件变更...</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config core.filemode false</span><br></pre></td></tr></table></figure>
+<h2 id="gitignore">.gitignore</h2>
+<p>更新<code>.gitignore</code>, 遇到不起作用的时候, 尝试下面的操作</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached .</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="delete-remote-branch-删除远程分支">Delete remote branch 删除远程分支</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin --delete &lt;branch_name&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="更新文件">更新文件</h2>
+<p>比较复杂的更新, <code>merge</code>命令就不合适了, merge并不能有选择的更新部分文件, 这个时候就只能一个一个的<code>checkout</code>了.</p>
+<p>首先查看下两个分支的奇异点点SHA值</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge-base</span><br></pre></td></tr></table></figure>
+<p>然后再和当前分支比较</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff &lt;common-base&gt; &lt;branch&gt;</span><br></pre></td></tr></table></figure>
+<p>再通过<code>checkout</code>分别更新文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout &lt;branch&gt; &lt;path&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="更新当前分支到最新点内容">更新当前分支到最新点内容</h2>
+<p><code>rebase</code>命令很好用, 不过当有conflict的时候, 如果需要强制覆盖当前分支, 首先强制移动指针</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard &lt;target&gt;</span><br></pre></td></tr></table></figure>
+<p>然后强制覆盖原创分支</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin &lt;branch&gt; --force</span><br></pre></td></tr></table></figure>
 <h2 id="uncommit-commit-取消提交">Uncommit commit 取消提交</h2>
 <p>keep change:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --soft HEAD^</span><br></pre></td></tr></table></figure>
@@ -287,8 +304,6 @@
 <h2 id="tag-加标签">Tag 加标签</h2>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git tag -a &lt;tag_name&gt; -m &quot;&lt;comment&gt;&quot;</span><br><span class="line">git push origin --tags</span><br></pre></td></tr></table></figure>
 <p>tags will not be pushed with commits, need to be pushed explicitly.</p>
-<h2 id="delete-remote-branch-删除远程分支">Delete remote branch 删除远程分支</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin --delete &lt;branch_name&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="submodule-子模块">Submodule 子模块</h2>
 <p>To add new submodule:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule add &lt;repository url&gt;</span><br></pre></td></tr></table></figure>
@@ -299,8 +314,6 @@
 <h3 id="update-submodule-url">update submodule URL</h3>
 <p>modify the .gitmodules file then:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule sync --recursive</span><br></pre></td></tr></table></figure>
-<h2 id="ignore-filemode-changes-忽略文件模式改变">Ignore filemode changes 忽略文件模式改变</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config core.filemode false</span><br></pre></td></tr></table></figure>
 <h2 id="stash-暂存">Stash 暂存</h2>
 <p>To save codes that you don't want to commit, for example, when switch branch, when you forget to pull and need to pull but have a conflict...</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash</span><br></pre></td></tr></table></figure>
@@ -308,9 +321,6 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash list</span><br></pre></td></tr></table></figure>
 <p>get back the modifications:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash apply</span><br></pre></td></tr></table></figure>
-<h2 id="update-.gitignore-and-related-files-更新忽略文件列表">update .gitignore and related files 更新忽略文件列表</h2>
-<p>After update and commit <strong>.gitignore</strong> file:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached .</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;&quot;</span><br></pre></td></tr></table></figure>
 <h2 id="merge-commits-合并多个提交">merge commits 合并多个提交</h2>
 <p>merge with commits number from current commit:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase -i HEAD~3</span><br></pre></td></tr></table></figure>
@@ -421,7 +431,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#repository-info-%E4%BB%93%E5%BA%93%E4%BF%A1%E6%81%AF"><span class="nav-number">1.</span> <span class="nav-text">Repository info 仓库信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#local-%E6%9C%AC%E5%9C%B0"><span class="nav-number">1.1.</span> <span class="nav-text">Local 本地</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#remote-%E8%BF%9C%E7%A8%8B"><span class="nav-number">1.2.</span> <span class="nav-text">Remote 远程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#show-configuration-%E6%98%BE%E7%A4%BA%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">Show configuration 显示配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#uncommit-commit-%E5%8F%96%E6%B6%88%E6%8F%90%E4%BA%A4"><span class="nav-number">3.</span> <span class="nav-text">Uncommit commit 取消提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unstage-added-file-%E5%8F%96%E6%B6%88%E5%B7%B2%E7%BB%8F%E6%B7%BB%E5%8A%A0%E7%9A%84%E6%96%87%E4%BB%B6"><span class="nav-number">4.</span> <span class="nav-text">Unstage added file 取消已经添加的文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tag-%E5%8A%A0%E6%A0%87%E7%AD%BE"><span class="nav-number">5.</span> <span class="nav-text">Tag 加标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#delete-remote-branch-%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF"><span class="nav-number">6.</span> <span class="nav-text">Delete remote branch 删除远程分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#submodule-%E5%AD%90%E6%A8%A1%E5%9D%97"><span class="nav-number">7.</span> <span class="nav-text">Submodule 子模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#update-submodule-url"><span class="nav-number">7.1.</span> <span class="nav-text">update submodule URL</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ignore-filemode-changes-%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6%E6%A8%A1%E5%BC%8F%E6%94%B9%E5%8F%98"><span class="nav-number">8.</span> <span class="nav-text">Ignore filemode changes 忽略文件模式改变</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stash-%E6%9A%82%E5%AD%98"><span class="nav-number">9.</span> <span class="nav-text">Stash 暂存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#update-.gitignore-and-related-files-%E6%9B%B4%E6%96%B0%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8"><span class="nav-number">10.</span> <span class="nav-text">update .gitignore and related files 更新忽略文件列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#merge-commits-%E5%90%88%E5%B9%B6%E5%A4%9A%E4%B8%AA%E6%8F%90%E4%BA%A4"><span class="nav-number">11.</span> <span class="nav-text">merge commits 合并多个提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#migration-from-one-repository-to-another-%E4%BB%93%E5%BA%93%E8%BF%81%E7%A7%BB"><span class="nav-number">12.</span> <span class="nav-text">Migration from one repository to another 仓库迁移</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#step-1-clone-everything-%E5%A4%8D%E5%88%B6%E5%85%A8%E9%83%A8%E4%BB%93%E5%BA%93"><span class="nav-number">12.1.</span> <span class="nav-text">Step 1: Clone everything 复制全部仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step-2-create-an-empty-git-repository-on-the-new-server-%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9A%84%E4%BB%93%E5%BA%93"><span class="nav-number">12.2.</span> <span class="nav-text">Step 2: create an empty Git repository on the new server 创建新的仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step-3-push-to-the-new-git-server-%E5%8F%91%E5%B8%83%E5%88%B0%E6%96%B0%E7%9A%84%E4%BB%93%E5%BA%93"><span class="nav-number">12.3.</span> <span class="nav-text">Step 3: push to the new Git server 发布到新的仓库</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#config"><span class="nav-number">1.</span> <span class="nav-text">Config</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E5%9C%B0%E5%9D%80"><span class="nav-number">1.1.</span> <span class="nav-text">显示远程仓库的地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ignore-filemode-changes-%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6%E6%A8%A1%E5%BC%8F%E6%94%B9%E5%8F%98"><span class="nav-number">1.2.</span> <span class="nav-text">Ignore filemode changes 忽略文件模式改变</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gitignore"><span class="nav-number">2.</span> <span class="nav-text">.gitignore</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#delete-remote-branch-%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF"><span class="nav-number">3.</span> <span class="nav-text">Delete remote branch 删除远程分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E6%96%87%E4%BB%B6"><span class="nav-number">4.</span> <span class="nav-text">更新文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E5%BD%93%E5%89%8D%E5%88%86%E6%94%AF%E5%88%B0%E6%9C%80%E6%96%B0%E7%82%B9%E5%86%85%E5%AE%B9"><span class="nav-number">5.</span> <span class="nav-text">更新当前分支到最新点内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#uncommit-commit-%E5%8F%96%E6%B6%88%E6%8F%90%E4%BA%A4"><span class="nav-number">6.</span> <span class="nav-text">Uncommit commit 取消提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unstage-added-file-%E5%8F%96%E6%B6%88%E5%B7%B2%E7%BB%8F%E6%B7%BB%E5%8A%A0%E7%9A%84%E6%96%87%E4%BB%B6"><span class="nav-number">7.</span> <span class="nav-text">Unstage added file 取消已经添加的文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tag-%E5%8A%A0%E6%A0%87%E7%AD%BE"><span class="nav-number">8.</span> <span class="nav-text">Tag 加标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#submodule-%E5%AD%90%E6%A8%A1%E5%9D%97"><span class="nav-number">9.</span> <span class="nav-text">Submodule 子模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#update-submodule-url"><span class="nav-number">9.1.</span> <span class="nav-text">update submodule URL</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stash-%E6%9A%82%E5%AD%98"><span class="nav-number">10.</span> <span class="nav-text">Stash 暂存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#merge-commits-%E5%90%88%E5%B9%B6%E5%A4%9A%E4%B8%AA%E6%8F%90%E4%BA%A4"><span class="nav-number">11.</span> <span class="nav-text">merge commits 合并多个提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#migration-from-one-repository-to-another-%E4%BB%93%E5%BA%93%E8%BF%81%E7%A7%BB"><span class="nav-number">12.</span> <span class="nav-text">Migration from one repository to another 仓库迁移</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#step-1-clone-everything-%E5%A4%8D%E5%88%B6%E5%85%A8%E9%83%A8%E4%BB%93%E5%BA%93"><span class="nav-number">12.1.</span> <span class="nav-text">Step 1: Clone everything 复制全部仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step-2-create-an-empty-git-repository-on-the-new-server-%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9A%84%E4%BB%93%E5%BA%93"><span class="nav-number">12.2.</span> <span class="nav-text">Step 2: create an empty Git repository on the new server 创建新的仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step-3-push-to-the-new-git-server-%E5%8F%91%E5%B8%83%E5%88%B0%E6%96%B0%E7%9A%84%E4%BB%93%E5%BA%93"><span class="nav-number">12.3.</span> <span class="nav-text">Step 3: push to the new Git server 发布到新的仓库</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -435,20 +445,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-count">40</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-count">28</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-count">39</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

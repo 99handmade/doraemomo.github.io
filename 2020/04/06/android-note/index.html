@@ -54,7 +54,7 @@
 <meta property="og:description" content="Add a module manually edit settings.gradle 12include &amp;#x27;:app&amp;#x27;, &amp;#x27;:module_name&amp;#x27;project(&amp;#x27;:project_name&amp;#x27;).projectDir &#x3D; new File(&amp;#x27;lib&amp;#x27;) keytool Check APK signature inf">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-04-06T21:52:48.000Z">
-<meta property="article:modified_time" content="2021-11-02T09:35:23.360Z">
+<meta property="article:modified_time" content="2022-03-01T09:31:42.125Z">
 <meta property="article:author" content="doraemomo">
 <meta property="article:tag" content="Android">
 <meta name="twitter:card" content="summary">
@@ -141,17 +141,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">38</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">39</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">26</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">28</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">38</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">40</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -220,7 +220,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-11-02 10:35:23" itemprop="dateModified" datetime="2021-11-02T10:35:23+01:00">2021-11-02</time>
+                <time title="Modified: 2022-03-01 10:31:42" itemprop="dateModified" datetime="2022-03-01T10:31:42+01:00">2022-03-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -275,6 +275,8 @@
 <h3 id="about-zipalign">About zipalign</h3>
 <p><a target="_blank" rel="noopener" href="https://developer.android.com/studio/command-line/zipalign">zipalign</a></p>
 <h2 id="adb">ADB</h2>
+<h3 id="列出当前进程">列出当前进程</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb -d logcat &lt;package&gt;:I *:S</span><br></pre></td></tr></table></figure>
 <h3 id="use-for-multiple-device-connected">Use for multiple device connected</h3>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb -s &lt;serial&gt; &lt;command&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="model">Model</h3>
@@ -419,7 +421,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#add-a-module-manually"><span class="nav-number">1.</span> <span class="nav-text">Add a module manually</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#keytool"><span class="nav-number">2.</span> <span class="nav-text">keytool</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#check-apk-signature-information"><span class="nav-number">2.1.</span> <span class="nav-text">Check APK signature information</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#check-keystore-file-information"><span class="nav-number">2.2.</span> <span class="nav-text">Check keystore file information</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sign-an-apk"><span class="nav-number">2.3.</span> <span class="nav-text">Sign an apk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#verify-a-signed-apk"><span class="nav-number">2.4.</span> <span class="nav-text">Verify a signed apk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#about-zipalign"><span class="nav-number">2.5.</span> <span class="nav-text">About zipalign</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#adb"><span class="nav-number">3.</span> <span class="nav-text">ADB</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#use-for-multiple-device-connected"><span class="nav-number">3.1.</span> <span class="nav-text">Use for multiple device connected</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#model"><span class="nav-number">3.2.</span> <span class="nav-text">Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#battery-information"><span class="nav-number">3.3.</span> <span class="nav-text">Battery information</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scrren-resoluton"><span class="nav-number">3.4.</span> <span class="nav-text">Scrren resoluton</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#screen-density"><span class="nav-number">3.5.</span> <span class="nav-text">Screen density</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#screen-information"><span class="nav-number">3.6.</span> <span class="nav-text">Screen information</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#android-id"><span class="nav-number">3.7.</span> <span class="nav-text">Android ID</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#imei"><span class="nav-number">3.8.</span> <span class="nav-text">IMEI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#android-system-version"><span class="nav-number">3.9.</span> <span class="nav-text">Android system version</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ip"><span class="nav-number">3.10.</span> <span class="nav-text">IP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mac"><span class="nav-number">3.11.</span> <span class="nav-text">MAC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cpu-information"><span class="nav-number">3.12.</span> <span class="nav-text">CPU information</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#memmory-information"><span class="nav-number">3.13.</span> <span class="nav-text">Memmory information</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#connect-to-device-shell"><span class="nav-number">3.14.</span> <span class="nav-text">Connect to device shell</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#install-apk-force-downgrade-replace"><span class="nav-number">3.15.</span> <span class="nav-text">install apk, force downgrade, replace</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list-packages"><span class="nav-number">3.16.</span> <span class="nav-text">list packages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#unexcepted-eof"><span class="nav-number">3.17.</span> <span class="nav-text">unexcepted EOF</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#add-a-module-manually"><span class="nav-number">1.</span> <span class="nav-text">Add a module manually</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#keytool"><span class="nav-number">2.</span> <span class="nav-text">keytool</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#check-apk-signature-information"><span class="nav-number">2.1.</span> <span class="nav-text">Check APK signature information</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#check-keystore-file-information"><span class="nav-number">2.2.</span> <span class="nav-text">Check keystore file information</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sign-an-apk"><span class="nav-number">2.3.</span> <span class="nav-text">Sign an apk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#verify-a-signed-apk"><span class="nav-number">2.4.</span> <span class="nav-text">Verify a signed apk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#about-zipalign"><span class="nav-number">2.5.</span> <span class="nav-text">About zipalign</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#adb"><span class="nav-number">3.</span> <span class="nav-text">ADB</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%97%E5%87%BA%E5%BD%93%E5%89%8D%E8%BF%9B%E7%A8%8B"><span class="nav-number">3.1.</span> <span class="nav-text">列出当前进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#use-for-multiple-device-connected"><span class="nav-number">3.2.</span> <span class="nav-text">Use for multiple device connected</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#model"><span class="nav-number">3.3.</span> <span class="nav-text">Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#battery-information"><span class="nav-number">3.4.</span> <span class="nav-text">Battery information</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scrren-resoluton"><span class="nav-number">3.5.</span> <span class="nav-text">Scrren resoluton</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#screen-density"><span class="nav-number">3.6.</span> <span class="nav-text">Screen density</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#screen-information"><span class="nav-number">3.7.</span> <span class="nav-text">Screen information</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#android-id"><span class="nav-number">3.8.</span> <span class="nav-text">Android ID</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#imei"><span class="nav-number">3.9.</span> <span class="nav-text">IMEI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#android-system-version"><span class="nav-number">3.10.</span> <span class="nav-text">Android system version</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ip"><span class="nav-number">3.11.</span> <span class="nav-text">IP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mac"><span class="nav-number">3.12.</span> <span class="nav-text">MAC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cpu-information"><span class="nav-number">3.13.</span> <span class="nav-text">CPU information</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#memmory-information"><span class="nav-number">3.14.</span> <span class="nav-text">Memmory information</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#connect-to-device-shell"><span class="nav-number">3.15.</span> <span class="nav-text">Connect to device shell</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#install-apk-force-downgrade-replace"><span class="nav-number">3.16.</span> <span class="nav-text">install apk, force downgrade, replace</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list-packages"><span class="nav-number">3.17.</span> <span class="nav-text">list packages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#unexcepted-eof"><span class="nav-number">3.18.</span> <span class="nav-text">unexcepted EOF</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -433,20 +435,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-count">40</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-count">28</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-count">39</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
