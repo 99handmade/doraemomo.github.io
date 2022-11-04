@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 6.0.0">
+<meta name="generator" content="Hexo 6.3.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -46,16 +46,17 @@
   };
 </script>
 
-  <meta name="description" content="https:&#x2F;&#x2F;www.concurrencylabs.com&#x2F;blog&#x2F;choose-your-aws-region-wisely&#x2F;">
+  <meta name="description" content="https:&#x2F;&#x2F;www.concurrencylabs.com&#x2F;blog&#x2F;choose-your-aws-region-wisely&#x2F; Multiaccount 多用户管理 多用户管理不用IAM, 企业级多用户管理,用AWS Organizations. AWS可以有树形多层组织结构, 根据不用的部门配置用户权限. 用IAM Identity Center来管理SSO CloudFormation">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AWS Note">
 <meta property="og:url" content="https://doraemomo.github.io/2022/04/22/aws-note/index.html">
 <meta property="og:site_name" content="Doraemomo&#39;s site">
-<meta property="og:description" content="https:&#x2F;&#x2F;www.concurrencylabs.com&#x2F;blog&#x2F;choose-your-aws-region-wisely&#x2F;">
+<meta property="og:description" content="https:&#x2F;&#x2F;www.concurrencylabs.com&#x2F;blog&#x2F;choose-your-aws-region-wisely&#x2F; Multiaccount 多用户管理 多用户管理不用IAM, 企业级多用户管理,用AWS Organizations. AWS可以有树形多层组织结构, 根据不用的部门配置用户权限. 用IAM Identity Center来管理SSO CloudFormation">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-04-22T09:21:21.000Z">
-<meta property="article:modified_time" content="2022-04-22T09:21:54.624Z">
+<meta property="article:modified_time" content="2022-09-27T09:21:24.598Z">
 <meta property="article:author" content="doraemomo">
+<meta property="article:tag" content="AWS">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://doraemomo.github.io/2022/04/22/aws-note/">
@@ -140,17 +141,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">39</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">47</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">28</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">36</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">40</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">45</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -211,9 +212,32 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-04-22 11:21:21 / Modified: 11:21:54" itemprop="dateCreated datePublished" datetime="2022-04-22T11:21:21+02:00">2022-04-22</time>
+              <time title="Created: 2022-04-22 11:21:21" itemprop="dateCreated datePublished" datetime="2022-04-22T11:21:21+02:00">2022-04-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-09-27 11:21:24" itemprop="dateModified" datetime="2022-09-27T11:21:24+02:00">2022-09-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/devops/" itemprop="url" rel="index">
+                    <span itemprop="name">devops</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/devops/server/" itemprop="url" rel="index">
+                    <span itemprop="name">server</span>
+                  </a>
+                </span>
             </span>
 
           
@@ -242,6 +266,49 @@
 
       
         <p>https://www.concurrencylabs.com/blog/choose-your-aws-region-wisely/</p>
+<h2 id="multiaccount-多用户管理">Multiaccount 多用户管理</h2>
+<p>多用户管理不用IAM, 企业级多用户管理,用AWS Organizations.</p>
+<p>AWS可以有树形多层组织结构, 根据不用的部门配置用户权限.</p>
+<p>用IAM Identity Center来管理SSO</p>
+<p>CloudFormation 可以用可视化设计器初始脚本.</p>
+<h2 id="clicdk">CLI/CDK</h2>
+<h3 id="更新到最新版本">更新到最新版本</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g aws-cdk@latest</span><br></pre></td></tr></table></figure>
+<h3 id="configurqtion-file-配置文件">Configurqtion file 配置文件</h3>
+<p>本地配置文件在用户根目录下, <strong>config</strong>文件中记录了默认的区域</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[default]</span><br><span class="line">region=eu-west-3</span><br></pre></td></tr></table></figure>
+<p><strong>credentials</strong>文件中记录了访问ID和密码</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[default]</span><br><span class="line">aws_access_key_id=...</span><br><span class="line">aws_secret_access_key=...</span><br></pre></td></tr></table></figure>
+<h3 id="安装cdk">安装CDK</h3>
+<p>全局安装cdk</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g aws-cdk</span><br></pre></td></tr></table></figure>
+<p>检查cdk版本</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cdk --version</span><br></pre></td></tr></table></figure>
+<p>Bootstrapping 引导 (可以引导多个区域)</p>
+<p>获取aws信息</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">aws sts get-caller-identity</span><br><span class="line">aws configure get region</span><br></pre></td></tr></table></figure>
+<p>编译typescript文件到javascript</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>为什么一定要JavaScript运行时才能使用AWS CDK? 为什么npm run build命令把不同语言的版本编译到JavaScript</p>
+<p>AWS 使用 TypeScript 语言构建 AWS 构造库软件包的业务逻辑，并提供目标为各种受支持编程语言的映射。这样可以确保 AWS CDK 构造行为在不同语言之间保持一致，可以提供支持所有语言的一套全面的构造软件包。您可以在 AWS &gt; CDK 项目中使用自己选择的编程语言编写所有代码，JavaScript 运行时环境用于确定编程体验的实施细节。</p>
+</blockquote>
+<p>不怎么常用的命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm run watch</span><br><span class="line">npm run test</span><br></pre></td></tr></table></figure>
+<p>部署命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cdk deploy</span><br></pre></td></tr></table></figure>
+<p>查看当前版本与上一个部署版本的区别</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cdk diff</span><br></pre></td></tr></table></figure>
+<p>根据获得的信息执行引导</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cdk bootstrap aws://ACCOUNT-NUMBER/REGION</span><br></pre></td></tr></table></figure>
+<p>关于为什么需要这个bootstrap的步骤, CDK的文档里面给出了具体的解释, 大概的意思就是CloudFormation需要预先配置S3和其他资源的权限.</p>
+<p>引导程序会自动创建一个以<strong>cdk-</strong>开头的存储桶,用于Cloudformation的部署, 在Cloudformation中也会自动创建一个名为<strong>CDKToolkit</strong>的堆栈, 用于CDK的部署.</p>
+<p>如果没有指定资源名称, CDK创建的资源会CDK项目的名字为前缀, 和随机后缀.</p>
+<p>根据项目创建CloudFormation脚本, 可以用来直接通过CloudFormation部署, 绕过CDK (synthesize)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cdk synth</span><br></pre></td></tr></table></figure>
+<p>删除项目已经创建的资源</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cdk destroy</span><br></pre></td></tr></table></figure>
+<p>会有一个确认, 然后就没有然后了.</p>
 
     </div>
 
@@ -250,6 +317,9 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/AWS/" rel="tag"># AWS</a>
+          </div>
 
         
 
@@ -260,7 +330,10 @@
     <a href="/2022/02/24/frontend-note/" rel="prev" title="Frontend Note 前端笔记">
       <i class="fa fa-chevron-left"></i> Frontend Note 前端笔记
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2022/06/13/websocket-note/" rel="next" title="WebSocket Note WebSocket笔记">
+      WebSocket Note WebSocket笔记 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -327,6 +400,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#multiaccount-%E5%A4%9A%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">Multiaccount 多用户管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#clicdk"><span class="nav-number">2.</span> <span class="nav-text">CLI&#x2F;CDK</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E5%88%B0%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC"><span class="nav-number">2.1.</span> <span class="nav-text">更新到最新版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#configurqtion-file-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">2.2.</span> <span class="nav-text">Configurqtion file 配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85cdk"><span class="nav-number">2.3.</span> <span class="nav-text">安装CDK</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -340,20 +414,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-count">45</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-count">36</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-count">47</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

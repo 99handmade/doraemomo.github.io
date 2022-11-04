@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 6.0.0">
+<meta name="generator" content="Hexo 6.3.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -136,17 +136,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">39</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">47</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">28</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">36</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">40</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">45</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -185,6 +185,578 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2022/11/03/dns-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="doraemomo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Doraemomo's site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/03/dns-note/" class="post-title-link" itemprop="url">DNS note</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-03 14:29:47" itemprop="dateCreated datePublished" datetime="2022-11-03T14:29:47+01:00">2022-11-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-04 11:13:53" itemprop="dateModified" datetime="2022-11-04T11:13:53+01:00">2022-11-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/DNS/" itemprop="url" rel="index">
+                    <span itemprop="name">DNS</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2022/11/03/dns-note/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/11/03/dns-note/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>DNS解析不涉及端口.</p>
+<p>DNS服务器有不同的类型: 递归解析器, 根域名服务器, TLD域名服务器 (Top Level Domain), 权威域名服务器.</p>
+<p>根域名服务器一共有13台 (都是服务器集群, 通过Anycast路由来提供快速响应), 他们的IP地址是不变的, 集成在操作系统里.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Root Server</th>
+<th style="text-align: center;">IPv4</th>
+<th style="text-align: center;">IPv6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">a.root-servers.net</td>
+<td style="text-align: center;">198.41.0.4</td>
+<td style="text-align: center;">2001:503:ba3e::2:30</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">b.root-servers.net</td>
+<td style="text-align: center;">199.9.14.201</td>
+<td style="text-align: center;">2001:500:200::b</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">c.root-servers.net</td>
+<td style="text-align: center;">192.33.4.12</td>
+<td style="text-align: center;">2001:500:2::c</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">d.root-servers.net</td>
+<td style="text-align: center;">199.7.91.13</td>
+<td style="text-align: center;">2001:500:2d::d</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">e.root-servers.net</td>
+<td style="text-align: center;">192.203.230.10</td>
+<td style="text-align: center;">2001:500:a8::e</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">f.root-servers.net</td>
+<td style="text-align: center;">192.5.5.241</td>
+<td style="text-align: center;">2001:500:2f::f</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">g.root-servers.net</td>
+<td style="text-align: center;">192.112.36.4</td>
+<td style="text-align: center;">2001:500:12::d0d</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">h.root-servers.net</td>
+<td style="text-align: center;">198.97.190.53</td>
+<td style="text-align: center;">2001:500:1::53</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">i.root-servers.net</td>
+<td style="text-align: center;">192.36.148.17</td>
+<td style="text-align: center;">2001:7fe::53</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">j.root-servers.net</td>
+<td style="text-align: center;">192.58.128.30</td>
+<td style="text-align: center;">2001:503:c27::2:30</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">k.root-servers.net</td>
+<td style="text-align: center;">193.0.14.129</td>
+<td style="text-align: center;">2001:7fd::1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">l.root-servers.net</td>
+<td style="text-align: center;">199.7.83.42</td>
+<td style="text-align: center;">2001:500:9f::42</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">m.root-servers.net</td>
+<td style="text-align: center;">202.12.27.33</td>
+<td style="text-align: center;">2001:dc3::35</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dns递归解析器">DNS递归解析器</h2>
+<p>递归解析器作为客户端与DNS域名服务器的中间人, DNS的分级解析下行过程 (从根服务器到顶级服务器到权威服务器)是由递归解析器完成的, 不是由DNS服务器完成的. 大多数Internet用户使用他们ISP提供的递归解析器，但还有其他可用选择, 例如Cloudflare的1.1.1.1.</p>
+<h2 id="manually-add-host-手动添加dns记录">Manually add host 手动添加DNS记录</h2>
+<p>如果域名在本地文件中, 访问该域名时就不会询问域名服务器.</p>
+<p>Edit first <strong>/etc/hosts</strong>, then flush local DNS cache:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dscacheutil -flushcache</span><br></pre></td></tr></table></figure>
+<h2 id="dig命令">Dig命令</h2>
+<p>可以指定域名服务器</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dig @&lt;DNS IP&gt; &lt;domaine name&gt;</span><br></pre></td></tr></table></figure>
+<p>可以查询所有的信息</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dig +nocmd google.com any +noall +answer</span><br></pre></td></tr></table></figure>
+<h2 id="dns查询流程">DNS查询流程</h2>
+<p>为了更好的的理解DNS的查询步骤, 我们可以用dig命令来做一个释例.</p>
+<p>递归解析器帮助完成逐级查询的全部任务, 所以通过递归解析器查询, 可以直接得到IP</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dig @1.1.1.1 google.com</span><br></pre></td></tr></table></figure>
+<p>因为递归解析器干了所有的活, 所以在<strong>ANSWER SECTION</strong>里, 我们直接得到了IP地址</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">; &lt;&lt;&gt;&gt; DiG 9.10.6 &lt;&lt;&gt;&gt; @1.1.1.1 google.com</span><br><span class="line">; (1 server found)</span><br><span class="line">;; global options: +cmd</span><br><span class="line">;; Got answer:</span><br><span class="line">;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 36771</span><br><span class="line">;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1</span><br><span class="line"></span><br><span class="line">;; OPT PSEUDOSECTION:</span><br><span class="line">; EDNS: version: 0, flags:; udp: 1232</span><br><span class="line">;; QUESTION SECTION:</span><br><span class="line">;google.com.			IN	A</span><br><span class="line"></span><br><span class="line">;; ANSWER SECTION:</span><br><span class="line">google.com.		18	IN	A	142.250.201.174</span><br><span class="line"></span><br><span class="line">;; Query time: 43 msec</span><br><span class="line">;; SERVER: 1.1.1.1#53(1.1.1.1)</span><br><span class="line">;; WHEN: Thu Nov 03 18:04:36 CET 2022</span><br><span class="line">;; MSG SIZE  rcvd: 55</span><br></pre></td></tr></table></figure>
+<p>如果我们尝试去询问根服务器,</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dig @198.41.0.4 google.com</span><br></pre></td></tr></table></figure>
+<p>根服务器并没有域名的具体IP, 相应的, 根服务器会发送给我们顶级服务器的地址在<strong>AUTHORITY SECTION</strong>里, 以便于逐级查询. 换句话说, 根服务器只提供顶级服务器的信息.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">; &lt;&lt;&gt;&gt; DiG 9.10.6 &lt;&lt;&gt;&gt; @198.41.0.4 google.com</span><br><span class="line">; (1 server found)</span><br><span class="line">;; global options: +cmd</span><br><span class="line">;; Got answer:</span><br><span class="line">;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 2331</span><br><span class="line">;; flags: qr rd; QUERY: 1, ANSWER: 0, AUTHORITY: 13, ADDITIONAL: 27</span><br><span class="line">;; WARNING: recursion requested but not available</span><br><span class="line"></span><br><span class="line">;; OPT PSEUDOSECTION:</span><br><span class="line">; EDNS: version: 0, flags:; udp: 4096</span><br><span class="line">;; QUESTION SECTION:</span><br><span class="line">;google.com.			IN	A</span><br><span class="line"></span><br><span class="line">;; AUTHORITY SECTION:</span><br><span class="line">com.			172800	IN	NS	e.gtld-servers.net.</span><br><span class="line">com.			172800	IN	NS	b.gtld-servers.net.</span><br><span class="line">com.			172800	IN	NS	j.gtld-servers.net.</span><br><span class="line">com.			172800	IN	NS	m.gtld-servers.net.</span><br><span class="line">com.			172800	IN	NS	i.gtld-servers.net.</span><br><span class="line">com.			172800	IN	NS	f.gtld-servers.net.</span><br><span class="line">com.			172800	IN	NS	a.gtld-servers.net.</span><br><span class="line">com.			172800	IN	NS	g.gtld-servers.net.</span><br><span class="line">com.			172800	IN	NS	h.gtld-servers.net.</span><br><span class="line">com.			172800	IN	NS	l.gtld-servers.net.</span><br><span class="line">com.			172800	IN	NS	k.gtld-servers.net.</span><br><span class="line">com.			172800	IN	NS	c.gtld-servers.net.</span><br><span class="line">com.			172800	IN	NS	d.gtld-servers.net.</span><br><span class="line"></span><br><span class="line">;; ADDITIONAL SECTION:</span><br><span class="line">e.gtld-servers.net.	172800	IN	A	192.12.94.30</span><br><span class="line">e.gtld-servers.net.	172800	IN	AAAA	2001:502:1ca1::30</span><br><span class="line">b.gtld-servers.net.	172800	IN	A	192.33.14.30</span><br><span class="line">b.gtld-servers.net.	172800	IN	AAAA	2001:503:231d::2:30</span><br><span class="line">j.gtld-servers.net.	172800	IN	A	192.48.79.30</span><br><span class="line">j.gtld-servers.net.	172800	IN	AAAA	2001:502:7094::30</span><br><span class="line">m.gtld-servers.net.	172800	IN	A	192.55.83.30</span><br><span class="line">m.gtld-servers.net.	172800	IN	AAAA	2001:501:b1f9::30</span><br><span class="line">i.gtld-servers.net.	172800	IN	A	192.43.172.30</span><br><span class="line">i.gtld-servers.net.	172800	IN	AAAA	2001:503:39c1::30</span><br><span class="line">f.gtld-servers.net.	172800	IN	A	192.35.51.30</span><br><span class="line">f.gtld-servers.net.	172800	IN	AAAA	2001:503:d414::30</span><br><span class="line">a.gtld-servers.net.	172800	IN	A	192.5.6.30</span><br><span class="line">a.gtld-servers.net.	172800	IN	AAAA	2001:503:a83e::2:30</span><br><span class="line">g.gtld-servers.net.	172800	IN	A	192.42.93.30</span><br><span class="line">g.gtld-servers.net.	172800	IN	AAAA	2001:503:eea3::30</span><br><span class="line">h.gtld-servers.net.	172800	IN	A	192.54.112.30</span><br><span class="line">h.gtld-servers.net.	172800	IN	AAAA	2001:502:8cc::30</span><br><span class="line">l.gtld-servers.net.	172800	IN	A	192.41.162.30</span><br><span class="line">l.gtld-servers.net.	172800	IN	AAAA	2001:500:d937::30</span><br><span class="line">k.gtld-servers.net.	172800	IN	A	192.52.178.30</span><br><span class="line">k.gtld-servers.net.	172800	IN	AAAA	2001:503:d2d::30</span><br><span class="line">c.gtld-servers.net.	172800	IN	A	192.26.92.30</span><br><span class="line">c.gtld-servers.net.	172800	IN	AAAA	2001:503:83eb::30</span><br><span class="line">d.gtld-servers.net.	172800	IN	A	192.31.80.30</span><br><span class="line">d.gtld-servers.net.	172800	IN	AAAA	2001:500:856e::30</span><br><span class="line"></span><br><span class="line">;; Query time: 81 msec</span><br><span class="line">;; SERVER: 198.41.0.4#53(198.41.0.4)</span><br><span class="line">;; WHEN: Fri Nov 04 10:39:58 CET 2022</span><br><span class="line">;; MSG SIZE  rcvd: 835</span><br></pre></td></tr></table></figure>
+<p>根据根服务器提供的顶级服务器的信息, 我们继续询问顶级服务器</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dig @192.12.94.30 google.com</span><br></pre></td></tr></table></figure>
+<p>顶级域名服务器会发给我们权威域名服务器的信息, 在<strong>AUTHORITY SECTION</strong>里面, 换句话说, 顶级域名服务器,只记录了权威服务器的信息</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">; &lt;&lt;&gt;&gt; DiG 9.10.6 &lt;&lt;&gt;&gt; @192.12.94.30 google.com</span><br><span class="line">; (1 server found)</span><br><span class="line">;; global options: +cmd</span><br><span class="line">;; Got answer:</span><br><span class="line">;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 35625</span><br><span class="line">;; flags: qr rd; QUERY: 1, ANSWER: 0, AUTHORITY: 4, ADDITIONAL: 9</span><br><span class="line">;; WARNING: recursion requested but not available</span><br><span class="line"></span><br><span class="line">;; OPT PSEUDOSECTION:</span><br><span class="line">; EDNS: version: 0, flags:; udp: 4096</span><br><span class="line">;; QUESTION SECTION:</span><br><span class="line">;google.com.			IN	A</span><br><span class="line"></span><br><span class="line">;; AUTHORITY SECTION:</span><br><span class="line">google.com.		172800	IN	NS	ns2.google.com.</span><br><span class="line">google.com.		172800	IN	NS	ns1.google.com.</span><br><span class="line">google.com.		172800	IN	NS	ns3.google.com.</span><br><span class="line">google.com.		172800	IN	NS	ns4.google.com.</span><br><span class="line"></span><br><span class="line">;; ADDITIONAL SECTION:</span><br><span class="line">ns2.google.com.		172800	IN	AAAA	2001:4860:4802:34::a</span><br><span class="line">ns2.google.com.		172800	IN	A	216.239.34.10</span><br><span class="line">ns1.google.com.		172800	IN	AAAA	2001:4860:4802:32::a</span><br><span class="line">ns1.google.com.		172800	IN	A	216.239.32.10</span><br><span class="line">ns3.google.com.		172800	IN	AAAA	2001:4860:4802:36::a</span><br><span class="line">ns3.google.com.		172800	IN	A	216.239.36.10</span><br><span class="line">ns4.google.com.		172800	IN	AAAA	2001:4860:4802:38::a</span><br><span class="line">ns4.google.com.		172800	IN	A	216.239.38.10</span><br><span class="line"></span><br><span class="line">;; Query time: 51 msec</span><br><span class="line">;; SERVER: 192.12.94.30#53(192.12.94.30)</span><br><span class="line">;; WHEN: Fri Nov 04 11:06:09 CET 2022</span><br><span class="line">;; MSG SIZE  rcvd: 287</span><br></pre></td></tr></table></figure>
+<p>我们继续询问权威服务器</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dig @216.239.34.10 google.com</span><br></pre></td></tr></table></figure>
+<p>权威服务器终于发给我们想要的IP地址了, 在<strong>ANSWER SECTION</strong>字段里</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">; &lt;&lt;&gt;&gt; DiG 9.10.6 &lt;&lt;&gt;&gt; @216.239.34.10 google.com</span><br><span class="line">; (1 server found)</span><br><span class="line">;; global options: +cmd</span><br><span class="line">;; Got answer:</span><br><span class="line">;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 40547</span><br><span class="line">;; flags: qr aa rd; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1</span><br><span class="line">;; WARNING: recursion requested but not available</span><br><span class="line"></span><br><span class="line">;; OPT PSEUDOSECTION:</span><br><span class="line">; EDNS: version: 0, flags:; udp: 512</span><br><span class="line">;; QUESTION SECTION:</span><br><span class="line">;google.com.			IN	A</span><br><span class="line"></span><br><span class="line">;; ANSWER SECTION:</span><br><span class="line">google.com.		300	IN	A	142.250.178.142</span><br><span class="line"></span><br><span class="line">;; Query time: 50 msec</span><br><span class="line">;; SERVER: 216.239.34.10#53(216.239.34.10)</span><br><span class="line">;; WHEN: Fri Nov 04 11:09:45 CET 2022</span><br><span class="line">;; MSG SIZE  rcvd: 55</span><br></pre></td></tr></table></figure>
+<p>我们总结一下, 域名解析系统就是一个分级系统, 逐级向下, 根服务器, 顶级服务器, 权威服务器分别负责记录他们那一级别的信息, 查询是逐级向下的, 而递归解析服务器的角色比较特殊, 他就像一个管家, 把逐级查询的任务都包了, 直接发给我们想要的结果.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2022/10/21/cryptography/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="doraemomo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Doraemomo's site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/10/21/cryptography/" class="post-title-link" itemprop="url">Cryptography 密码学</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-10-21 14:55:43 / Modified: 15:34:01" itemprop="dateCreated datePublished" datetime="2022-10-21T14:55:43+02:00">2022-10-21</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/cryptography/" itemprop="url" rel="index">
+                    <span itemprop="name">cryptography</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2022/10/21/cryptography/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/10/21/cryptography/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="openssl">OpenSSL</h2>
+<h3 id="password">password</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">openssl rand -base64 6</span><br><span class="line"></span><br><span class="line">openssl rand -hex 4</span><br></pre></td></tr></table></figure>
+<h3 id="generate-rsa-private-key">generate RSA private key</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl genrsa</span><br></pre></td></tr></table></figure>
+<p>more parameters for generation</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl genrsa -out private_pkcs1.pem 2048</span><br></pre></td></tr></table></figure>
+<p>2048 is the length of the modulus, -out redirect the key to a file for example.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2022/09/21/nodejs-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="doraemomo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Doraemomo's site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/09/21/nodejs-note/" class="post-title-link" itemprop="url">Node.js note</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-09-21 16:59:26 / Modified: 17:21:15" itemprop="dateCreated datePublished" datetime="2022-09-21T16:59:26+02:00">2022-09-21</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/runtime/" itemprop="url" rel="index">
+                    <span itemprop="name">runtime</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2022/09/21/nodejs-note/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/09/21/nodejs-note/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="查看包的版本">查看包的版本</h2>
+<p>所有历史版本</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm view &lt;package name&gt; versions</span><br></pre></td></tr></table></figure>
+<p>最新版本</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm view &lt;package name&gt; version</span><br></pre></td></tr></table></figure>
+<p>列出可更新的版本</p>
+<p>本地</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm outdated</span><br></pre></td></tr></table></figure>
+<p>全局</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm outdated -g</span><br></pre></td></tr></table></figure>
+<p>更新包</p>
+<p>更新本地指定包</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm update &lt;package name&gt;</span><br></pre></td></tr></table></figure>
+<p>更新全局指定包</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm update -g &lt;package name&gt; </span><br></pre></td></tr></table></figure>
+<p>更新所有本地</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm update</span><br></pre></td></tr></table></figure>
+<p>更新所有全局</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm update -g</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2022/06/16/protocol-buffers-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="doraemomo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Doraemomo's site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/06/16/protocol-buffers-note/" class="post-title-link" itemprop="url">Protocol Buffers Note Protocol Buffers笔记</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-06-16 11:43:04 / Modified: 11:58:16" itemprop="dateCreated datePublished" datetime="2022-06-16T11:43:04+02:00">2022-06-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Serialization/" itemprop="url" rel="index">
+                    <span itemprop="name">Serialization</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2022/06/16/protocol-buffers-note/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/06/16/protocol-buffers-note/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="c-sharp">C sharp</h2>
+<h3 id="compile-the-proto-file">Compile the proto file</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">protoc -I=$SRC_DIR --csharp_out=$DST_DIR $SRC_DIR/your.proto</span><br></pre></td></tr></table></figure>
+<h3 id="dependencies">Dependencies</h3>
+<p>NuGet Package Manager will manage the dependencies, just install the Google.protobuf package, which is the official one.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2022/06/13/websocket-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="doraemomo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Doraemomo's site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/06/13/websocket-note/" class="post-title-link" itemprop="url">WebSocket Note WebSocket笔记</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-06-13 15:38:38 / Modified: 15:59:04" itemprop="dateCreated datePublished" datetime="2022-06-13T15:38:38+02:00">2022-06-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TCP/" itemprop="url" rel="index">
+                    <span itemprop="name">TCP</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TCP/Socket/" itemprop="url" rel="index">
+                    <span itemprop="name">Socket</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2022/06/13/websocket-note/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/06/13/websocket-note/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="https://datatracker.ietf.org/doc/html/rfc6455">The WebSocket Protocol</a></p>
+<h2 id="opcode">Opcode</h2>
+<p>Opcode表明了WebSocket每一帧的类型, 是一个范围从0到15的整数. Opcode位于每一帧第一字节的低四位比特, 参见协议文档6455的5.2段.</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"> 0                   1                   2                   3</span><br><span class="line"> 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1</span><br><span class="line">+-+-+-+-+-------+-+-------------+-------------------------------+</span><br><span class="line">|F|R|R|R| opcode|M| Payload len |    Extended payload length    |</span><br><span class="line">|I|S|S|S|  (4)  |A|     (7)     |             (16/64)           |</span><br><span class="line">|N|V|V|V|       |S|             |   (if payload len==126/127)   |</span><br><span class="line">| |1|2|3|       |K|             |                               |</span><br><span class="line">+-+-+-+-+-------+-+-------------+ - - - - - - - - - - - - - - - +</span><br><span class="line">|     Extended payload length continued, if payload len == 127  |</span><br><span class="line">+ - - - - - - - - - - - - - - - +-------------------------------+</span><br><span class="line">|                               |Masking-key, if MASK set to 1  |</span><br><span class="line">+-------------------------------+-------------------------------+</span><br><span class="line">| Masking-key (continued)       |          Payload Data         |</span><br><span class="line">+-------------------------------- - - - - - - - - - - - - - - - +</span><br><span class="line">:                     Payload Data continued ...                :</span><br><span class="line">+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +</span><br><span class="line">|                     Payload Data continued ...                |</span><br><span class="line">+---------------------------------------------------------------+</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2022/04/22/aws-note/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -208,9 +780,32 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-04-22 11:21:21 / Modified: 11:21:54" itemprop="dateCreated datePublished" datetime="2022-04-22T11:21:21+02:00">2022-04-22</time>
+              <time title="Created: 2022-04-22 11:21:21" itemprop="dateCreated datePublished" datetime="2022-04-22T11:21:21+02:00">2022-04-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-09-27 11:21:24" itemprop="dateModified" datetime="2022-09-27T11:21:24+02:00">2022-09-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/devops/" itemprop="url" rel="index">
+                    <span itemprop="name">devops</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/devops/server/" itemprop="url" rel="index">
+                    <span itemprop="name">server</span>
+                  </a>
+                </span>
             </span>
 
           
@@ -239,6 +834,49 @@
 
       
           <p>https://www.concurrencylabs.com/blog/choose-your-aws-region-wisely/</p>
+<h2 id="multiaccount-多用户管理">Multiaccount 多用户管理</h2>
+<p>多用户管理不用IAM, 企业级多用户管理,用AWS Organizations.</p>
+<p>AWS可以有树形多层组织结构, 根据不用的部门配置用户权限.</p>
+<p>用IAM Identity Center来管理SSO</p>
+<p>CloudFormation 可以用可视化设计器初始脚本.</p>
+<h2 id="clicdk">CLI/CDK</h2>
+<h3 id="更新到最新版本">更新到最新版本</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g aws-cdk@latest</span><br></pre></td></tr></table></figure>
+<h3 id="configurqtion-file-配置文件">Configurqtion file 配置文件</h3>
+<p>本地配置文件在用户根目录下, <strong>config</strong>文件中记录了默认的区域</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[default]</span><br><span class="line">region=eu-west-3</span><br></pre></td></tr></table></figure>
+<p><strong>credentials</strong>文件中记录了访问ID和密码</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[default]</span><br><span class="line">aws_access_key_id=...</span><br><span class="line">aws_secret_access_key=...</span><br></pre></td></tr></table></figure>
+<h3 id="安装cdk">安装CDK</h3>
+<p>全局安装cdk</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g aws-cdk</span><br></pre></td></tr></table></figure>
+<p>检查cdk版本</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cdk --version</span><br></pre></td></tr></table></figure>
+<p>Bootstrapping 引导 (可以引导多个区域)</p>
+<p>获取aws信息</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">aws sts get-caller-identity</span><br><span class="line">aws configure get region</span><br></pre></td></tr></table></figure>
+<p>编译typescript文件到javascript</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>为什么一定要JavaScript运行时才能使用AWS CDK? 为什么npm run build命令把不同语言的版本编译到JavaScript</p>
+<p>AWS 使用 TypeScript 语言构建 AWS 构造库软件包的业务逻辑，并提供目标为各种受支持编程语言的映射。这样可以确保 AWS CDK 构造行为在不同语言之间保持一致，可以提供支持所有语言的一套全面的构造软件包。您可以在 AWS &gt; CDK 项目中使用自己选择的编程语言编写所有代码，JavaScript 运行时环境用于确定编程体验的实施细节。</p>
+</blockquote>
+<p>不怎么常用的命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm run watch</span><br><span class="line">npm run test</span><br></pre></td></tr></table></figure>
+<p>部署命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cdk deploy</span><br></pre></td></tr></table></figure>
+<p>查看当前版本与上一个部署版本的区别</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cdk diff</span><br></pre></td></tr></table></figure>
+<p>根据获得的信息执行引导</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cdk bootstrap aws://ACCOUNT-NUMBER/REGION</span><br></pre></td></tr></table></figure>
+<p>关于为什么需要这个bootstrap的步骤, CDK的文档里面给出了具体的解释, 大概的意思就是CloudFormation需要预先配置S3和其他资源的权限.</p>
+<p>引导程序会自动创建一个以<strong>cdk-</strong>开头的存储桶,用于Cloudformation的部署, 在Cloudformation中也会自动创建一个名为<strong>CDKToolkit</strong>的堆栈, 用于CDK的部署.</p>
+<p>如果没有指定资源名称, CDK创建的资源会CDK项目的名字为前缀, 和随机后缀.</p>
+<p>根据项目创建CloudFormation脚本, 可以用来直接通过CloudFormation部署, 绕过CDK (synthesize)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cdk synth</span><br></pre></td></tr></table></figure>
+<p>删除项目已经创建的资源</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cdk destroy</span><br></pre></td></tr></table></figure>
+<p>会有一个确认, 然后就没有然后了.</p>
 
       
     </div>
@@ -281,10 +919,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-02-24 15:24:19 / Modified: 16:47:35" itemprop="dateCreated datePublished" datetime="2022-02-24T15:24:19+01:00">2022-02-24</time>
+              <time title="Created: 2022-02-24 15:24:19" itemprop="dateCreated datePublished" datetime="2022-02-24T15:24:19+01:00">2022-02-24</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-08 17:33:43" itemprop="dateModified" datetime="2022-06-08T17:33:43+02:00">2022-06-08</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -355,6 +999,16 @@
 <hr />
 <p>#声明HTML中的控件名, 对应<code>@ViewChild()</code>, 比如</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">mat-table</span> #<span class="attr">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="javascript">JavaScript</h2>
+<h3 id="timing-event">timing event</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">func</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// repeat every 1 second</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="built_in">setInterval</span>(func, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+<p>setInterval() do not support to pass parameter with <strong>()</strong>, to pass parameter we can:</p>
+<p>pass parameters with setInterval():</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">func</span>(<span class="params">param1, param2</span>) &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">window</span>.<span class="built_in">setInterval</span>(func, <span class="number">1000</span>, param1, param2);</span><br><span class="line"></span><br><span class="line"><span class="comment">// another way with spread operator</span></span><br><span class="line"><span class="keyword">let</span> params = [param1, param2];</span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">setInerval</span>(func, <span class="number">1000</span>, ...params);</span><br></pre></td></tr></table></figure>
+<p>use anonymous function:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">setInterval</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+<p>another way, eval...</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="built_in">setInterval</span>(<span class="string">&quot;func(&#x27;&quot;</span>+param1+<span class="string">&quot;&#x27;, &#x27;&quot;</span>+param2+<span class="string">&quot;&#x27;)&quot;</span>);</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -537,11 +1191,11 @@
 <p>/etc/mail.rc</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set sendmail=/usr/local/bin/msmtp</span><br></pre></td></tr></table></figure>
 <p>~/.msmtprc</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># </span><span class="language-bash">Use an external SMTP server with insecure authentication.</span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">(manually choose an insecure authentication method.)</span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">Note that the password contains blanks.</span></span><br><span class="line"> </span><br><span class="line">defaults</span><br><span class="line"><span class="meta"> </span></span><br><span class="line"><span class="meta">#</span><span class="language-bash"><span class="comment">###################################################################</span></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">A sample configuration using Gmail</span></span><br><span class="line"><span class="meta">#</span><span class="language-bash"><span class="comment">###################################################################</span></span></span><br><span class="line"><span class="meta"> </span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">account name is <span class="string">&quot;gmail&quot;</span>.</span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">You can select this account by using <span class="string">&quot;-a gmail&quot;</span> <span class="keyword">in</span> your <span class="built_in">command</span> line.</span></span><br><span class="line">account gmail</span><br><span class="line">host smtp.gmail.com</span><br><span class="line">tls on</span><br><span class="line">tls_certcheck off</span><br><span class="line">port 587</span><br><span class="line">auth login</span><br><span class="line">from yourname@gmail.com</span><br><span class="line">user yourname</span><br><span class="line">password yourpassword</span><br><span class="line"><span class="meta"> </span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">If you don<span class="string">&#x27;t use any &quot;-a&quot; parameter in your command line,</span></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash"><span class="string">the default account &quot;gmail&quot; will be used.</span></span></span><br><span class="line">account default: gmail</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Use an external SMTP server with insecure authentication.</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">(manually choose an insecure authentication method.)</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Note that the password contains blanks.</span></span><br><span class="line"> </span><br><span class="line">defaults</span><br><span class="line"><span class="meta prompt_"> </span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">###################################################################</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">A sample configuration using Gmail</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">###################################################################</span></span></span><br><span class="line"><span class="meta prompt_"> </span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">account name is <span class="string">&quot;gmail&quot;</span>.</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">You can select this account by using <span class="string">&quot;-a gmail&quot;</span> <span class="keyword">in</span> your <span class="built_in">command</span> line.</span></span><br><span class="line">account gmail</span><br><span class="line">host smtp.gmail.com</span><br><span class="line">tls on</span><br><span class="line">tls_certcheck off</span><br><span class="line">port 587</span><br><span class="line">auth login</span><br><span class="line">from yourname@gmail.com</span><br><span class="line">user yourname</span><br><span class="line">password yourpassword</span><br><span class="line"><span class="meta prompt_"> </span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">If you don<span class="string">&#x27;t use any &quot;-a&quot; parameter in your command line,</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">the default account &quot;gmail&quot; will be used.</span></span></span><br><span class="line">account default: gmail</span><br></pre></td></tr></table></figure>
 <p>~/.msmtprc 需要设置正确的访问权限</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- lang: shell --&gt;</span><br><span class="line"><span class="meta">$ </span><span class="language-bash"><span class="built_in">chmod</span> 600 ~/.msmtprc</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- lang: shell --&gt;</span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">chmod</span> 600 ~/.msmtprc</span></span><br></pre></td></tr></table></figure>
 <p>test</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- lang: shell --&gt;</span><br><span class="line"><span class="meta">$ </span><span class="language-bash"><span class="built_in">echo</span> <span class="string">&quot;Hello world&quot;</span> | mail -s <span class="string">&quot;msmtp test`&quot;</span> yourfriend®@gmail.com</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- lang: shell --&gt;</span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">echo</span> <span class="string">&quot;Hello world&quot;</span> | mail -s <span class="string">&quot;msmtp test`&quot;</span> yourfriend®@gmail.com</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -648,555 +1302,11 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2021/10/08/hi-fi/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="doraemomo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Doraemomo's site">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/10/08/hi-fi/" class="post-title-link" itemprop="url">Hi-Fi</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-10-08 10:39:52" itemprop="dateCreated datePublished" datetime="2021-10-08T10:39:52+02:00">2021-10-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-12-02 15:39:05" itemprop="dateModified" datetime="2021-12-02T15:39:05+01:00">2021-12-02</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Web-Security/" itemprop="url" rel="index">
-                    <span itemprop="name">Web Security</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/10/08/hi-fi/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/10/08/hi-fi/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="https://www.zhihu.com/people/wo-yu-er-zi-dou-zheng-de-30nian">https://www.zhihu.com/people/wo-yu-er-zi-dou-zheng-de-30nian</a></p>
-<p>专业发烧友分析,好耳机的基本素质有:</p>
-<ul>
-<li>解析力: 就像图像对比度</li>
-<li>声场: 这个有点玄学,可以理解为对声音都还原程度</li>
-<li>调音风格: 就是大家常听到的<strong>三频均衡</strong></li>
-</ul>
-<p>引用叫兽的原话:</p>
-<blockquote>
-<p>但我以电声行业从业多年的经验告诉你，听来听去还是耳塞式耳机的性价比最高，你想啊，头戴式耳机需要配备头梁和耳罩，蓝牙耳机需要组装芯片和电池，而耳塞只需插头、线材和发声单元，不管放上多久拿起来就能用，只需轻轻一插即可享受音乐，它是不含任何无关声学零件的纯粹耳机产品，亦是可以以最低的成本享受到最高音质的耳机产品。</p>
-</blockquote>
-<p>我觉得说得很有道理,虽然不是完全赞同,比如我觉得,大耳机的优势就是,大... 就像大家从来不把几百元的音响和几千元的耳机比较一样,因为体积有时候就是优势.</p>
-<p>关于HD600为什么评价这么高,这篇评论很中肯,文章中还提到了当年同是三巨头的K701和DT880</p>
-<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/296748469/answer/502529548">https://www.zhihu.com/question/296748469/answer/502529548</a></p>
-<p>耳机棉套叫 Coussinets en Mousse ...</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2021/10/04/gitlab-note/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="doraemomo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Doraemomo's site">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/10/04/gitlab-note/" class="post-title-link" itemprop="url">Gitlab Note Gitlab笔记</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-10-04 16:18:19 / Modified: 16:27:33" itemprop="dateCreated datePublished" datetime="2021-10-04T16:18:19+02:00">2021-10-04</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CI-CD/" itemprop="url" rel="index">
-                    <span itemprop="name">CI/CD</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/10/04/gitlab-note/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/10/04/gitlab-note/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="about-docker-image-关于docker镜像">About docker image 关于Docker镜像</h2>
-<p>Every Gitlab repository has an associated <strong>Container Registory</strong> for storing Docker images. 每个Gitlab仓库都有一个相关联的<strong>Container Registory</strong>用于存储Docker镜像.</p>
-<p>Gitlab CI provides predefined variables to your CI jobs such as CI_REGISTRY, CI_REGISTRY_IMAGE, CI_REGISTRY_USER, CI_REGISTRY_PASSOWRD. Gitlab提供了预定义变量.</p>
-<h2 id="related-runner-list-列出所有关联runner">Related runner list 列出所有关联runner</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">gitlab-runner list</span><br><span class="line"></span><br><span class="line">Runtime platform                                    arch=amd64 os=linux pid=734 revision=e95f89a0 version=13.4.1</span><br><span class="line">Listing configured runners                          ConfigFile=/etc/gitlab-runner/config.toml</span><br><span class="line">BWC DEV Runner                                      Executor=docker Token=2v_Gdb1meaCur8vi73Dt URL=https://git.pentalog.fr/</span><br><span class="line">bwc public web api runner                           Executor=docker Token=ozVN1gQUkjmk6zLMozP7 URL=https://git.pentalog.fr/</span><br></pre></td></tr></table></figure>
-<h2 id="runner-status-状态">Runner status 状态</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gitlab-runner status</span><br><span class="line"></span><br><span class="line">Runtime platform                                    arch=amd64 os=linux pid=742 revision=e95f89a0 version=13.4.1</span><br><span class="line">gitlab-runner: Service is not running.</span><br></pre></td></tr></table></figure>
-<p>when use gitlab runner with docker image, this "not running" issue is known and not affect the usage.</p>
-<h2 id="check-runner-检查">Check runner 检查</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gitlab-runner verify</span><br><span class="line"></span><br><span class="line">Runtime platform                                    arch=amd64 os=linux pid=762 revision=e95f89a0 version=13.4.1</span><br><span class="line">Running in system-mode.                            </span><br><span class="line">                                                   </span><br><span class="line">Verifying runner... is alive                        runner=2v_Gdb1m</span><br><span class="line">Verifying runner... is alive                        runner=ozVN1gQU</span><br></pre></td></tr></table></figure>
-<h2 id="debug-output-调试">Debug output 调试</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitlab-runner --debug &lt;command&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="register-new-repository-注册新的仓库">Register new repository 注册新的仓库</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitlab-runner register</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2021/10/01/web-security-note/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="doraemomo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Doraemomo's site">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/10/01/web-security-note/" class="post-title-link" itemprop="url">Web Security Note 网络安全笔记</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-10-01 16:13:59" itemprop="dateCreated datePublished" datetime="2021-10-01T16:13:59+02:00">2021-10-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-12-08 10:06:30" itemprop="dateModified" datetime="2021-12-08T10:06:30+01:00">2021-12-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Web-Security/" itemprop="url" rel="index">
-                    <span itemprop="name">Web Security</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/10/01/web-security-note/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/10/01/web-security-note/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="userinfo-endpoint-or-id-token">UserInfo endpoint or ID token</h2>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/active-directory/develop/userinfo">https://docs.microsoft.com/en-us/azure/active-directory/develop/userinfo</a></p>
-<p>As mentioned in this document:</p>
-<blockquote>
-<p>The information available in the ID token that your app can receive is a superset of the information it can get from the UserInfo endpoint. Because you can get an ID token at the same time you get a token to call the UserInfo endpoint, we suggest that you use that ID token to get information about the user instead of calling the UserInfo endpoint. Using the ID token will eliminate one to two network requests from your application launch, reducing latency in your application. ID token中包含的用户信息,可以看作是从用户信息接口中获得信息的子集. 一般情况下,我们可以在为了访问用户信息接口拿到access token的同时拿到ID token,文章建议直接使用ID token中的用户信息来代替进一步访问用户信息接口.其中一个原因就是这样服务器就少发送一条请求,从另一方面优化了性能.</p>
-</blockquote>
-<h2 id="token-best-practices-token指南">Token best practices Token指南</h2>
-<p><a target="_blank" rel="noopener" href="https://auth0.com/docs/best-practices/token-best-practices">https://auth0.com/docs/best-practices/token-best-practices</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/HTML5_Security_Cheat_Sheet.md#local-storage">https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/HTML5_Security_Cheat_Sheet.md#local-storage</a></p>
-<p><a target="_blank" rel="noopener" href="https://auth0.com/docs/security/data-security/token-storage#don-t-store-tokens-in-local-storage">https://auth0.com/docs/security/data-security/token-storage#don-t-store-tokens-in-local-storage</a></p>
-<p><a target="_blank" rel="noopener" href="https://speakerdeck.com/rdegges/jwts-suck?slide=35">https://speakerdeck.com/rdegges/jwts-suck?slide=35</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.logrocket.com/jwt-authentication-best-practices/#store-jwts-securely">https://blog.logrocket.com/jwt-authentication-best-practices/#store-jwts-securely</a></p>
-<p><a target="_blank" rel="noopener" href="https://datatracker.ietf.org/doc/html/draft-ietf-oauth-browser-based-apps-03">https://datatracker.ietf.org/doc/html/draft-ietf-oauth-browser-based-apps-03</a></p>
-<h2 id="openid-logout">OpenID logout</h2>
-<p>OpenID automatical login is managed at server side.</p>
-<p><a target="_blank" rel="noopener" href="https://oa.dnc.global/-fr-.html?page=unarticle&amp;id_article=89&amp;lang=fr">https://oa.dnc.global/-fr-.html?page=unarticle&amp;id_article=89&amp;lang=fr</a></p>
-<h2 id="aws-hds">AWS HDS</h2>
-<p>Amazon servers are certificated for a while ago.</p>
-<p><a target="_blank" rel="noopener" href="https://aws.amazon.com/fr/compliance/hds/">https://aws.amazon.com/fr/compliance/hds/</a></p>
-<p><a target="_blank" rel="noopener" href="https://aws.amazon.com/compliance/iso-certified/">https://aws.amazon.com/compliance/iso-certified/</a></p>
-<p>虽然SSL证书过期了,但是通过https://调用的API依然有效,只是网站会显示SSL证书不安全的提示.</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2021/09/30/calculus-note/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="doraemomo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Doraemomo's site">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/09/30/calculus-note/" class="post-title-link" itemprop="url">Calculus Note 微积分笔记</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-09-30 11:09:35" itemprop="dateCreated datePublished" datetime="2021-09-30T11:09:35+02:00">2021-09-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-10-27 17:17:41" itemprop="dateModified" datetime="2021-10-27T17:17:41+02:00">2021-10-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Mathematics/" itemprop="url" rel="index">
-                    <span itemprop="name">Mathematics</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/09/30/calculus-note/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/09/30/calculus-note/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="https://www.eet-china.com/mp/a10563.html">https://www.eet-china.com/mp/a10563.html</a></p>
-<p>对于微积分的思考可以追述到阿基米德( Archimedes)的时代,阿基米德首先考虑的是,如何求抛物线和直线围城的面积.</p>
-<p>阿基米德的方法是无线的用三角形去逼近,先用一个大三角形,然后两个更小的,然后四个...阿基米德发现,每次新画的三角形面积,都是上一次三角形的四分之一</p>
-<img src="/2021/09/30/calculus-note/parabolic_area.png" class="" title="This is an example image">
-<p>那么大弓形的面积,就是</p>
-<p><span class="math display">\[ S = S_1 + \frac{1}{4}S_1 + (\frac{1}{4})^2S_1... \]</span></p>
-<p>这是个无穷级数和的问题,阿基米德用反证法证明了面积等于<span class="math inline">\((\frac{4}{3})S_1\)</span>.</p>
-<p>这样又过了一千八百年...</p>
-<p>大家统一用矩形去做逼近了,以抛物线<span class="math inline">\(y=x^2\)</span>为例</p>
-<p><span class="math display">\[ S = \frac{1}{n}(\frac{1}{n})^2 + \frac{1}{n}(\frac{2}{n})^2 + \frac{1}{n}(\frac{3}{n})^2...  \]</span></p>
-<p>从直觉上来讲,当n趋于无穷大的时候,面积就只剩下<span class="math inline">\(\frac{1}{3}\)</span>了.然而,这正是问题所在:不是我不想讲清楚,而是在这个时候根本就讲不清楚.别说我讲不清楚,牛顿和莱布尼茨也讲不清楚,这跟阿基米德用穷竭法求面积时的那种精确形成了鲜明的对比.使用穷竭法求面积,比如为了得到4/3S_1，阿基米德就去证明如果它大于4/3会出现矛盾,小于4/3也会出现矛盾,所以你就必须等于4/3.这是非常严密的,虽然操作上麻烦了点,但是逻辑上无懈可击.</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://doraemomo.github.io/2021/09/27/image-processing/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="doraemomo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Doraemomo's site">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/09/27/image-processing/" class="post-title-link" itemprop="url">Image Processing 图像处理</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-09-27 17:37:11" itemprop="dateCreated datePublished" datetime="2021-09-27T17:37:11+02:00">2021-09-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-30 11:10:52" itemprop="dateModified" datetime="2021-09-30T11:10:52+02:00">2021-09-30</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Image/" itemprop="url" rel="index">
-                    <span itemprop="name">Image</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/09/27/image-processing/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/09/27/image-processing/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="bacis-基础">Bacis 基础</h2>
-<h3 id="notions">Notions</h3>
-<p>A brief for three terms, where I found from this presentation :</p>
-<ul>
-<li><strong>Image Processing</strong> is to transform one or more images into new image(s).</li>
-<li><strong>Computer Vision</strong> is to analyze one or more images to get information about what is depicted in the image(s).</li>
-<li><strong>Computer Graphics</strong> is to generate images from description of what should be depicted.</li>
-</ul>
-<p><span class="math inline">\(I(i,j)\)</span> presents the intensity of pixels, for example:</p>
-<ul>
-<li>Binary image, Intensity value is 0 or 1.</li>
-<li>8-bits image, Intensity is from 0 to 255.</li>
-<li>24-bits image, Intensity for each primary color is from 0 to 255.</li>
-</ul>
-<h3 id="colorimetric-conversion-to-grayscale-灰度图像">colorimetric conversion to grayscale 灰度图像</h3>
-<p>matplotlib's formula:</p>
-<p><span class="math display">\[Y&#39; = 0.2989R + 0.5870G + 0.1140B\]</span></p>
-<p>and which mentioned in Pillow's document:</p>
-<blockquote>
-<p>When translating a color image to greyscale (mode "L"), the library uses the ITU-R 601-2 luma transform: <span class="math display">\[L = R *299/1000 + G* 587/1000 + B * 114/1000\]</span></p>
-</blockquote>
-<h2 id="autocontrast-自动调整对比度">Autocontrast 自动调整对比度</h2>
-<p>The histogram <span class="math inline">\(H(x)\)</span> presents total number of pixels who have intensity value x.</p>
-<p>Normalized histogram <span class="math inline">\(H_n(x)\ =\ H(x)\,/\,toal\,pixels\,number\)</span></p>
-<p>Dynamic range expansion:</p>
-<ul>
-<li>min, minima of gray level of this image.</li>
-<li>max, maxima of gray level of this image.</li>
-</ul>
-<p>You will see often the formular like this:</p>
-<p><span class="math display">\[I_{exp}(i,j) = (I(i,j) - min)\frac{255}{max - min}\]</span></p>
-<p>actually, it is eaier to understand if you see like this:</p>
-<p><span class="math display">\[I_{exp}(i,j) = \frac{I(i,j) - min}{max - min} * 255\]</span></p>
-<p>which means we calculate the percentage of the gray level according to the current range <span class="math inline">\(max - min\)</span>, then we apply the designed range <span class="math inline">\(0-255\)</span>.</p>
-<h2 id="histogram-equalization-直方图均衡化">Histogram Equalization 直方图均衡化</h2>
-<p><span class="math inline">\(i\)</span> gray level , and <span class="math inline">\(n_i\)</span> number of pixels which have this gray level.</p>
-<p>then probability</p>
-<p><span class="math display">\[p_x(i) = p(x=i) = \frac{n_i}{n}\]</span></p>
-<p>actually it is the normalized histogram.</p>
-<p>so accumulative histogram</p>
-<!-- TODO https://zh.wikipedia.org/wiki/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1%E5%8C%96 -->
-<p><span class="math display">\[cdf_x(i) = \sum_{j=1}^i p_i(i=j)\]</span></p>
-<h3 id="reference">Reference</h3>
-<p><a target="_blank" rel="noopener" href="https://www.cs.auckland.ac.nz/courses/compsci373s1c/PatricesLectures/2013/CS373-IP-01.pdf">https://www.cs.auckland.ac.nz/courses/compsci373s1c/PatricesLectures/2013/CS373-IP-01.pdf</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1262,20 +1372,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-count">45</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-count">36</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-count">47</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
