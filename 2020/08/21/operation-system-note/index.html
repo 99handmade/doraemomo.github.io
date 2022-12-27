@@ -54,7 +54,7 @@
 <meta property="og:description" content="General 综合 OS release file 系统信息 1cat &#x2F;ect&#x2F;os-release Secure copy 1scp -i &quot;bewellxpert_keypair_test.pem&quot;  BewellXpert.zip  ubuntu@ec2-13-37-234-34.eu-west-3.compute.amazonaws.com:&#x2F;home&#x2F;ubuntu">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-21T14:27:06.000Z">
-<meta property="article:modified_time" content="2022-11-03T13:30:49.899Z">
+<meta property="article:modified_time" content="2022-12-05T14:28:42.469Z">
 <meta property="article:author" content="doraemomo">
 <meta property="article:tag" content="OS">
 <meta name="twitter:card" content="summary">
@@ -141,7 +141,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">47</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">48</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -151,7 +151,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">45</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">46</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -220,7 +220,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-11-03 14:30:49" itemprop="dateModified" datetime="2022-11-03T14:30:49+01:00">2022-11-03</time>
+                <time title="Modified: 2022-12-05 15:28:42" itemprop="dateModified" datetime="2022-12-05T15:28:42+01:00">2022-12-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -277,7 +277,8 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete &lt;package&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="macos">MacOS</h2>
 <h3 id="cant-open-application-and-show-damaged">Can't open application and show "damaged"</h3>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo xattr -d com.apple.quarantine /Applications/appname</span><br></pre></td></tr></table></figure>
+<p>记得把文件从安装disk中拷贝出来, 在disk里是只读的</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo spctl --master-disable</span><br><span class="line">sudo xattr -cr </span><br><span class="line">sudo xattr -d com.apple.quarantine /Applications/appname</span><br></pre></td></tr></table></figure>
 <h3 id="jdk-fast-switching">JDK fast switching</h3>
 <p>edit ~/.bash_profile (create one if file not exists), the java home could be different:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_7_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home</span><br><span class="line">export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home</span><br><span class="line">export JAVA_11_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home</span><br><span class="line"></span><br><span class="line">export JAVA_HOME=$JAVA_11_HOME</span><br><span class="line"></span><br><span class="line">alias jdk7=&quot;export JAVA_HOME=$JAVA_7_HOME&quot;</span><br><span class="line">alias jdk8=&quot;export JAVA_HOME=$JAVA_8_HOME&quot;</span><br><span class="line">alias jdk11=&quot;export JAVA_HOME=$JAVA_11_HOME&quot;</span><br></pre></td></tr></table></figure>
@@ -462,7 +463,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-count">46</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -475,7 +476,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">47</span>
+        <span class="site-state-item-count">48</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
